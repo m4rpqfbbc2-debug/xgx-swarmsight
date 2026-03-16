@@ -212,6 +212,7 @@
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import HistoryDatabase from '../components/HistoryDatabase.vue'
+import { setPendingUpload } from '../store/pendingUpload'
 
 const router = useRouter()
 
@@ -294,15 +295,13 @@ const scrollToBottom = () => {
 const startSimulation = () => {
   if (!canSubmit.value || loading.value) return
   
-  // Store pending upload data
-  import('../store/pendingUpload.js').then(({ setPendingUpload }) => {
-    setPendingUpload(files.value, formData.value.simulationRequirement)
-    
-    // Navigate to Process page immediately (use special ID for new project)
-    router.push({
-      name: 'Process',
-      params: { projectId: 'new' }
-    })
+  // Store pending upload data synchronously before navigating
+  setPendingUpload(files.value, formData.value.simulationRequirement)
+  
+  // Navigate to Process page immediately (use special ID for new project)
+  router.push({
+    name: 'Process',
+    params: { projectId: 'new' }
   })
 }
 </script>
