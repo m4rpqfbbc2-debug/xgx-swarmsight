@@ -22,6 +22,15 @@
   background-color: #110f0d;
 }
 
+/* Form elements inherit light text */
+input, textarea, select {
+  color: #d6d3d1;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #78716c;
+}
+
 /* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;

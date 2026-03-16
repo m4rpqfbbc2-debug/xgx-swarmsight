@@ -803,6 +803,7 @@ const startSimulation = () => {
   width: 100%;
   border: none;
   background: transparent;
+  color: #d6d3d1;
   padding: 20px;
   font-family: var(--font-mono);
   font-size: 0.9rem;
@@ -810,6 +811,10 @@ const startSimulation = () => {
   resize: vertical;
   outline: none;
   min-height: 150px;
+}
+
+.code-input::placeholder {
+  color: #78716c;
 }
 
 .model-badge {
