@@ -11,10 +11,8 @@ from dotenv import load_dotenv
 project_root_env = os.path.join(os.path.dirname(__file__), '../../.env')
 
 if os.path.exists(project_root_env):
-    load_dotenv(project_root_env, override=True)
-else:
-    # If no .env in the root directory, try loading environment variables (for production)
-    load_dotenv(override=True)
+    load_dotenv(project_root_env, override=False)
+# In production (e.g., Render), env vars are set directly — no .env needed
 
 
 class Config:
