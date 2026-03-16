@@ -947,7 +947,7 @@ onUnmounted(() => {
   gap: 4px;
 }
 
-.breakdown-divider { color: #292524; }
+.breakdown-divider { color: #d6d3d1; }
 .breakdown-item.twitter { color: #e7e5e4; }
 .breakdown-item.reddit { color: #e7e5e4; }
 
@@ -1020,7 +1020,7 @@ onUnmounted(() => {
 
 .timeline-card:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  border-color: #292524;
+  border-color: #d6d3d1;
 }
 
 /* Left side (Twitter) */
@@ -1159,7 +1159,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: flex-end;
   font-size: 10px;
-  color: #44403c;
+  color: #a8a29e;
   font-family: 'JetBrains Mono', monospace;
 }
 
@@ -1173,7 +1173,7 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  color: #44403c;
+  color: #a8a29e;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1188,8 +1188,8 @@ onUnmounted(() => {
 }
 
 @keyframes ripple {
-  0% { transform: scale(0.8); opacity: 1; border-color: #44403c; }
-  100% { transform: scale(2.5); opacity: 0; border-color: #292524; }
+  0% { transform: scale(0.8); opacity: 1; border-color: #a8a29e; }
+  100% { transform: scale(2.5); opacity: 0; border-color: #d6d3d1; }
 }
 
 /* Animation */
@@ -1210,7 +1210,7 @@ onUnmounted(() => {
 /* Logs */
 .system-logs {
   background: #110f0d;
-  color: #292524;
+  color: #d6d3d1;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
   border-top: 1px solid #292524;
@@ -1247,7 +1247,7 @@ onUnmounted(() => {
 }
 
 .log-time { color: #a8a29e; min-width: 75px; }
-.log-msg { color: #44403c; word-break: break-all; }
+.log-msg { color: #a8a29e; word-break: break-all; }
 .mono { font-family: 'JetBrains Mono', monospace; }
 
 /* Loading spinner for button */

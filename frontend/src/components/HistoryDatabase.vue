@@ -726,7 +726,7 @@ onUnmounted(() => {
 .status-icon:nth-child(3).available { color: #c2410c; } /* Analysis Report - green */
 
 .status-icon.unavailable {
-  color: #44403c;
+  color: #a8a29e;
   opacity: 0.5;
 }
 
@@ -797,7 +797,7 @@ onUnmounted(() => {
 .file-item:hover {
   background: rgba(255, 255, 255, 1);
   transform: translateX(2px);
-  border-color: #292524;
+  border-color: #d6d3d1;
 }
 
 /* Minimal file tag style */
@@ -862,7 +862,7 @@ onUnmounted(() => {
 
 /* File area hover effect */
 .project-card:hover .card-files-wrapper {
-  border-color: #44403c;
+  border-color: #a8a29e;
   background: linear-gradient(135deg, #1c1917 0%, #110f0d 100%);
 }
 
@@ -1206,7 +1206,7 @@ onUnmounted(() => {
 }
 
 .modal-file-item:hover {
-  border-color: #44403c;
+  border-color: #a8a29e;
   box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.03);
 }
 

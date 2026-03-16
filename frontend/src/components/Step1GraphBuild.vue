@@ -321,7 +321,7 @@ watch(() => props.systemLogs.length, () => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 20px;
   font-weight: 700;
-  color: #292524;
+  color: #d6d3d1;
 }
 
 .step-card.active .step-num,
@@ -404,7 +404,7 @@ watch(() => props.systemLogs.length, () => {
 
 .entity-tag.clickable:hover {
     background: #292524;
-    border-color: #44403c;
+    border-color: #a8a29e;
 }
 
 /* Ontology Detail Overlay */
@@ -565,7 +565,7 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .conn-arrow {
-    color: #44403c;
+    color: #a8a29e;
 }
 
 /* Step 02 Stats */
@@ -644,7 +644,7 @@ watch(() => props.systemLogs.length, () => {
 /* System Logs */
 .system-logs {
   background: #110f0d;
-  color: #292524;
+  color: #d6d3d1;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
   border-top: 1px solid #292524;
@@ -692,7 +692,7 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .log-msg {
-  color: #44403c;
+  color: #a8a29e;
   word-break: break-all;
 }
 </style>

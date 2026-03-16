@@ -1,0 +1,614 @@
+
+
+=== xdx-licensing-playbook-1.md ===
+# XDX LICENSING PLAYBOOK
+
+## UAE-Based Global Software Licensing & Distribution
+
+---
+
+## 1. ENTITY OVERVIEW
+
+### 1.1 What XDX Is
+
+XDX is a UAE-based software licensing company that owns intellectual property rights to a portfolio of vertical SaaS products and distributes them globally through territory-based equity partnerships.
+
+**Registered:** Dubai, UAE (trading name of the licensing entity)
+
+**Core function:** Own IP → License to territories → Collect revenue → Pay commissions → Enforce exclusivity
+
+**Not:** A software development company (that's XGX UK), a private equity firm, or a traditional SaaS vendor.
+
+### 1.2 Why Dubai
+
+- Tax efficiency on licensing revenue
+- Neutral jurisdiction for global distribution
+- Strong IP protection framework
+- No restrictions on profit repatriation
+- Growing hub for international business
+
+### 1.3 The Business Model in One Sentence
+
+XDX licenses software products to territory-based partners who commit MRR in exchange for equity ownership, creating a capital-light global distribution network where partners are incentivised to grow the platform because they own part of it.
+
+---
+
+## 2. CORPORATE STRUCTURE
+
+### 2.1 The Three Entities
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                         XDX (DUBAI)                             │
+│                                                                 │
+│  • Owns all IP for Products A–F                                 │
+│  • Issues exclusive territory licences                          │
+│  • Receives 100% of subscription revenue                        │
+│  • Manages partner onboarding, compliance, contracts            │
+│  • Calculates and pays partner commissions                      │
+│  • Enforces exclusivity and clawback provisions                 │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+│
+┌───────────────┴───────────────┐
+│                               │
+▼                               ▼
+┌─────────────────────────┐     ┌─────────────────────────────────┐
+│      XGX UK             │     │     TERRITORYCOS (100+)         │
+│                         │     │                                 │
+│  Technical delivery:    │     │  • One per territory            │
+│  • Implementation       │     │  • 6 products × 5 slots each    │
+│  • Training             │     │  • Hold partner agreements      │
+│  • Support (Tier 1/2)   │     │  • Non-operational              │
+│  • Infrastructure       │     │  • Revenue flows through to     │
+│  • Product updates      │     │    LicCo — no margin retained   │
+│                         │     │                                 │
+│  Bills LicCo at agreed  │     │  Partners own slots in these    │
+│  transfer pricing       │     │  vehicles, not in LicCo         │
+└─────────────────────────┘     └─────────────────────────────────┘
+```
+
+### 2.2 Why This Structure
+
+| Objective | How Structure Achieves It |
+|-----------|---------------------------|
+| Tax efficiency | Licensing revenue collected in UAE (0% corporate tax on qualifying income) |
+| IP protection | Single ownership point; clear chain of title |
+| Partner alignment | Partners own equity in territory, not vendor relationship |
+| Operational simplicity | All revenue centralised; clean commission calculations |
+| Scalability | TerritoryCos are templated; can spin up 100 without complexity |
+| Exit optionality | LicCo can be sold as a single asset with global revenue |
+
+### 2.3 Transfer Pricing (XDX → XGX UK)
+
+XGX UK provides technical services to XDX under a services agreement. Key terms:
+
+| Service | Basis | Indicative Rate |
+|---------|-------|-----------------|
+| Implementation | Per customer onboarding | £X per activation |
+| Support | Per customer per month | £X per seat/month |
+| Infrastructure | Platform hosting, uptime | Cost + margin |
+| Development | Product updates, new features | Time & materials or fixed retainer |
+
+**Critical:** Transfer pricing must be arm's length and documented. Get tax advice before finalising rates.
+
+---
+
+## 3. PRODUCT PORTFOLIO
+
+### 3.1 Current Products
+
+| Product ID | Name | Vertical | Status | Target Partner Profile |
+|------------|------|----------|--------|------------------------|
+| SPV A | Hirestack CRM | Recruitment (temp/contract) | Live | Staffing agencies, 20–500 consultants |
+| SPV B | Hirestack Perm | Recruitment (permanent) | Live | Perm recruitment firms |
+| SPV C | Onsyte | Construction / field services | Live | Contractors, field service companies |
+| SPV D | TBC | TBC | 2027 | TBC |
+| SPV E | TBC | TBC | 2027 | TBC |
+| SPV F | TBC | TBC | 2027 | TBC |
+
+### 3.2 Product-Market Fit Requirements
+
+Before a product enters the licensing portfolio:
+
+1. **Proven in production** — At least one paying customer using it daily
+2. **Repeatable onboarding** — Implementation playbook documented
+3. **Support model defined** — Tier 1/2 coverage, SLA commitments
+4. **Pricing validated** — Per-seat or usage-based model tested
+5. **Competitive positioning** — Clear "why us vs. incumbent" story
+
+### 3.3 Kynder Care / Care Sector
+
+Kynder Care (or equivalent care platform) would become SPV D, E, or F once:
+- Product is live with UK customers
+- Compliance requirements (CQC, GDPR) are documented
+- Onboarding and support model is proven
+
+---
+
+## 4. TERRITORY STRUCTURE
+
+### 4.1 Territory Map
+
+**100 territories total:**
+
+| Region | Territories | Notes |
+|--------|-------------|-------|
+| **United States** | 50 | One per state |
+| **UK & Ireland** | 2 | UK, Ireland |
+| **Europe** | 18 | Germany, France, Netherlands, Spain, Italy, Sweden, Norway, Denmark, Finland, Poland, Belgium, Austria, Switzerland, Portugal, Greece, Czech Republic, Romania, Hungary |
+| **Middle East** | 4 | UAE, Saudi Arabia, Israel, Turkey |
+| **Africa** | 4 | South Africa, Nigeria, Kenya, Morocco, Egypt |
+| **Asia Pacific** | 14 | Australia, New Zealand, Singapore, Hong Kong, Japan, South Korea, Taiwan, Malaysia, Philippines, Indonesia, Thailand, Vietnam, India |
+| **Americas (ex-US)** | 8 | Canada, Mexico, Brazil, Argentina, Chile, Colombia + others |
+
+### 4.2 Territory Anatomy
+
+Each territory contains:
+
+- **6 products** (SPV A–F)
+- **5 equity slots per product** (50% total available to partners)
+- **50% retained** by LicCo per product
+- **£50k MRR baseline** per product (5 slots × £10k) = £300k total territory capacity
+
+```
+TERRITORY: UK
+├── SPV A (Hirestack CRM): 5 slots available, £50k baseline
+├── SPV B (Hirestack Perm): 5 slots available, £50k baseline
+├── SPV C (Onsyte): 5 slots available, £50k baseline
+├── SPV D (TBC): 5 slots available, £50k baseline
+├── SPV E (TBC): 5 slots available, £50k baseline
+└── SPV F (TBC): 5 slots available, £50k baseline
+
+Total territory capacity: £300k MRR (£3.6M ARR)
+```
+
+**Scale:** 100 territories per product = 500 slots per product globally
+
+### 4.3 Territory Lifecycle
+
+| Status | Definition |
+|--------|------------|
+| **Inactive** | No partners, no active sales conversations |
+| **Prospecting** | Active pipeline, conversations in progress |
+| **Activated** | At least one slot sold in at least one product |
+| **Partially filled** | Some slots sold, but slots still available |
+| **Fully filled** | All 5 slots sold across all 6 products (30 slots total) |
+| **Exclusive** | Single partner holds all 5 slots in one or more products |
+
+---
+
+## 5. THE LICENSING DISTRIBUTION MODEL (LDM)
+
+### 5.1 Core Mechanic
+
+Each product in each territory has **5 equity slots** available. Partners purchase slots to earn equity and commit MRR.
+
+| Slots | Equity | MRR Commitment | Notes |
+|-------|--------|----------------|-------|
+| 1 slot | 10% | £10k/month | Minimum buy-in |
+| 2 slots | 20% | £20k/month | |
+| 3 slots | 30% | £30k/month | |
+| 4 slots | 40% | £40k/month | |
+| 5 slots | 50% | £50k/month | Maximum — secures exclusivity |
+
+**Key rules:**
+- 5 slots available per product, per territory (100 territories per product)
+- Each slot = 10% equity for £10k MRR commitment
+- Partners take minimum 1 slot, maximum 5 slots
+- Multiple partners can share slots (e.g., three partners take 2, 2, 1 slots = 5 slots filled)
+- First-committed basis — early movers get priority
+- Partner taking all 5 slots = exclusive territory rights for that product
+- **5-year contract term** on all commitments
+- Equity is per-product, per-territory (a partner can hold 3 slots in Hirestack CRM and 1 slot in Onsyte)
+
+### 5.2 Revenue Flow
+
+**Baseline revenue (first £50k MRR per product per territory):**
+- 100% flows to LicCo
+- Partner earns equity position but no cash commission on baseline
+
+**Incremental revenue (MRR above £50k per product per territory):**
+- Partner earns commission = their equity %
+- Remainder flows to LicCo
+
+**Example:**
+```
+Partner: 30% equity in Hirestack CRM, UK territory
+Territory MRR: £80k (£50k baseline + £30k incremental)
+
+Partner commission: 30% × £30k = £9,000/month
+LicCo receives: £50k (baseline) + £21k (70% of incremental) = £71k/month
+```
+
+### 5.3 TerritoryCo Economics
+
+TerritoryCos retain **zero operating margin**. They exist only to:
+- Hold equity positions
+- Hold partner agreements
+- Provide legal structure for territory-based ownership
+
+All cash flows through to LicCo. Commission payments go from LicCo directly to partners.
+
+### 5.4 What Partners Get
+
+| Benefit | Timing |
+|---------|--------|
+| **Better product** | Immediate — replace legacy systems |
+| **Operational improvement** | Immediate — AI capabilities, modern UX |
+| **Equity ownership** | Immediate — stake in territory pool |
+| **Commission income** | Ongoing — once baseline is exceeded |
+| **Exclusivity** (if 50%) | Immediate — protected territory position |
+| **Exit upside** | Long-term — AI multiples (15–30× ARR) vs. traditional SME multiples (3–7× EBITDA) |
+
+### 5.5 What Partners Commit
+
+| Obligation | Detail |
+|------------|--------|
+| **Slot commitment** | Minimum 1 slot (£10k MRR), maximum 5 slots (£50k MRR) |
+| **Contract term** | 5 years |
+| **Performance threshold** | Maintain committed MRR or face clawback |
+| **Platform exclusivity** | Cannot resell competing products in same vertical |
+| **Customer onboarding** | Responsible for introducing customers; XGX UK handles implementation |
+
+---
+
+## 6. PARTNER ACQUISITION
+
+### 6.1 Partner Profile by Product
+
+| Product | Ideal Partner | Why |
+|---------|---------------|-----|
+| **Hirestack CRM** | Staffing agency owner, 20–500 consultants | Heavy tech users, high software spend, frustrated with Bullhorn/Vincere |
+| **Hirestack Perm** | Permanent recruitment firm owner | Similar profile, different workflow needs |
+| **Onsyte** | Construction/field services operator | Mobile workforce, scheduling pain, compliance needs |
+| **Care (future)** | Domiciliary/residential care provider | Heavy rostering, CQC compliance, legacy system frustration |
+
+### 6.2 Qualification Criteria
+
+| Factor | Score 1–5 | Weight |
+|--------|-----------|--------|
+| **Tech frustration** | Current system pain | High |
+| **MRR capacity** | Can they commit £10k+ from own usage + network? | Critical |
+| **Decision velocity** | Can they move in 30–60 days? | Medium |
+| **Network strength** | Do they have customers/contacts to bring? | High |
+| **Cultural fit** | Partnership mindset vs. vendor mindset | Medium |
+
+**Proceed if weighted average ≥ 3.5**
+
+### 6.3 Sales Process
+
+```
+LEAD
+│
+▼
+DISCOVERY CALL (Analyst)
+│ Qualify: pain, capacity, timeline, fit
+│
+▼
+FOUNDER CALL (Gregg)
+│ Present model, answer strategic questions
+│
+▼
+PRODUCT DEMO
+│ Show platform, prove capability vs. incumbents
+│
+▼
+ECONOMICS WALKTHROUGH
+│ Calculator: MRR → equity → commission projections
+│
+▼
+TERM SHEET
+│ Non-binding: territory, product, commitment, equity
+│
+▼
+LEGAL REVIEW
+│ Partner reviews SHA, licence agreement
+│
+▼
+SIGNED
+│ Countersigned agreements, first invoice
+│
+▼
+ONBOARDING
+│ XGX UK implements, trains, goes live
+│
+▼
+ACTIVE PARTNER
+```
+
+### 6.4 Sales Cycle Targets
+
+| Stage | Target Duration |
+|-------|-----------------|
+| Lead → Discovery | 3–5 days |
+| Discovery → Founder call | 5–7 days |
+| Founder call → Demo | 3–5 days |
+| Demo → Term sheet | 7–14 days |
+| Term sheet → Signed | 14–30 days |
+| Signed → Live | 30–45 days |
+
+**Total: 60–90 days lead to live**
+
+---
+
+## 7. COMMERCIAL ASSETS REQUIRED
+
+### 7.1 Sales Collateral
+
+| Asset | Purpose | Status |
+|-------|---------|--------|
+| Territory pitch deck | Present LDM to prospective partners | |
+| Product one-pagers (per SPV) | Explain each product's value proposition | |
+| Equity calculator | Interactive: MRR → equity → projected returns | |
+| Competitive comparison | Why Hirestack vs. Bullhorn/Vincere, etc. | |
+| Case studies | Partner success stories (once available) | |
+| FAQ document | Common objections and answers | |
+
+### 7.2 Legal Documents
+
+| Document | Purpose | Status |
+|----------|---------|--------|
+| Master Licence Agreement | LicCo → TerritoryCo, per-product | |
+| TerritoryCo Shareholders Agreement | Governs equity slots, 5 per product per territory | |
+| Partner Subscription Agreement | Individual partner commitment | |
+| Clawback Framework | Performance thresholds, cure periods, enforcement | |
+| XGX UK Services Agreement | Transfer pricing, SLA, scope | |
+
+### 7.3 Operational Tools
+
+| Function | Tool/System |
+|----------|-------------|
+| CRM / Pipeline | HubSpot, Pipedrive, or custom |
+| Territory tracker | Equity pools, availability, partner status |
+| Billing / Invoicing | Stripe, Xero, or custom |
+| Commission engine | Calculate partner payouts |
+| Partner portal | Self-service: position, earnings, customers |
+| Reporting dashboard | MRR by territory, product, partner |
+
+---
+
+## 8. OPERATIONS
+
+### 8.1 What XDX Does (Dubai)
+
+| Function | Detail |
+|----------|--------|
+| **Licensing** | Issue territory licences, manage exclusivity |
+| **Contracts** | Partner agreements, TerritoryCo formation |
+| **Revenue collection** | All subscription fees flow to LicCo |
+| **Commission calculation** | Monthly payout calculations |
+| **Commission payment** | Disburse to partners |
+| **Compliance** | Partner performance monitoring |
+| **Clawback enforcement** | Cure notices, equity recovery |
+| **Partner success** | QBRs, health checks, expansion conversations |
+
+### 8.2 What XGX UK Does
+
+| Function | Detail |
+|----------|--------|
+| **Implementation** | Customer onboarding, data migration |
+| **Training** | Partner and end-customer training |
+| **Support** | Tier 1/2 customer support |
+| **Infrastructure** | Hosting, uptime, security |
+| **Product** | Development, updates, roadmap |
+
+### 8.3 Handoff Points
+
+| Trigger | From | To |
+|---------|------|-----|
+| Partner signs | XDX (Sales) | XGX UK (Implementation) |
+| Customer goes live | XGX UK (Impl) | XGX UK (Support) |
+| Support escalation | XGX UK (Support) | XGX UK (Dev) |
+| Billing issue | XGX UK (Support) | XDX (Operations) |
+| Performance issue | XDX (Partner Success) | XDX (Compliance) |
+
+---
+
+## 9. PERFORMANCE MANAGEMENT
+
+### 9.1 Partner KPIs
+
+| Metric | Definition | Threshold |
+|--------|------------|-----------|
+| **Committed MRR** | Contracted monthly amount | Per agreement |
+| **Actual MRR** | Current monthly revenue | Must meet committed |
+| **Activation rate** | Customers live ÷ customers signed | ≥80% within 90 days |
+| **Net retention** | MRR retained + expansion − churn | ≥95% monthly |
+| **Customer NPS** | End-customer satisfaction | ≥40 |
+
+### 9.2 Clawback Triggers
+
+| Trigger | Consequence |
+|---------|-------------|
+| MRR falls below 80% of commitment for 3 consecutive months | Cure notice issued |
+| MRR falls below 50% of commitment | Immediate review, potential equity reduction |
+| Breach of exclusivity (reselling competitor) | Equity forfeiture |
+| Material contract breach | Agreement termination, equity forfeiture |
+
+### 9.3 Cure Process
+
+```
+TRIGGER DETECTED
+│
+▼
+CURE NOTICE ISSUED (14 days)
+│
+├── Partner remedies → Continue
+│
+└── Partner fails to remedy
+│
+▼
+ESCALATION TO FOUNDER
+│
+├── Negotiate revised terms
+│
+└── Enforce clawback
+│
+▼
+EQUITY RETURNED TO POOL
+(Available for new partners)
+```
+
+---
+
+## 10. TEAM STRUCTURE
+
+### 10.1 Phase 1 (2026) — Lean
+
+| Role | Location | Focus |
+|------|----------|-------|
+| **Gregg Curtis** | UK/UAE | Strategy, high-value deals, founder calls |
+| **Sales Director** | UK | Partner acquisition, territory pipeline |
+| **Operations Manager** | Dubai | Contracts, billing, compliance |
+| **Partner Success** | UK or Dubai | Onboarding, QBRs, retention |
+
+### 10.2 Phase 2 (2027) — Scaled
+
+| Role | Location | Focus |
+|------|----------|-------|
+| **Gregg Curtis** | UK/UAE | Strategy, major accounts |
+| **Sales Director** | UK | UK & Europe territories |
+| **Sales Manager** | Dubai | GCC & international |
+| **Sales Manager** | US (remote) | US territories |
+| **Operations Lead** | Dubai | Contracts, billing, compliance |
+| **Partner Success (×2)** | UK/Dubai | Portfolio management |
+| **Finance/Admin** | Dubai | Invoicing, reporting |
+
+---
+
+## 11. METRICS & TARGETS
+
+### 11.1 Phase 1 Targets (Dec 2026)
+
+| Metric | Target |
+|--------|--------|
+| Territories activated | 25 |
+| Territories fully filled (SPV A–C) | 15 |
+| Baseline MRR (SPV A–C) | £2.25M |
+| Incremental MRR | ~£0.5M |
+| **Total MRR** | **~£2.7M** |
+| Partners signed | 50+ |
+| Products in market | 3 |
+
+### 11.2 Phase 2 Targets (Dec 2027)
+
+| Metric | Target |
+|--------|--------|
+| Territories activated | 100+ |
+| Territories fully filled (SPV A–C) | 70–80 |
+| Baseline MRR (SPV A–C) | ~£12M |
+| Incremental MRR (SPV A–C) | ~£2M |
+| Baseline MRR (SPV D–F) | ~£3M |
+| **Total MRR** | **~£17–18M** |
+| Partners signed | 200+ |
+| Products in market | 6 |
+
+### 11.3 Structural Capacity
+
+| Metric | Calculation | Total |
+|--------|-------------|-------|
+| Products | 6 | |
+| Territories | 100 | |
+| Baseline per product per territory | £50k MRR | |
+| Baseline per territory | £300k MRR | |
+| **Total baseline capacity** | 100 × £300k | **£30M MRR** |
+| **Annualised** | | **£360M ARR** |
+
+---
+
+## 12. PHASE 1 PRIORITIES
+
+### 12.1 Territory Focus
+
+| Priority | Territories | Rationale |
+|----------|-------------|-----------|
+| **1st** | UK | Home market, existing network, fastest sales cycle |
+| **2nd** | UAE, Saudi Arabia | Dubai proximity, Gregg's presence, GCC growth |
+| **3rd** | Ireland, South Africa, Australia | English-speaking, similar legal frameworks |
+| **4th** | Canada, India | Large markets, recruitment sector opportunity |
+
+### 12.2 Product Focus
+
+| Priority | Product | Rationale |
+|----------|---------|-----------|
+| **1st** | Hirestack CRM | Most mature, recruitment is target-rich |
+| **2nd** | Hirestack Perm | Same buyer, different workflow |
+| **3rd** | Onsyte | Diversification, construction vertical |
+| **4th** | Care (SPV D) | UK regulatory knowledge, clear competitors |
+
+### 12.3 Critical Path Items
+
+| Item | Owner | Deadline |
+|------|-------|----------|
+| Legal docs finalised (SHA, licence agreement) | Gregg + Legal | |
+| Territory pitch deck | Gregg | |
+| Equity calculator (interactive) | Adam / Dev | |
+| CRM / pipeline setup | Ops | |
+| First 5 partner conversations | Gregg / Sales | |
+| First partner signed | Team | |
+| First partner live | Team | |
+
+---
+
+## 13. RISK MANAGEMENT
+
+### 13.1 Key Risks
+
+| Risk | Likelihood | Impact | Mitigation |
+|------|------------|--------|------------|
+| **Partner underperformance** | Medium | Medium | Clear clawback terms, quarterly reviews |
+| **Legal challenge to structure** | Low | High | UK-qualified lawyer review; arm's length transfer pricing |
+| **Competitor response** | Medium | Medium | Speed to market; lock in exclusives early |
+| **Product gaps vs. incumbents** | Medium | High | Prioritise roadmap based on partner feedback |
+| **Cash flow timing** | Medium | Medium | 5-year contracts provide visibility; billing upfront |
+| **Key person risk (Gregg)** | Medium | High | Document processes; hire Sales Director early |
+| **FX exposure** | Medium | Low | Bill in GBP or USD; hedge if material |
+
+### 13.2 Legal Considerations
+
+| Area | Consideration |
+|------|---------------|
+| **UAE entity** | Ensure proper formation; understand licensing requirements |
+| **Transfer pricing** | Must be arm's length; document methodology |
+| **IP assignment** | Confirm XGX UK has properly assigned IP to LicCo |
+| **Partner agreements** | Jurisdiction, dispute resolution, enforcement |
+| **GDPR** | Data flows between territories and UK; DPAs required |
+| **Employment** | If hiring in Dubai, understand UAE labour law |
+
+---
+
+## 14. APPENDIX
+
+### 14.1 Glossary
+
+| Term | Definition |
+|------|------------|
+| **LicCo** | XDX Dubai — the licensing entity that owns IP and collects revenue |
+| **TerritoryCo** | Territory-specific vehicle holding equity and partner agreements |
+| **LDM** | Licensing Distribution Model — the equity-for-MRR partnership structure |
+| **Slot** | Unit of equity (10%) and MRR commitment (£10k/month); 5 slots available per product per territory |
+| **Baseline** | First £50k MRR per product per territory (all 5 slots filled) — flows 100% to LicCo |
+| **Incremental** | MRR above baseline — partners earn commission on this |
+| **Exclusivity** | Partner holding all 5 slots (50% equity) has exclusive rights in that product/territory |
+| **Clawback** | Recovery of slots/equity for underperformance or breach |
+
+### 14.2 Partner Value Proposition Summary
+
+**The pitch in three sentences:**
+
+"Instead of paying monthly fees to a legacy vendor, convert that spend into equity ownership in your territory. Each £10k MRR commitment gets you a 10% equity slot — take all five slots for exclusivity and lock out competitors. You get a better product, ongoing commission income when you bring new customers, and exposure to AI-company valuations when we exit."
+
+### 14.3 Competitive Positioning
+
+| Incumbent | Weakness | Our Angle |
+|-----------|----------|-----------|
+| **Bullhorn** | Expensive, dated UX, poor AI | "Modern, AI-native, fraction of the cost" |
+| **Vincere** | Limited functionality, scaling issues | "Built for agencies that want to grow" |
+| **Mercury** | Legacy architecture, slow innovation | "21st-century platform, not 1990s code" |
+| **Intuitive Care** | Clunky, expensive, poor mobile | "Built by care operators, for care operators" |
+| **ClearCare** | US-focused, weak on UK compliance | "CQC-native, UK-first" |
+
+---
+
+*XDX Licensing Playbook v1.0 | January 2026*

@@ -1121,7 +1121,7 @@ watch(() => props.simulationId, (newId) => {
 .section-number {
   font-family: 'JetBrains Mono', monospace;
   font-size: 16px;
-  color: #292524;
+  color: #d6d3d1;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -1137,10 +1137,10 @@ watch(() => props.simulationId, (newId) => {
 
 /* States */
 .report-section-item.is-pending .section-number {
-  color: #292524;
+  color: #d6d3d1;
 }
 .report-section-item.is-pending .section-title {
-  color: #44403c;
+  color: #a8a29e;
 }
 
 .report-section-item.is-active .section-number,
@@ -1462,7 +1462,7 @@ watch(() => props.simulationId, (newId) => {
 
 .tab-btn:hover {
   background: #110f0d;
-  border-color: #44403c;
+  border-color: #a8a29e;
 }
 
 .tab-btn.active {
@@ -1547,7 +1547,7 @@ watch(() => props.simulationId, (newId) => {
 
 .tools-card-toggle:hover {
   background: #110f0d;
-  border-color: #44403c;
+  border-color: #a8a29e;
 }
 
 .tools-card-toggle svg {
@@ -1714,7 +1714,7 @@ watch(() => props.simulationId, (newId) => {
 
 .profile-card-toggle:hover {
   background: #110f0d;
-  border-color: #44403c;
+  border-color: #a8a29e;
 }
 
 .profile-card-toggle svg {
@@ -1791,7 +1791,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .target-option:hover {
-  border-color: #44403c;
+  border-color: #a8a29e;
 }
 
 .target-option.active {
@@ -2221,7 +2221,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .agent-checkbox:hover {
-  border-color: #44403c;
+  border-color: #a8a29e;
 }
 
 .agent-checkbox.checked {
@@ -2328,7 +2328,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .action-divider {
-  color: #292524;
+  color: #d6d3d1;
 }
 
 /* Survey Input */
@@ -2554,7 +2554,7 @@ watch(() => props.simulationId, (newId) => {
 :deep(.code-block code) {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  color: #292524;
+  color: #d6d3d1;
 }
 
 :deep(.inline-code) {

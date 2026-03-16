@@ -2471,7 +2471,7 @@ watch(() => props.reportId, (newId) => {
 
 /* States */
 .report-section-item.is-pending .section-title {
-  color: #44403c;
+  color: #a8a29e;
 }
 
 .report-section-item.is-active .section-title,
@@ -3214,7 +3214,7 @@ watch(() => props.reportId, (newId) => {
 /* Tool Colors - Gray (Default) */
 .tool-badge.tool-gray {
   background: linear-gradient(135deg, #110f0d 0%, #1c1917 100%);
-  border-color: #44403c;
+  border-color: #a8a29e;
   color: #d6d3d1;
 }
 .tool-badge.tool-gray .tool-icon {
@@ -3260,7 +3260,7 @@ watch(() => props.reportId, (newId) => {
 .action-btn:hover {
   background: #292524;
   color: #d6d3d1;
-  border-color: #44403c;
+  border-color: #a8a29e;
 }
 
 /* Result Wrapper */
@@ -3508,7 +3508,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.stat-box.muted) {
   background: #110f0d;
-  border-color: #292524;
+  border-color: #d6d3d1;
 }
 
 :deep(.stat-box.muted .stat-num) {
@@ -3539,7 +3539,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.expand-details:hover) {
-  border-color: #44403c;
+  border-color: #a8a29e;
   color: #d6d3d1;
 }
 
@@ -3735,7 +3735,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.interview-display .stat-divider) {
-  color: #44403c;
+  color: #a8a29e;
   font-size: 12px;
 }
 
@@ -3762,7 +3762,7 @@ watch(() => props.reportId, (newId) => {
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
-  scrollbar-color: #292524 transparent;
+  scrollbar-color: #d6d3d1 transparent;
 }
 
 :deep(.interview-display .agent-tabs::-webkit-scrollbar) {
@@ -3800,7 +3800,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.interview-display .agent-tab:hover) {
   background: #1c1917;
-  border-color: #44403c;
+  border-color: #a8a29e;
   color: #d6d3d1;
 }
 
@@ -4044,7 +4044,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.interview-display .platform-btn.active) {
   background: transparent;
   color: #c2410c;
-  border-color: #292524;
+  border-color: #d6d3d1;
   box-shadow: none;
 }
 
@@ -4412,7 +4412,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.insight-display .entity-tag:hover) {
   background: #1c1917;
-  border-color: #44403c;
+  border-color: #a8a29e;
 }
 
 :deep(.insight-display .entity-tag .entity-name) {
@@ -4582,7 +4582,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.quick-search-display .expand-btn:hover) {
   background: #1c1917;
   color: #d6d3d1;
-  border-color: #44403c;
+  border-color: #a8a29e;
 }
 
 /* Empty State */
@@ -4744,12 +4744,12 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.panorama-display .fact-item.active) {
   background: #110f0d;
-  border-color: #292524;
+  border-color: #d6d3d1;
 }
 
 :deep(.panorama-display .fact-item.historical) {
   background: #110f0d;
-  border-color: #292524;
+  border-color: #d6d3d1;
 }
 
 :deep(.panorama-display .fact-number) {
@@ -4985,7 +4985,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.quick-search-display .fact-item.active) {
   background: #110f0d;
-  border-color: #292524;
+  border-color: #d6d3d1;
 }
 
 :deep(.quick-search-display .fact-number) {
@@ -5100,7 +5100,7 @@ watch(() => props.reportId, (newId) => {
 /* Console Logs - consistent with Step3Simulation.vue */
 .console-logs {
   background: #110f0d;
-  color: #292524;
+  color: #d6d3d1;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
   border-top: 1px solid #292524;
@@ -5140,7 +5140,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 .log-msg {
-  color: #44403c;
+  color: #a8a29e;
   word-break: break-all;
 }
 

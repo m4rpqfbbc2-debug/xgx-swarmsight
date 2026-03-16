@@ -329,7 +329,7 @@ const startSimulation = () => {
   min-height: 100vh;
   background: var(--white);
   font-family: var(--font-sans);
-  color: var(--black);
+  color: #d6d3d1;
 }
 
 /* Top navigation */
@@ -425,7 +425,7 @@ const startSimulation = () => {
   font-weight: 500;
   margin: 0 0 40px 0;
   letter-spacing: -2px;
-  color: var(--black);
+  color: #d6d3d1;
 }
 
 .gradient-text {
@@ -450,7 +450,7 @@ const startSimulation = () => {
 }
 
 .highlight-bold {
-  color: var(--black);
+  color: #d6d3d1;
   font-weight: 700;
 }
 
@@ -466,14 +466,14 @@ const startSimulation = () => {
   border-radius: 2px;
   font-family: var(--font-mono);
   font-size: 0.9em;
-  color: var(--black);
+  color: #d6d3d1;
   font-weight: 600;
 }
 
 .slogan-text {
   font-size: 1.2rem;
   font-weight: 520;
-  color: var(--black);
+  color: #d6d3d1;
   letter-spacing: 1px;
   border-left: 3px solid var(--orange);
   padding-left: 15px;
@@ -647,7 +647,7 @@ const startSimulation = () => {
 .step-num {
   font-family: var(--font-mono);
   font-weight: 700;
-  color: var(--black);
+  color: #d6d3d1;
   opacity: 0.3;
 }
 
@@ -790,7 +790,7 @@ const startSimulation = () => {
   padding: 0 15px;
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: #44403c;
+  color: #a8a29e;
   letter-spacing: 1px;
 }
 

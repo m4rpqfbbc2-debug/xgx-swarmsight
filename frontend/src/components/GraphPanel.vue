@@ -607,7 +607,7 @@ const renderGraph = () => {
       linkLabels.attr('fill', '#78716c')
       // Highlight corresponding edge
       link.filter(l => l === d).attr('stroke', '#c2410c').attr('stroke-width', 3)
-      d3.select(event.target).attr('fill', 'rgba(52, 152, 219, 0.1)')
+      d3.select(event.target).attr('fill', 'rgba(194, 65, 12, 0.1)')
       
       selectedItem.value = {
         type: 'edge',
@@ -731,7 +731,7 @@ const renderGraph = () => {
     .enter().append('text')
     .text(d => d.name.length > 8 ? d.name.substring(0, 8) + '…' : d.name)
     .attr('font-size', '11px')
-    .attr('fill', '#44403c')
+    .attr('fill', '#d6d3d1')
     .attr('font-weight', '500')
     .attr('dx', 14)
     .attr('dy', 4)
@@ -872,7 +872,7 @@ onUnmounted(() => {
 .tool-btn:hover {
   background: #110f0d;
   color: #e7e5e4;
-  border-color: #44403c;
+  border-color: #a8a29e;
 }
 
 .tool-btn .btn-text {

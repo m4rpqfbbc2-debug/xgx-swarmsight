@@ -1030,7 +1030,7 @@ const renderGraph = () => {
     .attr('dy', 4)
     .text(d => d.name?.substring(0, 12) || '')
     .attr('font-size', '11px')
-    .attr('fill', '#44403c')
+    .attr('fill', '#d6d3d1')
     .attr('font-family', 'JetBrains Mono, monospace')
   
   // Click blank area to close detail panel
@@ -1265,7 +1265,7 @@ onUnmounted(() => {
 }
 
 .stat-divider {
-  color: #292524;
+  color: #d6d3d1;
 }
 
 .action-buttons {
@@ -1750,7 +1750,7 @@ onUnmounted(() => {
 .phase-num {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #292524;
+  color: #d6d3d1;
   line-height: 1;
 }
 
@@ -1838,7 +1838,7 @@ onUnmounted(() => {
 }
 
 .rel-arrow {
-  color: #44403c;
+  color: #a8a29e;
 }
 
 .rel-name {

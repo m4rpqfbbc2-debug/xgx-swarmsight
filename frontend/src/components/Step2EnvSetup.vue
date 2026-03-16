@@ -1131,7 +1131,7 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 20px;
   font-weight: 700;
-  color: #292524;
+  color: #d6d3d1;
 }
 
 .step-card.active .step-num,
@@ -2051,7 +2051,7 @@ onUnmounted(() => {
 /* System Logs */
 .system-logs {
   background: #110f0d;
-  color: #292524;
+  color: #d6d3d1;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
   border-top: 1px solid #292524;
@@ -2099,7 +2099,7 @@ onUnmounted(() => {
 }
 
 .log-msg {
-  color: #44403c;
+  color: #a8a29e;
   word-break: break-all;
 }
 

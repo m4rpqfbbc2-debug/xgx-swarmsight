@@ -19,3 +19,29 @@
 [2026-03-16 20:35:59] DEBUG [swarmsight.request.log_response:62] Response: 200
 [2026-03-16 20:36:15] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
 [2026-03-16 20:36:15] DEBUG [swarmsight.request.log_response:62] Response: 200
+[2026-03-16 20:42:04] DEBUG [swarmsight.request.log_request:55] Request: POST /api/graph/ontology/generate
+[2026-03-16 20:42:04] INFO [swarmsight.api.generate_ontology:150] === Starting ontology generation ===
+[2026-03-16 20:42:04] DEBUG [swarmsight.api.generate_ontology:157] Project name: Unnamed Project
+[2026-03-16 20:42:04] DEBUG [swarmsight.api.generate_ontology:158] Simulation requirement: is this a feasible software distribution model via SME's trying to get into tech ...
+[2026-03-16 20:42:04] INFO [swarmsight.api.generate_ontology:177] Created project: proj_edea7f199ba0
+[2026-03-16 20:42:04] INFO [swarmsight.api.generate_ontology:212] Text extraction complete, 22452 characters total
+[2026-03-16 20:42:04] INFO [swarmsight.api.generate_ontology:215] Calling LLM to generate ontology definition...
+[2026-03-16 20:42:06] DEBUG [swarmsight.request.log_response:62] Response: 500
+[2026-03-16 20:42:07] DEBUG [swarmsight.request.log_request:55] Request: POST /api/graph/ontology/generate
+[2026-03-16 20:42:07] INFO [swarmsight.api.generate_ontology:150] === Starting ontology generation ===
+[2026-03-16 20:42:07] DEBUG [swarmsight.api.generate_ontology:157] Project name: Unnamed Project
+[2026-03-16 20:42:07] DEBUG [swarmsight.api.generate_ontology:158] Simulation requirement: is this a feasible software distribution model via SME's trying to get into tech ...
+[2026-03-16 20:42:07] INFO [swarmsight.api.generate_ontology:177] Created project: proj_7d980ed20f27
+[2026-03-16 20:42:07] INFO [swarmsight.api.generate_ontology:212] Text extraction complete, 22452 characters total
+[2026-03-16 20:42:07] INFO [swarmsight.api.generate_ontology:215] Calling LLM to generate ontology definition...
+[2026-03-16 20:42:09] DEBUG [swarmsight.request.log_response:62] Response: 500
+[2026-03-16 20:42:11] DEBUG [swarmsight.request.log_request:55] Request: POST /api/graph/ontology/generate
+[2026-03-16 20:42:11] INFO [swarmsight.api.generate_ontology:150] === Starting ontology generation ===
+[2026-03-16 20:42:11] DEBUG [swarmsight.api.generate_ontology:157] Project name: Unnamed Project
+[2026-03-16 20:42:11] DEBUG [swarmsight.api.generate_ontology:158] Simulation requirement: is this a feasible software distribution model via SME's trying to get into tech ...
+[2026-03-16 20:42:11] INFO [swarmsight.api.generate_ontology:177] Created project: proj_9377a3ed9d65
+[2026-03-16 20:42:11] INFO [swarmsight.api.generate_ontology:212] Text extraction complete, 22452 characters total
+[2026-03-16 20:42:11] INFO [swarmsight.api.generate_ontology:215] Calling LLM to generate ontology definition...
+[2026-03-16 20:42:12] DEBUG [swarmsight.request.log_response:62] Response: 500
+[2026-03-16 20:43:37] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
+[2026-03-16 20:43:37] DEBUG [swarmsight.request.log_response:62] Response: 200
