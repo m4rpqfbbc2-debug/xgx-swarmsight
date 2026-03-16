@@ -1,0 +1,14 @@
+services:
+  swarmsight:
+    image: ghcr.io/666ghj/mirofish:latest
+    # Mirror image (use this if the above is slow to pull)
+    # image: ghcr.nju.edu.cn/666ghj/mirofish:latest
+    container_name: swarmsight
+    env_file:
+      - .env
+    ports:
+      - "3002:3000"
+      - "5002:5001"
+    restart: unless-stopped
+    volumes:
+      - ./backend/uploads:/app/backend/uploads
