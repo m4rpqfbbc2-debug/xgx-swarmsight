@@ -748,7 +748,7 @@ onUnmounted(() => {
 .platform-status.completed {
   opacity: 1;
   border-color: #c2410c;
-  background: #14291a;
+  background: #1c1917;
 }
 
 /* Actions Tooltip */
@@ -947,7 +947,7 @@ onUnmounted(() => {
   gap: 4px;
 }
 
-.breakdown-divider { color: #DDD; }
+.breakdown-divider { color: #292524; }
 .breakdown-item.twitter { color: #e7e5e4; }
 .breakdown-item.reddit { color: #e7e5e4; }
 
@@ -1050,7 +1050,7 @@ onUnmounted(() => {
   align-items: flex-start;
   margin-bottom: 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #F5F5F5;
+  border-bottom: 1px solid #110f0d;
 }
 
 .agent-info {
@@ -1105,7 +1105,7 @@ onUnmounted(() => {
 .badge-post { background: #1c1917; color: #d6d3d1; border-color: #292524; }
 .badge-comment { background: #1c1917; color: #a8a29e; border-color: #292524; }
 .badge-action { background: #1c1917; color: #a8a29e; border: 1px solid #292524; }
-.badge-meta { background: #110f0d; color: #78716c; border: 1px dashed #DDD; }
+.badge-meta { background: #110f0d; color: #78716c; border: 1px dashed #292524; }
 .badge-idle { opacity: 0.5; }
 
 .content-text {
@@ -1123,7 +1123,7 @@ onUnmounted(() => {
 /* Info Blocks (Quote, Repost, etc) */
 .quoted-block, .repost-content {
   background: #1c1917;
-  border: 1px solid #EEE;
+  border: 1px solid #292524;
   padding: 10px 12px;
   border-radius: 2px;
   margin-top: 8px;
@@ -1159,7 +1159,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: flex-end;
   font-size: 10px;
-  color: #BBB;
+  color: #44403c;
   font-family: 'JetBrains Mono', monospace;
 }
 
@@ -1173,7 +1173,7 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  color: #CCC;
+  color: #44403c;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1210,17 +1210,17 @@ onUnmounted(() => {
 /* Logs */
 .system-logs {
   background: #110f0d;
-  color: #DDD;
+  color: #292524;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
-  border-top: 1px solid #222;
+  border-top: 1px solid #292524;
   flex-shrink: 0;
 }
 
 .log-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #44403c;
   padding-bottom: 8px;
   margin-bottom: 8px;
   font-size: 10px;
@@ -1247,7 +1247,7 @@ onUnmounted(() => {
 }
 
 .log-time { color: #a8a29e; min-width: 75px; }
-.log-msg { color: #BBB; word-break: break-all; }
+.log-msg { color: #44403c; word-break: break-all; }
 .mono { font-family: 'JetBrains Mono', monospace; }
 
 /* Loading spinner for button */

@@ -15,3 +15,7 @@
 [2026-03-16 20:33:35] DEBUG [swarmsight.request.log_response:62] Response: 200
 [2026-03-16 20:33:52] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
 [2026-03-16 20:33:52] DEBUG [swarmsight.request.log_response:62] Response: 200
+[2026-03-16 20:35:59] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
+[2026-03-16 20:35:59] DEBUG [swarmsight.request.log_response:62] Response: 200
+[2026-03-16 20:36:15] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
+[2026-03-16 20:36:15] DEBUG [swarmsight.request.log_response:62] Response: 200

@@ -310,12 +310,12 @@ const startSimulation = () => {
 <style scoped>
 /* Global variables and reset */
 :root {
-  --black: #000000;
-  --white: #FFFFFF;
-  --orange: #FF4500;
-  --gray-light: #F5F5F5;
-  --gray-text: #666666;
-  --border: #E5E5E5;
+  --black: #110f0d;
+  --white: #1c1917;
+  --orange: #dc2626;
+  --gray-light: #110f0d;
+  --gray-text: #78716c;
+  --border: #292524;
   /*
     Use Space Grotesk as the primary heading font, JetBrains Mono for code/label font.
     Ensure these Google Fonts are imported in index.html.
@@ -694,7 +694,7 @@ const startSimulation = () => {
 }
 
 .upload-zone {
-  border: 1px dashed #CCC;
+  border: 1px dashed #44403c;
   height: 200px;
   overflow-y: auto;
   display: flex;
@@ -754,7 +754,7 @@ const startSimulation = () => {
   align-items: center;
   background: var(--white);
   padding: 8px 12px;
-  border: 1px solid #EEE;
+  border: 1px solid #292524;
   font-family: var(--font-mono);
   font-size: 0.85rem;
 }
@@ -783,14 +783,14 @@ const startSimulation = () => {
   content: '';
   flex: 1;
   height: 1px;
-  background: #EEE;
+  background: #292524;
 }
 
 .console-divider span {
   padding: 0 15px;
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: #BBB;
+  color: #44403c;
   letter-spacing: 1px;
 }
 
@@ -819,7 +819,7 @@ const startSimulation = () => {
   right: 15px;
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: #AAA;
+  color: #78716c;
 }
 
 .start-engine-btn {
@@ -863,7 +863,7 @@ const startSimulation = () => {
   color: #78716c;
   cursor: not-allowed;
   transform: none;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #292524;
 }
 
 /* Guide animation: subtle border pulse */

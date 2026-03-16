@@ -407,8 +407,8 @@ onMounted(async () => {
 }
 
 .status-indicator.processing .dot { background: #c2410c; animation: pulse 1s infinite; }
-.status-indicator.completed .dot { background: #4CAF50; }
-.status-indicator.error .dot { background: #F44336; }
+.status-indicator.completed .dot { background: #c2410c; }
+.status-indicator.error .dot { background: #dc2626; }
 
 @keyframes pulse { 50% { opacity: 0.5; } }
 
@@ -428,7 +428,7 @@ onMounted(async () => {
 }
 
 .panel-wrapper.left {
-  border-right: 1px solid #EAEAEA;
+  border-right: 1px solid #292524;
 }
 </style>
 

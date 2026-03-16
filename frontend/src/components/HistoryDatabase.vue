@@ -692,7 +692,7 @@ onUnmounted(() => {
   align-items: center;
   margin-bottom: 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #F3F4F6;
+  border-bottom: 1px solid #1c1917;
   font-family: 'JetBrains Mono', 'SF Mono', monospace;
   font-size: 0.7rem;
 }
@@ -721,12 +721,12 @@ onUnmounted(() => {
 }
 
 /* Feature-specific colors */
-.status-icon:nth-child(1).available { color: #3B82F6; } /* Graph Building - blue */
-.status-icon:nth-child(2).available { color: #F59E0B; } /* Environment Setup - orange */
-.status-icon:nth-child(3).available { color: #10B981; } /* Analysis Report - green */
+.status-icon:nth-child(1).available { color: #c2410c; } /* Graph Building - blue */
+.status-icon:nth-child(2).available { color: #ea580c; } /* Environment Setup - orange */
+.status-icon:nth-child(3).available { color: #c2410c; } /* Analysis Report - green */
 
 .status-icon.unavailable {
-  color: #D1D5DB;
+  color: #44403c;
   opacity: 0.5;
 }
 
@@ -745,8 +745,8 @@ onUnmounted(() => {
 }
 
 /* Progress status colors */
-.card-progress.completed { color: #10B981; }    /* Completed - green */
-.card-progress.in-progress { color: #F59E0B; }  /* In progress - orange */
+.card-progress.completed { color: #c2410c; }    /* Completed - green */
+.card-progress.in-progress { color: #ea580c; }  /* In progress - orange */
 .card-progress.not-started { color: #78716c; }  /* Not started - gray */
 .card-status.pending { color: #78716c; }
 
@@ -760,7 +760,7 @@ onUnmounted(() => {
   padding: 8px 10px;
   background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
   border-radius: 4px;
-  border: 1px solid #e8eaed;
+  border: 1px solid #1c1917;
   overflow: hidden;
 }
 
@@ -819,14 +819,14 @@ onUnmounted(() => {
 }
 
 /* Low saturation color scheme - Morandi palette */
-.file-tag.pdf { background: #f2e6e6; color: #a65a5a; }
-.file-tag.doc { background: #e6eff5; color: #5a7ea6; }
-.file-tag.xls { background: #e6f2e8; color: #5aa668; }
-.file-tag.ppt { background: #f5efe6; color: #a6815a; }
-.file-tag.txt { background: #1c1917; color: #757575; }
-.file-tag.code { background: #eae6f2; color: #815aa6; }
-.file-tag.img { background: #e6f2f2; color: #5aa6a6; }
-.file-tag.zip { background: #f2f0e6; color: #a69b5a; }
+.file-tag.pdf { background: #1c1917; color: #c2410c; }
+.file-tag.doc { background: #1c1917; color: #c2410c; }
+.file-tag.xls { background: #1c1917; color: #c2410c; }
+.file-tag.ppt { background: #1c1917; color: #c2410c; }
+.file-tag.txt { background: #1c1917; color: #78716c; }
+.file-tag.code { background: #1c1917; color: #c2410c; }
+.file-tag.img { background: #1c1917; color: #c2410c; }
+.file-tag.zip { background: #1c1917; color: #c2410c; }
 .file-tag.other { background: #1c1917; color: #a8a29e; }
 
 .file-name {
@@ -894,7 +894,7 @@ onUnmounted(() => {
 }
 
 .project-card:hover .card-title {
-  color: #60a5fa;
+  color: #c2410c;
 }
 
 /* Card description */
@@ -918,7 +918,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding-top: 12px;
-  border-top: 1px solid #F3F4F6;
+  border-top: 1px solid #1c1917;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.65rem;
   color: #78716c;
@@ -947,8 +947,8 @@ onUnmounted(() => {
 }
 
 /* Progress status colors - footer */
-.card-footer .card-progress.completed { color: #10B981; }
-.card-footer .card-progress.in-progress { color: #F59E0B; }
+.card-footer .card-progress.completed { color: #c2410c; }
+.card-footer .card-progress.in-progress { color: #ea580c; }
 .card-footer .card-progress.not-started { color: #78716c; }
 
 /* Bottom decoration line */
@@ -1072,7 +1072,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 20px 32px;
-  border-bottom: 1px solid #F3F4F6;
+  border-bottom: 1px solid #1c1917;
   background: #1c1917;
 }
 
@@ -1102,8 +1102,8 @@ onUnmounted(() => {
   background: #110f0d;
 }
 
-.modal-progress.completed { color: #10B981; background: rgba(16, 185, 129, 0.1); }
-.modal-progress.in-progress { color: #F59E0B; background: rgba(245, 158, 11, 0.1); }
+.modal-progress.completed { color: #c2410c; background: rgba(16, 185, 129, 0.1); }
+.modal-progress.in-progress { color: #ea580c; background: rgba(245, 158, 11, 0.1); }
 .modal-progress.not-started { color: #78716c; background: #1c1917; }
 
 .modal-create-time {
@@ -1162,7 +1162,7 @@ onUnmounted(() => {
   line-height: 1.6;
   padding: 16px;
   background: #110f0d;
-  border: 1px solid #F3F4F6;
+  border: 1px solid #1c1917;
   border-radius: 8px;
 }
 
@@ -1224,7 +1224,7 @@ onUnmounted(() => {
   color: #78716c;
   padding: 16px;
   background: #110f0d;
-  border: 1px dashed #E5E7EB;
+  border: 1px dashed #292524;
   border-radius: 6px;
   text-align: center;
 }
@@ -1312,9 +1312,9 @@ onUnmounted(() => {
   color: #a8a29e;
 }
 
-.modal-btn.btn-project .btn-icon { color: #3B82F6; }
-.modal-btn.btn-simulation .btn-icon { color: #F59E0B; }
-.modal-btn.btn-report .btn-icon { color: #10B981; }
+.modal-btn.btn-project .btn-icon { color: #c2410c; }
+.modal-btn.btn-simulation .btn-icon { color: #ea580c; }
+.modal-btn.btn-report .btn-icon { color: #c2410c; }
 
 .modal-btn:hover:not(:disabled) .btn-text {
   color: #fef3c7;

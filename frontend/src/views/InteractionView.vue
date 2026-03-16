@@ -322,10 +322,10 @@ onMounted(() => {
   background: #44403c;
 }
 
-.status-indicator.ready .dot { background: #4CAF50; }
-.status-indicator.processing .dot { background: #FF9800; animation: pulse 1s infinite; }
-.status-indicator.completed .dot { background: #4CAF50; }
-.status-indicator.error .dot { background: #F44336; }
+.status-indicator.ready .dot { background: #c2410c; }
+.status-indicator.processing .dot { background: #ea580c; animation: pulse 1s infinite; }
+.status-indicator.completed .dot { background: #c2410c; }
+.status-indicator.error .dot { background: #dc2626; }
 
 @keyframes pulse { 50% { opacity: 0.5; } }
 
@@ -345,6 +345,6 @@ onMounted(() => {
 }
 
 .panel-wrapper.left {
-  border-right: 1px solid #EAEAEA;
+  border-right: 1px solid #292524;
 }
 </style>

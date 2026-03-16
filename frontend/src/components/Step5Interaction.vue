@@ -54,8 +54,8 @@
                 <div v-else-if="currentSectionIndex === idx + 1" class="loading-state">
                   <div class="loading-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke-width="4" stroke="#E5E7EB"></circle>
-                      <path d="M12 2a10 10 0 0 1 10 10" stroke-width="4" stroke="#4B5563" stroke-linecap="round"></path>
+                      <circle cx="12" cy="12" r="10" stroke-width="4" stroke="#292524"></circle>
+                      <path d="M12 2a10 10 0 0 1 10 10" stroke-width="4" stroke="#78716c" stroke-linecap="round"></path>
                     </svg>
                   </div>
                   <span class="loading-text">Generating {{ section.title }}...</span>
@@ -985,7 +985,7 @@ watch(() => props.simulationId, (newId) => {
   width: 45%;
   min-width: 450px;
   background: #1c1917;
-  border-right: 1px solid #E5E7EB;
+  border-right: 1px solid #292524;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -1121,7 +1121,7 @@ watch(() => props.simulationId, (newId) => {
 .section-number {
   font-family: 'JetBrains Mono', monospace;
   font-size: 16px;
-  color: #E5E7EB;
+  color: #292524;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -1137,10 +1137,10 @@ watch(() => props.simulationId, (newId) => {
 
 /* States */
 .report-section-item.is-pending .section-number {
-  color: #E5E7EB;
+  color: #292524;
 }
 .report-section-item.is-pending .section-title {
-  color: #D1D5DB;
+  color: #44403c;
 }
 
 .report-section-item.is-active .section-number,
@@ -1180,7 +1180,7 @@ watch(() => props.simulationId, (newId) => {
   font-weight: 700;
 }
 
-.generated-content :deep(.md-h2) { font-size: 20px; border-bottom: 1px solid #F3F4F6; padding-bottom: 8px; }
+.generated-content :deep(.md-h2) { font-size: 20px; border-bottom: 1px solid #1c1917; padding-bottom: 8px; }
 .generated-content :deep(.md-h3) { font-size: 18px; }
 .generated-content :deep(.md-h4) { font-size: 16px; }
 
@@ -1383,7 +1383,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .tab-pill.active {
-  background: #1F2937;
+  background: #292524;
   color: #fef3c7;
   box-shadow: 0 2px 8px rgba(31, 41, 55, 0.15);
 }
@@ -1419,16 +1419,16 @@ watch(() => props.simulationId, (newId) => {
 
 .survey-pill {
   background: #1c1917;
-  color: #4ade80;
+  color: #ea580c;
 }
 
 .survey-pill:hover {
-  background: #14291a;
-  color: #4ade80;
+  background: #1c1917;
+  color: #ea580c;
 }
 
 .survey-pill.active {
-  background: #047857;
+  background: #B8510D;
   color: #fef3c7;
   box-shadow: 0 2px 8px rgba(4, 120, 87, 0.2);
 }
@@ -1466,7 +1466,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .tab-btn.active {
-  background: #1F2937;
+  background: #292524;
   color: #fef3c7;
   border-color: #e7e5e4;
 }
@@ -1595,22 +1595,22 @@ watch(() => props.simulationId, (newId) => {
 
 .tool-purple .tool-icon-wrapper {
   background: rgba(139, 92, 246, 0.1);
-  color: #8B5CF6;
+  color: #c2410c;
 }
 
 .tool-blue .tool-icon-wrapper {
   background: rgba(59, 130, 246, 0.1);
-  color: #3B82F6;
+  color: #c2410c;
 }
 
 .tool-orange .tool-icon-wrapper {
   background: rgba(249, 115, 22, 0.1);
-  color: #F97316;
+  color: #ea580c;
 }
 
 .tool-green .tool-icon-wrapper {
   background: rgba(34, 197, 94, 0.1);
-  color: #22C55E;
+  color: #c2410c;
 }
 
 .tool-content {
@@ -1795,7 +1795,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .target-option.active {
-  background: #1F2937;
+  background: #292524;
   color: #fef3c7;
   border-color: #e7e5e4;
 }
@@ -1837,7 +1837,7 @@ watch(() => props.simulationId, (newId) => {
   color: #78716c;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid #F3F4F6;
+  border-bottom: 1px solid #1c1917;
 }
 
 .dropdown-item {
@@ -1960,7 +1960,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .chat-message.user .message-avatar {
-  background: #1F2937;
+  background: #292524;
   color: #fef3c7;
 }
 
@@ -2009,7 +2009,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .chat-message.user .message-text {
-  background: #1F2937;
+  background: #292524;
   color: #fef3c7;
   border-bottom-right-radius: 4px;
 }
@@ -2125,7 +2125,7 @@ watch(() => props.simulationId, (newId) => {
 .send-btn {
   width: 44px;
   height: 44px;
-  background: #1F2937;
+  background: #292524;
   color: #fef3c7;
   border: none;
   border-radius: 8px;
@@ -2137,7 +2137,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .send-btn:hover:not(:disabled) {
-  background: #374151;
+  background: #44403c;
 }
 
 .send-btn:disabled {
@@ -2225,8 +2225,8 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .agent-checkbox.checked {
-  background: #14291a;
-  border-color: #10B981;
+  background: #1c1917;
+  border-color: #c2410c;
 }
 
 .agent-checkbox input {
@@ -2250,7 +2250,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .agent-checkbox.checked .checkbox-avatar {
-  background: #10B981;
+  background: #c2410c;
   color: #fef3c7;
 }
 
@@ -2291,8 +2291,8 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .agent-checkbox.checked .checkbox-indicator {
-  background: #10B981;
-  border-color: #10B981;
+  background: #c2410c;
+  border-color: #c2410c;
   color: #fef3c7;
 }
 
@@ -2328,7 +2328,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .action-divider {
-  color: #E5E7EB;
+  color: #292524;
 }
 
 /* Survey Input */
@@ -2355,7 +2355,7 @@ watch(() => props.simulationId, (newId) => {
   font-size: 14px;
   font-weight: 600;
   color: #fef3c7;
-  background: #1F2937;
+  background: #292524;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -2368,7 +2368,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .survey-submit-btn:hover:not(:disabled) {
-  background: #374151;
+  background: #44403c;
 }
 
 .survey-submit-btn:disabled {
@@ -2440,7 +2440,7 @@ watch(() => props.simulationId, (newId) => {
   height: 36px;
   min-width: 36px;
   min-height: 36px;
-  background: #1F2937;
+  background: #292524;
   color: #fef3c7;
   border-radius: 50%;
   display: flex;
@@ -2539,14 +2539,14 @@ watch(() => props.simulationId, (newId) => {
   margin: 12px 0;
   padding: 12px 16px;
   background: #110f0d;
-  border-left: 3px solid #1F2937;
+  border-left: 3px solid #292524;
   color: #a8a29e;
 }
 
 :deep(.code-block) {
   margin: 12px 0;
   padding: 12px 16px;
-  background: #1F2937;
+  background: #292524;
   border-radius: 6px;
   overflow-x: auto;
 }
@@ -2554,7 +2554,7 @@ watch(() => props.simulationId, (newId) => {
 :deep(.code-block code) {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  color: #E5E7EB;
+  color: #292524;
 }
 
 :deep(.inline-code) {

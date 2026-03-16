@@ -462,7 +462,7 @@ const entityTypes = computed(() => {
   if (!graphData.value?.nodes) return []
   
   const typeMap = {}
-  const colors = ['#c2410c', '#004E89', '#7B2D8E', '#c2410c', '#C5283D', '#E9724C']
+  const colors = ['#c2410c', '#B8510D', '#B8510D', '#c2410c', '#dc2626', '#ea580c']
   
   graphData.value.nodes.forEach(node => {
     const type = node.labels?.find(l => l !== 'Entity') || 'Entity'
@@ -904,7 +904,7 @@ const renderGraph = () => {
       .attr('x', width / 2)
       .attr('y', height / 2)
       .attr('text-anchor', 'middle')
-      .attr('fill', '#999')
+      .attr('fill', '#a8a29e')
       .text('Waiting for graph data...')
     return
   }
@@ -944,7 +944,7 @@ const renderGraph = () => {
   const types = [...new Set(nodes.map(n => n.type))]
   const colorScale = d3.scaleOrdinal()
     .domain(types)
-    .range(['#c2410c', '#004E89', '#7B2D8E', '#c2410c', '#C5283D', '#E9724C', '#2D3436', '#6C5CE7'])
+    .range(['#c2410c', '#B8510D', '#B8510D', '#c2410c', '#dc2626', '#ea580c', '#292524', '#c2410c'])
   
   // Force-directed layout
   const simulation = d3.forceSimulation(nodes)
@@ -980,7 +980,7 @@ const renderGraph = () => {
   
   // Visible thin line
   const link = linkGroup.append('line')
-    .attr('stroke', '#ccc')
+    .attr('stroke', '#44403c')
     .attr('stroke-width', 1.5)
     .attr('stroke-opacity', 0.6)
   
@@ -997,7 +997,7 @@ const renderGraph = () => {
     .enter()
     .append('text')
     .attr('font-size', '9px')
-    .attr('fill', '#999')
+    .attr('fill', '#a8a29e')
     .attr('text-anchor', 'middle')
     .text(d => d.type.length > 15 ? d.type.substring(0, 12) + '...' : d.type)
   
@@ -1030,7 +1030,7 @@ const renderGraph = () => {
     .attr('dy', 4)
     .text(d => d.name?.substring(0, 12) || '')
     .attr('font-size', '11px')
-    .attr('fill', '#333')
+    .attr('fill', '#44403c')
     .attr('font-family', 'JetBrains Mono, monospace')
   
   // Click blank area to close detail panel
@@ -1093,12 +1093,12 @@ onUnmounted(() => {
 <style scoped>
 /* Variables */
 :root {
-  --black: #000000;
-  --white: #FFFFFF;
+  --black: #110f0d;
+  --white: #1c1917;
   --orange: #c2410c;
-  --gray-light: #F5F5F5;
-  --gray-border: #E0E0E0;
-  --gray-text: #666666;
+  --gray-light: #110f0d;
+  --gray-border: #292524;
+  --gray-text: #78716c;
 }
 
 .process-page {
@@ -1167,7 +1167,7 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #666;
+  background: #78716c;
   margin-right: 8px;
 }
 
@@ -1181,7 +1181,7 @@ onUnmounted(() => {
 }
 
 .status-dot.error {
-  background: #C5283D;
+  background: #dc2626;
 }
 
 @keyframes pulse {
@@ -1207,7 +1207,7 @@ onUnmounted(() => {
   flex: none; /* Fixed width initially */
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #E0E0E0;
+  border-right: 1px solid #292524;
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   background: #1c1917;
   z-index: 5;
@@ -1223,7 +1223,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: space-between;
   padding: 12px 24px;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #292524;
   background: #1c1917;
   height: 50px;
 }
@@ -1265,7 +1265,7 @@ onUnmounted(() => {
 }
 
 .stat-divider {
-  color: #eee;
+  color: #292524;
 }
 
 .action-buttons {
@@ -1449,7 +1449,7 @@ onUnmounted(() => {
   gap: 10px;
   padding: 12px 16px;
   background: #110f0d;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #292524;
 }
 
 .detail-title {
@@ -1584,7 +1584,7 @@ onUnmounted(() => {
   color: #d6d3d1;
   margin: 16px 0 12px 0;
   padding-bottom: 8px;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #292524;
 }
 
 /* Properties list */
@@ -1647,7 +1647,7 @@ onUnmounted(() => {
   flex-wrap: wrap;
   gap: 16px;
   padding: 12px 24px;
-  border-top: 1px solid #E0E0E0;
+  border-top: 1px solid #292524;
   background: #110f0d;
 }
 
@@ -1736,21 +1736,21 @@ onUnmounted(() => {
   gap: 16px;
   padding: 16px;
   background: #110f0d;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #292524;
 }
 
 .process-phase.active .phase-header {
-  background: #FFF5F2;
+  background: #1c1917;
 }
 
 .process-phase.completed .phase-header {
-  background: #14291a;
+  background: #1c1917;
 }
 
 .phase-num {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ddd;
+  color: #292524;
   line-height: 1;
 }
 
@@ -1781,7 +1781,7 @@ onUnmounted(() => {
 .phase-status {
   font-size: 0.75rem;
   padding: 4px 10px;
-  background: #eee;
+  background: #292524;
   color: #a8a29e;
 }
 
@@ -1825,7 +1825,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 6px 0;
-  border-bottom: 1px dashed #eee;
+  border-bottom: 1px dashed #292524;
 }
 
 .relation-item:last-child {
@@ -1838,7 +1838,7 @@ onUnmounted(() => {
 }
 
 .rel-arrow {
-  color: #ccc;
+  color: #44403c;
 }
 
 .rel-name {
@@ -1858,14 +1858,14 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  background: #FFF5F2;
-  border: 1px solid #FFE0D6;
+  background: #1c1917;
+  border: 1px solid #292524;
 }
 
 .progress-spinner {
   width: 20px;
   height: 20px;
-  border: 2px solid #FFE0D6;
+  border: 2px solid #292524;
   border-top-color: #c2410c;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -1880,7 +1880,7 @@ onUnmounted(() => {
 .waiting-state {
   padding: 16px;
   background: #1c1917;
-  border: 1px dashed #E0E0E0;
+  border: 1px dashed #292524;
   text-align: center;
 }
 
@@ -1950,7 +1950,7 @@ onUnmounted(() => {
 .next-step-section {
   margin-top: 24px;
   padding-top: 24px;
-  border-top: 1px solid #E0E0E0;
+  border-top: 1px solid #292524;
 }
 
 .next-step-btn {
@@ -1975,7 +1975,7 @@ onUnmounted(() => {
 }
 
 .next-step-btn:disabled {
-  background: #ccc;
+  background: #44403c;
   cursor: not-allowed;
 }
 
@@ -1985,7 +1985,7 @@ onUnmounted(() => {
 
 /* Project info panel */
 .project-panel {
-  border-top: 1px solid #E0E0E0;
+  border-top: 1px solid #292524;
   background: #110f0d;
 }
 
@@ -1994,7 +1994,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 10px;
   padding: 12px 24px;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #292524;
 }
 
 .project-icon {
@@ -2015,7 +2015,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: flex-start;
   padding: 8px 0;
-  border-bottom: 1px dashed #E0E0E0;
+  border-bottom: 1px dashed #292524;
   font-size: 0.8rem;
 }
 
@@ -2050,7 +2050,7 @@ onUnmounted(() => {
   .left-panel {
     width: 100% !important;
     border-right: none;
-    border-bottom: 1px solid #E0E0E0;
+    border-bottom: 1px solid #292524;
     height: 50vh;
   }
   

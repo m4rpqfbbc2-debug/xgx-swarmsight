@@ -376,7 +376,7 @@
                   <defs>
                     <linearGradient id="paint0_linear" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
                       <stop stop-color="#c2410c"/>
-                      <stop offset="1" stop-color="#FF9800"/>
+                      <stop offset="1" stop-color="#ea580c"/>
                     </linearGradient>
                   </defs>
                 </svg>
@@ -1131,7 +1131,7 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 20px;
   font-weight: 700;
-  color: #E0E0E0;
+  color: #292524;
 }
 
 .step-card.active .step-num,
@@ -1153,10 +1153,10 @@ onUnmounted(() => {
   text-transform: uppercase;
 }
 
-.badge.success { background: #14291a; color: #4ade80; }
+.badge.success { background: #1c1917; color: #ea580c; }
 .badge.processing { background: #c2410c; color: #fef3c7; }
 .badge.pending { background: #110f0d; color: #78716c; }
-.badge.accent { background: #151e2e; color: #60a5fa; }
+.badge.accent { background: #1c1917; color: #c2410c; }
 
 .card-content {
   /* No extra padding - uses step-card's padding */
@@ -1245,7 +1245,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 8px 0;
-  border-bottom: 1px dashed #E0E0E0;
+  border-bottom: 1px dashed #292524;
 }
 
 .info-row:last-child {
@@ -1300,7 +1300,7 @@ onUnmounted(() => {
 /* Profiles Preview */
 .profiles-preview {
   margin-top: 20px;
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid #292524;
   padding-top: 16px;
 }
 
@@ -1343,7 +1343,7 @@ onUnmounted(() => {
 
 .profile-card {
   background: #110f0d;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #292524;
   border-radius: 6px;
   padding: 14px;
   cursor: pointer;
@@ -1405,8 +1405,8 @@ onUnmounted(() => {
 
 .topic-tag {
   font-size: 10px;
-  color: #60a5fa;
-  background: #151e2e;
+  color: #c2410c;
+  background: #1c1917;
   padding: 2px 8px;
   border-radius: 10px;
 }
@@ -1425,7 +1425,7 @@ onUnmounted(() => {
 
 .config-block {
   margin-top: 16px;
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid #292524;
   padding-top: 12px;
 }
 
@@ -1522,8 +1522,8 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   font-weight: 600;
-  color: #6366F1;
-  background: #1a1a2e;
+  color: #c2410c;
+  background: #1c1917;
   padding: 2px 6px;
   border-radius: 4px;
 }
@@ -1553,7 +1553,7 @@ onUnmounted(() => {
 
 .agent-card {
   background: #1c1917;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #292524;
   border-radius: 6px;
   padding: 14px;
   transition: all 0.2s ease;
@@ -1571,7 +1571,7 @@ onUnmounted(() => {
   align-items: flex-start;
   margin-bottom: 14px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid #1c1917;
 }
 
 .agent-identity {
@@ -1619,18 +1619,18 @@ onUnmounted(() => {
 }
 
 .stance-supportive {
-  background: #14291a;
-  color: #4ade80;
+  background: #1c1917;
+  color: #ea580c;
 }
 
 .stance-opposing {
-  background: #3b1515;
+  background: #292524;
   color: #DC2626;
 }
 
 .stance-observer {
-  background: #3b2e10;
-  color: #D97706;
+  background: #292524;
+  color: #c2410c;
 }
 
 /* Agent Timeline */
@@ -1722,7 +1722,7 @@ onUnmounted(() => {
 }
 
 .param-value.positive {
-  color: #4ade80;
+  color: #ea580c;
 }
 
 .param-value.negative {
@@ -1734,7 +1734,7 @@ onUnmounted(() => {
 }
 
 .param-value.highlight {
-  color: #6366F1;
+  color: #c2410c;
 }
 
 /* Platforms Grid */
@@ -1753,7 +1753,7 @@ onUnmounted(() => {
 .platform-card-header {
   margin-bottom: 10px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #292524;
 }
 
 .platform-name {
@@ -1839,7 +1839,7 @@ onUnmounted(() => {
   align-items: flex-start;
   padding: 24px;
   background: #1c1917;
-  border-bottom: 1px solid #F0F0F0;
+  border-bottom: 1px solid #1c1917;
 }
 
 .modal-header-info {
@@ -1961,7 +1961,7 @@ onUnmounted(() => {
   padding: 16px;
   background: #1c1917;
   border-radius: 6px;
-  border-left: 3px solid #E0E0E0;
+  border-left: 3px solid #292524;
 }
 
 /* Topic tags */
@@ -1973,8 +1973,8 @@ onUnmounted(() => {
 
 .topic-item {
   font-size: 11px;
-  color: #60a5fa;
-  background: #151e2e;
+  color: #c2410c;
+  background: #1c1917;
   padding: 4px 10px;
   border-radius: 12px;
   transition: all 0.2s;
@@ -1982,8 +1982,8 @@ onUnmounted(() => {
 }
 
 .topic-item:hover {
-  background: #BBDEFB;
-  color: #60a5fa;
+  background: #292524;
+  color: #c2410c;
 }
 
 /* Detailed profile */
@@ -1998,7 +1998,7 @@ onUnmounted(() => {
   background: #1c1917;
   padding: 12px;
   border-radius: 6px;
-  border-left: 3px solid #DDD;
+  border-left: 3px solid #292524;
   transition: all 0.2s;
 }
 
@@ -2051,17 +2051,17 @@ onUnmounted(() => {
 /* System Logs */
 .system-logs {
   background: #110f0d;
-  color: #DDD;
+  color: #292524;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
-  border-top: 1px solid #222;
+  border-top: 1px solid #292524;
   flex-shrink: 0;
 }
 
 .log-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #44403c;
   padding-bottom: 8px;
   margin-bottom: 8px;
   font-size: 10px;
@@ -2099,7 +2099,7 @@ onUnmounted(() => {
 }
 
 .log-msg {
-  color: #CCC;
+  color: #44403c;
   word-break: break-all;
 }
 
@@ -2107,7 +2107,7 @@ onUnmounted(() => {
 .spinner-sm {
   width: 16px;
   height: 16px;
-  border: 2px solid #E5E5E5;
+  border: 2px solid #292524;
   border-top-color: #c2410c;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -2138,7 +2138,7 @@ onUnmounted(() => {
   background: #1c1917;
   padding: 20px 24px;
   border-radius: 12px;
-  border: 1px solid #EEF2F6;
+  border: 1px solid #1c1917;
   box-shadow: 0 4px 24px rgba(0,0,0,0.03);
   transition: all 0.3s ease;
 }
@@ -2186,7 +2186,7 @@ onUnmounted(() => {
 .hot-topic-tag {
   font-size: 12px;
   color:rgba(255, 86, 34, 0.88);
-  background: #2e2215;
+  background: #1c1917;
   padding: 4px 10px;
   border-radius: 12px;
   font-weight: 500;
@@ -2199,7 +2199,7 @@ onUnmounted(() => {
 }
 
 .initial-posts-section {
-  border-top: 1px solid #EAEAEA;
+  border-top: 1px solid #292524;
   padding-top: 16px;
 }
 
@@ -2208,7 +2208,7 @@ onUnmounted(() => {
   flex-direction: column;
   gap: 16px;
   padding-left: 8px;
-  border-left: 2px solid #F0F0F0;
+  border-left: 2px solid #1c1917;
   margin-top: 12px;
 }
 
@@ -2230,7 +2230,7 @@ onUnmounted(() => {
   background: #1c1917;
   padding: 12px;
   border-radius: 6px;
-  border: 1px solid #EEE;
+  border: 1px solid #292524;
 }
 
 .post-header {
@@ -2276,7 +2276,7 @@ onUnmounted(() => {
 .rounds-config-section {
   margin: 24px 0;
   padding-top: 24px;
-  border-top: 1px solid #EAEAEA;
+  border-top: 1px solid #292524;
 }
 
 .rounds-header {
@@ -2504,7 +2504,7 @@ onUnmounted(() => {
   align-items: baseline;
   gap: 4px;
   padding-right: 24px;
-  border-right: 1px solid #E2E8F0;
+  border-right: 1px solid #292524;
 }
 
 .auto-content {
@@ -2529,7 +2529,7 @@ onUnmounted(() => {
   font-weight: 500;
   color: #a8a29e;
   background: #1c1917;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #292524;
   padding: 3px 8px;
   border-radius: 6px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.02);
