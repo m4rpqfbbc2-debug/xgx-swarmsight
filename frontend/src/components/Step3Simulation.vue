@@ -748,7 +748,7 @@ onUnmounted(() => {
 .platform-status.completed {
   opacity: 1;
   border-color: #c2410c;
-  background: #F2FAF6;
+  background: #14291a;
 }
 
 /* Actions Tooltip */
@@ -760,7 +760,7 @@ onUnmounted(() => {
   margin-top: 8px;
   padding: 10px 14px;
   background: #110f0d;
-  color: #1c1917;
+  color: #fef3c7;
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   opacity: 0;
@@ -779,7 +779,7 @@ onUnmounted(() => {
   transform: translateX(-50%);
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-bottom: 6px solid #e7e5e4;
+  border-bottom: 6px solid #000;
 }
 
 .platform-status:hover .actions-tooltip {
@@ -808,7 +808,7 @@ onUnmounted(() => {
   padding: 3px 8px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 2px;
-  color: #1c1917;
+  color: #fef3c7;
   letter-spacing: 0.03em;
 }
 
@@ -886,11 +886,11 @@ onUnmounted(() => {
 
 .action-btn.primary {
   background: #110f0d;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 .action-btn.primary:hover:not(:disabled) {
-  background: #333;
+  background: #292524;
 }
 
 .action-btn:disabled {
@@ -910,7 +910,7 @@ onUnmounted(() => {
 .timeline-header {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(17, 15, 13, 0.9);
   backdrop-filter: blur(8px);
   padding: 12px 24px;
   border-bottom: 1px solid #292524;
@@ -947,7 +947,7 @@ onUnmounted(() => {
   gap: 4px;
 }
 
-.breakdown-divider { color: #44403c; }
+.breakdown-divider { color: #DDD; }
 .breakdown-item.twitter { color: #e7e5e4; }
 .breakdown-item.reddit { color: #e7e5e4; }
 
@@ -1020,7 +1020,7 @@ onUnmounted(() => {
 
 .timeline-card:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  border-color: #44403c;
+  border-color: #292524;
 }
 
 /* Left side (Twitter) */
@@ -1050,7 +1050,7 @@ onUnmounted(() => {
   align-items: flex-start;
   margin-bottom: 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #110f0d;
+  border-bottom: 1px solid #F5F5F5;
 }
 
 .agent-info {
@@ -1063,7 +1063,7 @@ onUnmounted(() => {
   width: 24px;
   height: 24px;
   background: #110f0d;
-  color: #1c1917;
+  color: #fef3c7;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1105,7 +1105,7 @@ onUnmounted(() => {
 .badge-post { background: #1c1917; color: #d6d3d1; border-color: #292524; }
 .badge-comment { background: #1c1917; color: #a8a29e; border-color: #292524; }
 .badge-action { background: #1c1917; color: #a8a29e; border: 1px solid #292524; }
-.badge-meta { background: #110f0d; color: #78716c; border: 1px dashed #44403c; }
+.badge-meta { background: #110f0d; color: #78716c; border: 1px dashed #DDD; }
 .badge-idle { opacity: 0.5; }
 
 .content-text {
@@ -1122,7 +1122,7 @@ onUnmounted(() => {
 
 /* Info Blocks (Quote, Repost, etc) */
 .quoted-block, .repost-content {
-  background: #110f0d;
+  background: #1c1917;
   border: 1px solid #EEE;
   padding: 10px 12px;
   border-radius: 2px;
@@ -1173,7 +1173,7 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  color: #44403c;
+  color: #CCC;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1210,7 +1210,7 @@ onUnmounted(() => {
 /* Logs */
 .system-logs {
   background: #110f0d;
-  color: #44403c;
+  color: #DDD;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
   border-top: 1px solid #222;
@@ -1237,7 +1237,7 @@ onUnmounted(() => {
 }
 
 .log-content::-webkit-scrollbar { width: 4px; }
-.log-content::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+.log-content::-webkit-scrollbar-thumb { background: #292524; border-radius: 2px; }
 
 .log-line {
   font-size: 11px;
@@ -1256,7 +1256,7 @@ onUnmounted(() => {
   width: 14px;
   height: 14px;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #1c1917;
+  border-top-color: #fef3c7;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
   margin-right: 6px;

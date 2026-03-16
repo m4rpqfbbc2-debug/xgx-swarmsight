@@ -54,7 +54,7 @@
                 <div v-else-if="currentSectionIndex === idx + 1" class="loading-state">
                   <div class="loading-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke-width="4" stroke="#292524"></circle>
+                      <circle cx="12" cy="12" r="10" stroke-width="4" stroke="#E5E7EB"></circle>
                       <path d="M12 2a10 10 0 0 1 10 10" stroke-width="4" stroke="#4B5563" stroke-linecap="round"></path>
                     </svg>
                   </div>
@@ -963,7 +963,7 @@ watch(() => props.simulationId, (newId) => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #F8F9FA;
+  background: #1c1917;
   font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
   overflow: hidden;
 }
@@ -985,7 +985,7 @@ watch(() => props.simulationId, (newId) => {
   width: 45%;
   min-width: 450px;
   background: #1c1917;
-  border-right: 1px solid #292524;
+  border-right: 1px solid #E5E7EB;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -1034,7 +1034,7 @@ watch(() => props.simulationId, (newId) => {
 
 .report-tag {
   background: #110f0d;
-  color: #1c1917;
+  color: #fef3c7;
   font-size: 11px;
   font-weight: 700;
   padding: 4px 8px;
@@ -1121,7 +1121,7 @@ watch(() => props.simulationId, (newId) => {
 .section-number {
   font-family: 'JetBrains Mono', monospace;
   font-size: 16px;
-  color: #292524;
+  color: #E5E7EB;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -1137,10 +1137,10 @@ watch(() => props.simulationId, (newId) => {
 
 /* States */
 .report-section-item.is-pending .section-number {
-  color: #292524;
+  color: #E5E7EB;
 }
 .report-section-item.is-pending .section-title {
-  color: #44403c;
+  color: #D1D5DB;
 }
 
 .report-section-item.is-active .section-number,
@@ -1180,7 +1180,7 @@ watch(() => props.simulationId, (newId) => {
   font-weight: 700;
 }
 
-.generated-content :deep(.md-h2) { font-size: 20px; border-bottom: 1px solid #1c1917; padding-bottom: 8px; }
+.generated-content :deep(.md-h2) { font-size: 20px; border-bottom: 1px solid #F3F4F6; padding-bottom: 8px; }
 .generated-content :deep(.md-h3) { font-size: 18px; }
 .generated-content :deep(.md-h4) { font-size: 16px; }
 
@@ -1315,7 +1315,7 @@ watch(() => props.simulationId, (newId) => {
   justify-content: space-between;
   padding: 14px 20px;
   border-bottom: 1px solid #292524;
-  background: linear-gradient(180deg, #1c1917 0%, #FAFBFC 100%);
+  background: linear-gradient(180deg, #1c1917 0%, #110f0d 100%);
   gap: 16px;
 }
 
@@ -1384,7 +1384,7 @@ watch(() => props.simulationId, (newId) => {
 
 .tab-pill.active {
   background: #1F2937;
-  color: #1c1917;
+  color: #fef3c7;
   box-shadow: 0 2px 8px rgba(31, 41, 55, 0.15);
 }
 
@@ -1419,17 +1419,17 @@ watch(() => props.simulationId, (newId) => {
 
 .survey-pill {
   background: #1c1917;
-  color: #047857;
+  color: #4ade80;
 }
 
 .survey-pill:hover {
-  background: #D1FAE5;
-  color: #065F46;
+  background: #14291a;
+  color: #4ade80;
 }
 
 .survey-pill.active {
   background: #047857;
-  color: #1c1917;
+  color: #fef3c7;
   box-shadow: 0 2px 8px rgba(4, 120, 87, 0.2);
 }
 
@@ -1467,7 +1467,7 @@ watch(() => props.simulationId, (newId) => {
 
 .tab-btn.active {
   background: #1F2937;
-  color: #1c1917;
+  color: #fef3c7;
   border-color: #e7e5e4;
 }
 
@@ -1486,7 +1486,7 @@ watch(() => props.simulationId, (newId) => {
 /* Report Agent Tools Card */
 .report-agent-tools-card {
   border-bottom: 1px solid #292524;
-  background: linear-gradient(135deg, #F8FAFC 0%, #1c1917 100%);
+  background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
 }
 
 .tools-card-header {
@@ -1501,8 +1501,8 @@ watch(() => props.simulationId, (newId) => {
   height: 44px;
   min-width: 44px;
   min-height: 44px;
-  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
-  color: #1c1917;
+  background: linear-gradient(135deg, #292524 0%, #44403c 100%);
+  color: #fef3c7;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1638,7 +1638,7 @@ watch(() => props.simulationId, (newId) => {
 /* Agent Profile Card */
 .agent-profile-card {
   border-bottom: 1px solid #292524;
-  background: linear-gradient(135deg, #F8FAFC 0%, #1c1917 100%);
+  background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
 }
 
 .profile-card-header {
@@ -1653,8 +1653,8 @@ watch(() => props.simulationId, (newId) => {
   height: 44px;
   min-width: 44px;
   min-height: 44px;
-  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
-  color: #1c1917;
+  background: linear-gradient(135deg, #292524 0%, #44403c 100%);
+  color: #fef3c7;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1796,7 +1796,7 @@ watch(() => props.simulationId, (newId) => {
 
 .target-option.active {
   background: #1F2937;
-  color: #1c1917;
+  color: #fef3c7;
   border-color: #e7e5e4;
 }
 
@@ -1837,7 +1837,7 @@ watch(() => props.simulationId, (newId) => {
   color: #78716c;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid #1c1917;
+  border-bottom: 1px solid #F3F4F6;
 }
 
 .dropdown-item {
@@ -1868,8 +1868,8 @@ watch(() => props.simulationId, (newId) => {
   height: 32px;
   min-width: 32px;
   min-height: 32px;
-  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
-  color: #1c1917;
+  background: linear-gradient(135deg, #292524 0%, #44403c 100%);
+  color: #fef3c7;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1961,7 +1961,7 @@ watch(() => props.simulationId, (newId) => {
 
 .chat-message.user .message-avatar {
   background: #1F2937;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 .chat-message.assistant .message-avatar {
@@ -2010,7 +2010,7 @@ watch(() => props.simulationId, (newId) => {
 
 .chat-message.user .message-text {
   background: #1F2937;
-  color: #1c1917;
+  color: #fef3c7;
   border-bottom-right-radius: 4px;
 }
 
@@ -2077,7 +2077,7 @@ watch(() => props.simulationId, (newId) => {
 .typing-indicator span {
   width: 8px;
   height: 8px;
-  background: #9CA3AF;
+  background: #44403c;
   border-radius: 50%;
   animation: typing 1.4s infinite ease-in-out;
 }
@@ -2126,7 +2126,7 @@ watch(() => props.simulationId, (newId) => {
   width: 44px;
   height: 44px;
   background: #1F2937;
-  color: #1c1917;
+  color: #fef3c7;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -2225,7 +2225,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .agent-checkbox.checked {
-  background: #F0FDF4;
+  background: #14291a;
   border-color: #10B981;
 }
 
@@ -2251,7 +2251,7 @@ watch(() => props.simulationId, (newId) => {
 
 .agent-checkbox.checked .checkbox-avatar {
   background: #10B981;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 .checkbox-info {
@@ -2293,7 +2293,7 @@ watch(() => props.simulationId, (newId) => {
 .agent-checkbox.checked .checkbox-indicator {
   background: #10B981;
   border-color: #10B981;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 .checkbox-indicator svg {
@@ -2328,7 +2328,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .action-divider {
-  color: #292524;
+  color: #E5E7EB;
 }
 
 /* Survey Input */
@@ -2354,7 +2354,7 @@ watch(() => props.simulationId, (newId) => {
   padding: 14px 24px;
   font-size: 14px;
   font-weight: 600;
-  color: #1c1917;
+  color: #fef3c7;
   background: #1F2937;
   border: none;
   border-radius: 8px;
@@ -2381,7 +2381,7 @@ watch(() => props.simulationId, (newId) => {
   width: 18px;
   height: 18px;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #1c1917;
+  border-top-color: #fef3c7;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -2441,7 +2441,7 @@ watch(() => props.simulationId, (newId) => {
   min-width: 36px;
   min-height: 36px;
   background: #1F2937;
-  color: #1c1917;
+  color: #fef3c7;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2554,7 +2554,7 @@ watch(() => props.simulationId, (newId) => {
 :deep(.code-block code) {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  color: #292524;
+  color: #E5E7EB;
 }
 
 :deep(.inline-code) {

@@ -321,7 +321,7 @@ watch(() => props.systemLogs.length, () => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 20px;
   font-weight: 700;
-  color: #292524;
+  color: #E0E0E0;
 }
 
 .step-card.active .step-num,
@@ -343,9 +343,9 @@ watch(() => props.systemLogs.length, () => {
   text-transform: uppercase;
 }
 
-.badge.success { background: #E8F5E9; color: #2E7D32; }
-.badge.processing { background: #c2410c; color: #1c1917; }
-.badge.accent { background: #c2410c; color: #1c1917; }
+.badge.success { background: #14291a; color: #4ade80; }
+.badge.processing { background: #c2410c; color: #fef3c7; }
+.badge.accent { background: #c2410c; color: #fef3c7; }
 .badge.pending { background: #110f0d; color: #78716c; }
 
 .api-note {
@@ -446,7 +446,7 @@ watch(() => props.systemLogs.length, () => {
 .detail-type-badge {
     font-size: 9px;
     font-weight: 700;
-    color: #1c1917;
+    color: #fef3c7;
     background: #110f0d;
     padding: 2px 6px;
     border-radius: 2px;
@@ -480,11 +480,11 @@ watch(() => props.systemLogs.length, () => {
 
 .detail-desc {
     font-size: 12px;
-    color: #444;
+    color: #a8a29e;
     line-height: 1.5;
     margin-bottom: 16px;
     padding-bottom: 12px;
-    border-bottom: 1px dashed #292524;
+    border-bottom: 1px dashed #EAEAEA;
 }
 
 .detail-section {
@@ -512,7 +512,7 @@ watch(() => props.systemLogs.length, () => {
     gap: 6px;
     align-items: baseline;
     padding: 4px;
-    background: #110f0d;
+    background: #1c1917;
     border-radius: 4px;
 }
 
@@ -573,7 +573,7 @@ watch(() => props.systemLogs.length, () => {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
-  background: #110f0d;
+  background: #1c1917;
   padding: 16px;
   border-radius: 6px;
 }
@@ -602,7 +602,7 @@ watch(() => props.systemLogs.length, () => {
 .action-btn {
   width: 100%;
   background: #110f0d;
-  color: #1c1917;
+  color: #fef3c7;
   border: none;
   padding: 14px;
   border-radius: 4px;
@@ -644,7 +644,7 @@ watch(() => props.systemLogs.length, () => {
 /* System Logs */
 .system-logs {
   background: #110f0d;
-  color: #44403c;
+  color: #DDD;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
   border-top: 1px solid #222;
@@ -675,7 +675,7 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .log-content::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #292524;
   border-radius: 2px;
 }
 
@@ -692,7 +692,7 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .log-msg {
-  color: #44403c;
+  color: #CCC;
   word-break: break-all;
 }
 </style>

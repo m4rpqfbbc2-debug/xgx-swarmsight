@@ -1093,11 +1093,11 @@ onUnmounted(() => {
 <style scoped>
 /* Variables */
 :root {
-  --black: #e7e5e4;
-  --white: #1c1917;
+  --black: #000000;
+  --white: #FFFFFF;
   --orange: #c2410c;
-  --gray-light: #110f0d;
-  --gray-border: #292524;
+  --gray-light: #F5F5F5;
+  --gray-border: #E0E0E0;
   --gray-text: #666666;
 }
 
@@ -1116,7 +1116,7 @@ onUnmounted(() => {
   padding: 0 24px;
   height: 56px;
   background: #110f0d;
-  color: #1c1917;
+  color: #fef3c7;
   z-index: 10;
   position: relative;
 }
@@ -1144,7 +1144,7 @@ onUnmounted(() => {
 
 .step-badge {
   background: #c2410c;
-  color: #1c1917;
+  color: #fef3c7;
   padding: 2px 8px;
   font-size: 0.7rem;
   font-weight: 600;
@@ -1155,7 +1155,7 @@ onUnmounted(() => {
 .step-name {
   font-size: 0.85rem;
   letter-spacing: 0.05em;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 .nav-status {
@@ -1207,7 +1207,7 @@ onUnmounted(() => {
   flex: none; /* Fixed width initially */
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #292524;
+  border-right: 1px solid #E0E0E0;
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   background: #1c1917;
   z-index: 5;
@@ -1223,7 +1223,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: space-between;
   padding: 12px 24px;
-  border-bottom: 1px solid #292524;
+  border-bottom: 1px solid #E0E0E0;
   background: #1c1917;
   height: 50px;
 }
@@ -1449,7 +1449,7 @@ onUnmounted(() => {
   gap: 10px;
   padding: 12px 16px;
   background: #110f0d;
-  border-bottom: 1px solid #292524;
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .detail-title {
@@ -1461,7 +1461,7 @@ onUnmounted(() => {
 .detail-badge {
   padding: 2px 10px;
   font-size: 0.75rem;
-  color: #1c1917;
+  color: #fef3c7;
   border-radius: 2px;
 }
 
@@ -1525,7 +1525,7 @@ onUnmounted(() => {
   color: #d6d3d1;
   line-height: 1.6;
   padding: 10px;
-  background: #110f0d;
+  background: #1c1917;
   border-left: 3px solid #c2410c;
 }
 
@@ -1551,7 +1551,7 @@ onUnmounted(() => {
   gap: 8px;
   margin-bottom: 16px;
   padding: 12px;
-  background: #110f0d;
+  background: #1c1917;
   border: 1px solid #292524;
 }
 
@@ -1570,7 +1570,7 @@ onUnmounted(() => {
   padding: 2px 8px;
   font-size: 0.75rem;
   background: #c2410c;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 .detail-value.highlight {
@@ -1584,14 +1584,14 @@ onUnmounted(() => {
   color: #d6d3d1;
   margin: 16px 0 12px 0;
   padding-bottom: 8px;
-  border-bottom: 1px solid #292524;
+  border-bottom: 1px solid #E0E0E0;
 }
 
 /* Properties list */
 .properties-list {
   margin-top: 8px;
   padding: 10px;
-  background: #110f0d;
+  background: #1c1917;
   border: 1px solid #292524;
 }
 
@@ -1647,7 +1647,7 @@ onUnmounted(() => {
   flex-wrap: wrap;
   gap: 16px;
   padding: 12px 24px;
-  border-top: 1px solid #292524;
+  border-top: 1px solid #E0E0E0;
   background: #110f0d;
 }
 
@@ -1693,7 +1693,7 @@ onUnmounted(() => {
 
 .right-panel .panel-header.dark-header {
   background: #110f0d;
-  color: #1c1917;
+  color: #fef3c7;
   border-bottom: none;
 }
 
@@ -1736,7 +1736,7 @@ onUnmounted(() => {
   gap: 16px;
   padding: 16px;
   background: #110f0d;
-  border-bottom: 1px solid #292524;
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .process-phase.active .phase-header {
@@ -1744,7 +1744,7 @@ onUnmounted(() => {
 }
 
 .process-phase.completed .phase-header {
-  background: #F2FAF6;
+  background: #14291a;
 }
 
 .phase-num {
@@ -1787,12 +1787,12 @@ onUnmounted(() => {
 
 .phase-status.active {
   background: #c2410c;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 .phase-status.completed {
   background: #c2410c;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 /* Phase details */
@@ -1879,8 +1879,8 @@ onUnmounted(() => {
 /* Waiting state */
 .waiting-state {
   padding: 16px;
-  background: #110f0d;
-  border: 1px dashed #292524;
+  background: #1c1917;
+  border: 1px dashed #E0E0E0;
   text-align: center;
 }
 
@@ -1950,7 +1950,7 @@ onUnmounted(() => {
 .next-step-section {
   margin-top: 24px;
   padding-top: 24px;
-  border-top: 1px solid #292524;
+  border-top: 1px solid #E0E0E0;
 }
 
 .next-step-btn {
@@ -1961,7 +1961,7 @@ onUnmounted(() => {
   gap: 10px;
   padding: 16px;
   background: #110f0d;
-  color: #1c1917;
+  color: #fef3c7;
   border: none;
   font-size: 1rem;
   font-weight: 500;
@@ -1985,7 +1985,7 @@ onUnmounted(() => {
 
 /* Project info panel */
 .project-panel {
-  border-top: 1px solid #292524;
+  border-top: 1px solid #E0E0E0;
   background: #110f0d;
 }
 
@@ -1994,7 +1994,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 10px;
   padding: 12px 24px;
-  border-bottom: 1px solid #292524;
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .project-icon {
@@ -2015,7 +2015,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: flex-start;
   padding: 8px 0;
-  border-bottom: 1px dashed #292524;
+  border-bottom: 1px dashed #E0E0E0;
   font-size: 0.8rem;
 }
 
@@ -2050,7 +2050,7 @@ onUnmounted(() => {
   .left-panel {
     width: 100% !important;
     border-right: none;
-    border-bottom: 1px solid #292524;
+    border-bottom: 1px solid #E0E0E0;
     height: 50vh;
   }
   

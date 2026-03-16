@@ -1,8 +1,6 @@
 services:
   swarmsight:
     image: ghcr.io/666ghj/mirofish:latest
-    # Mirror image (use this if the above is slow to pull)
-    # image: ghcr.nju.edu.cn/666ghj/mirofish:latest
     container_name: swarmsight
     env_file:
       - .env
@@ -12,3 +10,10 @@ services:
     restart: unless-stopped
     volumes:
       - ./backend/uploads:/app/backend/uploads
+      # Overlay our reskinned frontend
+      - ./frontend/src:/app/frontend/src
+      - ./frontend/index.html:/app/frontend/index.html
+      # Overlay backend with our translated/fixed code
+      - ./backend/app:/app/backend/app
+      - ./backend/run.py:/app/backend/run.py
+      - ./backend/scripts:/app/backend/scripts

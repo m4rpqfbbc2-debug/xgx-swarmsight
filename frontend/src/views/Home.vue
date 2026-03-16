@@ -310,12 +310,12 @@ const startSimulation = () => {
 <style scoped>
 /* Global variables and reset */
 :root {
-  --black: #e7e5e4;
-  --white: #1c1917;
+  --black: #000000;
+  --white: #FFFFFF;
   --orange: #FF4500;
-  --gray-light: #110f0d;
+  --gray-light: #F5F5F5;
   --gray-text: #666666;
-  --border: #292524;
+  --border: #E5E5E5;
   /*
     Use Space Grotesk as the primary heading font, JetBrains Mono for code/label font.
     Ensure these Google Fonts are imported in index.html.
@@ -429,7 +429,7 @@ const startSimulation = () => {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #e7e5e4 0%, #444444 100%);
+  background: linear-gradient(90deg, #c2410c 0%, #ea580c 50%, #fef3c7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -461,7 +461,7 @@ const startSimulation = () => {
 }
 
 .highlight-code {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   padding: 2px 6px;
   border-radius: 2px;
   font-family: var(--font-mono);
@@ -694,7 +694,7 @@ const startSimulation = () => {
 }
 
 .upload-zone {
-  border: 1px dashed #44403c;
+  border: 1px dashed #CCC;
   height: 200px;
   overflow-y: auto;
   display: flex;
@@ -721,7 +721,7 @@ const startSimulation = () => {
 .upload-icon {
   width: 40px;
   height: 40px;
-  border: 1px solid #44403c;
+  border: 1px solid #292524;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -796,7 +796,7 @@ const startSimulation = () => {
 
 .input-wrapper {
   position: relative;
-  border: 1px solid #44403c;
+  border: 1px solid #292524;
   background: #110f0d;
 }
 
@@ -863,7 +863,7 @@ const startSimulation = () => {
   color: #78716c;
   cursor: not-allowed;
   transform: none;
-  border: 1px solid #292524;
+  border: 1px solid #E5E5E5;
 }
 
 /* Guide animation: subtle border pulse */

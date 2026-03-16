@@ -54,7 +54,7 @@
                 <div v-else-if="currentSectionIndex === idx + 1" class="loading-state">
                   <div class="loading-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <circle cx="12" cy="12" r="10" stroke-width="4" stroke="#292524"></circle>
+                      <circle cx="12" cy="12" r="10" stroke-width="4" stroke="#E5E7EB"></circle>
                       <path d="M12 2a10 10 0 0 1 10 10" stroke-width="4" stroke="#4B5563" stroke-linecap="round"></path>
                     </svg>
                   </div>
@@ -2207,7 +2207,7 @@ watch(() => props.reportId, (newId) => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #F8F9FA;
+  background: #1c1917;
   font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
   overflow: hidden;
 }
@@ -2320,7 +2320,7 @@ watch(() => props.reportId, (newId) => {
   width: 45%;
   min-width: 450px;
   background: #1c1917;
-  border-right: 1px solid #292524;
+  border-right: 1px solid #E5E7EB;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -2369,7 +2369,7 @@ watch(() => props.reportId, (newId) => {
 
 .report-tag {
   background: #110f0d;
-  color: #1c1917;
+  color: #fef3c7;
   font-size: 11px;
   font-weight: 700;
   padding: 4px 8px;
@@ -2471,7 +2471,7 @@ watch(() => props.reportId, (newId) => {
 
 /* States */
 .report-section-item.is-pending .section-title {
-  color: #44403c;
+  color: #D1D5DB;
 }
 
 .report-section-item.is-active .section-title,
@@ -2506,7 +2506,7 @@ watch(() => props.reportId, (newId) => {
   font-weight: 700;
 }
 
-.generated-content :deep(.md-h2) { font-size: 20px; border-bottom: 1px solid #1c1917; padding-bottom: 8px; }
+.generated-content :deep(.md-h2) { font-size: 20px; border-bottom: 1px solid #F3F4F6; padding-bottom: 8px; }
 .generated-content :deep(.md-h3) { font-size: 18px; }
 .generated-content :deep(.md-h4) { font-size: 16px; }
 
@@ -2669,19 +2669,19 @@ watch(() => props.reportId, (newId) => {
   flex-direction: column;
 
   /* Functional palette (low saturation, status-based) */
-  --wf-border: #292524;
-  --wf-divider: #1c1917;
+  --wf-border: #E5E7EB;
+  --wf-divider: #F3F4F6;
 
-  --wf-active-bg: #110f0d;
+  --wf-active-bg: #FAFAFA;
   --wf-active-border: #1F2937;
   --wf-active-dot: #1F2937;
   --wf-active-text: #1F2937;
 
-  --wf-done-bg: #110f0d;
-  --wf-done-border: #292524;
+  --wf-done-bg: #F9FAFB;
+  --wf-done-border: #E5E7EB;
   --wf-done-dot: #10B981;
 
-  --wf-muted-dot: #44403c;
+  --wf-muted-dot: #D1D5DB;
   --wf-todo-text: #9CA3AF;
 }
 
@@ -2768,7 +2768,7 @@ watch(() => props.reportId, (newId) => {
 .metric-pill.pill--completed {
   background: #1c1917;
   border-color: #A7F3D0;
-  color: #065F46;
+  color: #4ade80;
 }
 
 .metric-pill.pill--pending {
@@ -2823,7 +2823,7 @@ watch(() => props.reportId, (newId) => {
   height: 10px;
   border-radius: 50%;
   background: var(--wf-muted-dot);
-  border: 2px solid #1c1917;
+  border: 2px solid #FFFFFF;
   z-index: 1;
 }
 
@@ -2947,7 +2947,7 @@ watch(() => props.reportId, (newId) => {
   height: 12px;
   border-radius: 50%;
   background: var(--wf-muted-dot);
-  border: 2px solid #1c1917;
+  border: 2px solid #FFFFFF;
   z-index: 1;
 }
 
@@ -3018,7 +3018,7 @@ watch(() => props.reportId, (newId) => {
   align-items: center;
   margin-top: 10px;
   padding-top: 10px;
-  border-top: 1px solid #1c1917;
+  border-top: 1px solid #F3F4F6;
 }
 
 .elapsed-placeholder {
@@ -3073,7 +3073,7 @@ watch(() => props.reportId, (newId) => {
 .status-message.success {
   background: #1c1917;
   border-color: #A7F3D0;
-  color: #065F46;
+  color: #4ade80;
 }
 
 .outline-badge {
@@ -3114,7 +3114,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 .section-tag.completed svg {
-  color: #059669;
+  color: #4ade80;
 }
 
 .tag-num {
@@ -3124,7 +3124,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 .section-tag.completed .tag-num {
-  color: #059669;
+  color: #4ade80;
 }
 
 .tag-title {
@@ -3213,7 +3213,7 @@ watch(() => props.reportId, (newId) => {
 
 /* Tool Colors - Gray (Default) */
 .tool-badge.tool-gray {
-  background: linear-gradient(135deg, #110f0d 0%, #1c1917 100%);
+  background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
   border-color: #44403c;
   color: #d6d3d1;
 }
@@ -3337,13 +3337,13 @@ watch(() => props.reportId, (newId) => {
 }
 
 .meta-tag.active {
-  background: #DBEAFE;
+  background: #151e2e;
   color: #1E40AF;
 }
 
 .meta-tag.final-answer {
-  background: #D1FAE5;
-  color: #059669;
+  background: #14291a;
+  color: #4ade80;
   font-weight: 600;
 }
 
@@ -3356,7 +3356,7 @@ watch(() => props.reportId, (newId) => {
   background: #1c1917;
   border: 1px solid #A7F3D0;
   border-radius: 6px;
-  color: #065F46;
+  color: #4ade80;
   font-size: 12px;
   font-weight: 500;
 }
@@ -3392,7 +3392,7 @@ watch(() => props.reportId, (newId) => {
   background: #1c1917;
   border: 1px solid #A7F3D0;
   border-radius: 8px;
-  color: #065F46;
+  color: #4ade80;
   font-weight: 600;
   font-size: 14px;
 }
@@ -3407,7 +3407,7 @@ watch(() => props.reportId, (newId) => {
   padding: 14px 20px;
   font-size: 14px;
   font-weight: 600;
-  color: #1c1917;
+  color: #fef3c7;
   background: #1F2937;
   border: none;
   border-radius: 8px;
@@ -3503,7 +3503,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.stat-box.highlight .stat-num) {
-  color: #059669;
+  color: #4ade80;
 }
 
 :deep(.stat-box.muted) {
@@ -3559,7 +3559,7 @@ watch(() => props.reportId, (newId) => {
   letter-spacing: 0.04em;
   margin-bottom: 10px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #1c1917;
+  border-bottom: 1px solid #F3F4F6;
 }
 
 /* Facts Section */
@@ -3571,7 +3571,7 @@ watch(() => props.reportId, (newId) => {
   display: flex;
   gap: 10px;
   padding: 8px 0;
-  border-bottom: 1px solid #1c1917;
+  border-bottom: 1px solid #F3F4F6;
 }
 
 :deep(.fact-row:last-child) {
@@ -3602,7 +3602,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.fact-row.active .fact-idx) {
   background: #A7F3D0;
-  color: #065F46;
+  color: #4ade80;
 }
 
 :deep(.fact-text) {
@@ -3657,7 +3657,7 @@ watch(() => props.reportId, (newId) => {
   gap: 8px;
   padding: 8px 0;
   flex-wrap: wrap;
-  border-bottom: 1px solid #1c1917;
+  border-bottom: 1px solid #F3F4F6;
 }
 
 :deep(.relation-row:last-child) {
@@ -3676,7 +3676,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.rel-edge) {
   font-size: 10px;
   font-weight: 600;
-  color: #1c1917;
+  color: #fef3c7;
   background: #4F46E5;
   padding: 3px 10px;
   border-radius: 10px;
@@ -3735,7 +3735,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.interview-display .stat-divider) {
-  color: #44403c;
+  color: #D1D5DB;
   font-size: 12px;
 }
 
@@ -3758,11 +3758,11 @@ watch(() => props.reportId, (newId) => {
   gap: 8px;
   padding: 0 0 14px 0;
   background: transparent;
-  border-bottom: 1px solid #1c1917;
+  border-bottom: 1px solid #F3F4F6;
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
-  scrollbar-color: #292524 transparent;
+  scrollbar-color: #E5E7EB transparent;
 }
 
 :deep(.interview-display .agent-tabs::-webkit-scrollbar) {
@@ -3831,7 +3831,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.interview-display .agent-tab.active .tab-avatar) {
   background: #6366F1;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 :deep(.interview-display .tab-name) {
@@ -3900,7 +3900,7 @@ watch(() => props.reportId, (newId) => {
 
 /* Selection Reason */
 :deep(.interview-display .selection-reason) {
-  background: #F8FAFC;
+  background: #1c1917;
   border: 1px solid #E2E8F0;
   border-radius: 8px;
   padding: 12px 14px;
@@ -3910,7 +3910,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.interview-display .reason-label) {
   font-size: 11px;
   font-weight: 600;
-  color: #64748B;
+  color: #a8a29e;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-bottom: 6px;
@@ -3918,7 +3918,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.interview-display .reason-content) {
   font-size: 12px;
-  color: #475569;
+  color: #a8a29e;
   line-height: 1.6;
 }
 
@@ -3966,7 +3966,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.interview-display .a-badge) {
   background: #4F46E5;
-  color: #1c1917;
+  color: #fef3c7;
   border: 1px solid #4F46E5;
 }
 
@@ -4069,7 +4069,7 @@ watch(() => props.reportId, (newId) => {
   padding: 0;
   background: transparent;
   border: none;
-  border-bottom: 1px dotted #44403c;
+  border-bottom: 1px dotted #D1D5DB;
   border-radius: 0;
   font-size: 11px;
   font-weight: 500;
@@ -4088,7 +4088,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.interview-display .quotes-section) {
   background: transparent;
   border: none;
-  border-top: 1px solid #1c1917;
+  border-top: 1px solid #F3F4F6;
   border-radius: 0;
   padding: 16px 0 0 0;
   margin-top: 16px;
@@ -4127,7 +4127,7 @@ watch(() => props.reportId, (newId) => {
   padding: 16px 0 0 0;
   background: transparent;
   border: none;
-  border-top: 1px solid #1c1917;
+  border-top: 1px solid #F3F4F6;
   border-radius: 0;
 }
 
@@ -4320,7 +4320,7 @@ watch(() => props.reportId, (newId) => {
   background: #1c1917;
   color: #c2410c;
   border-color: #C4B5FD;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03);
 }
 
 
@@ -4338,7 +4338,7 @@ watch(() => props.reportId, (newId) => {
   align-items: center;
   margin-bottom: 12px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #1c1917;
+  border-bottom: 1px solid #F3F4F6;
 }
 
 :deep(.insight-display .panel-title) {
@@ -4424,7 +4424,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.insight-display .entity-tag .entity-type) {
   font-size: 9px;
   color: #c2410c;
-  background: #EDE9FE;
+  background: #1e1a2e;
   padding: 1px 4px;
   border-radius: 3px;
 }
@@ -4462,7 +4462,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.insight-display .entity-card .entity-type) {
   font-size: 10px;
   color: #c2410c;
-  background: #EDE9FE;
+  background: #1e1a2e;
   padding: 2px 6px;
   border-radius: 4px;
   display: inline-block;
@@ -4523,7 +4523,7 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.insight-display .rel-label) {
   padding: 2px 6px;
-  background: #EDE9FE;
+  background: #1e1a2e;
   border-radius: 4px;
   font-size: 10px;
   font-weight: 500;
@@ -4549,7 +4549,7 @@ watch(() => props.reportId, (newId) => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   font-weight: 700;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 :deep(.insight-display .subquery-text) {
@@ -4637,7 +4637,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.panorama-header .stat-value) {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  color: #2563EB;
+  color: #60a5fa;
 }
 
 :deep(.panorama-header .stat-label) {
@@ -4693,9 +4693,9 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.panorama-tab.active) {
   background: #1c1917;
-  color: #2563EB;
+  color: #60a5fa;
   border-color: #93C5FD;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03);
 }
 
 
@@ -4713,7 +4713,7 @@ watch(() => props.reportId, (newId) => {
   align-items: center;
   margin-bottom: 12px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #1c1917;
+  border-bottom: 1px solid #F3F4F6;
 }
 
 :deep(.panorama-display .panel-title) {
@@ -4773,8 +4773,8 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.panorama-display .fact-item.historical .fact-number) {
-  background: #9CA3AF;
-  color: #1c1917;
+  background: #44403c;
+  color: #fef3c7;
 }
 
 :deep(.panorama-display .fact-content) {
@@ -4821,8 +4821,8 @@ watch(() => props.reportId, (newId) => {
 
 :deep(.panorama-display .entity-type) {
   font-size: 10px;
-  color: #2563EB;
-  background: #DBEAFE;
+  color: #60a5fa;
+  background: #151e2e;
   padding: 2px 6px;
   border-radius: 4px;
 }
@@ -4931,7 +4931,7 @@ watch(() => props.reportId, (newId) => {
   background: #1c1917;
   color: #EA580C;
   border-color: #FDBA74;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.03);
 }
 
 
@@ -4954,7 +4954,7 @@ watch(() => props.reportId, (newId) => {
   align-items: center;
   margin-bottom: 12px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #1c1917;
+  border-bottom: 1px solid #F3F4F6;
 }
 
 :deep(.quick-search-display .panel-title) {
@@ -5100,7 +5100,7 @@ watch(() => props.reportId, (newId) => {
 /* Console Logs - consistent with Step3Simulation.vue */
 .console-logs {
   background: #110f0d;
-  color: #44403c;
+  color: #DDD;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
   border-top: 1px solid #222;
@@ -5132,7 +5132,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 .log-content::-webkit-scrollbar { width: 4px; }
-.log-content::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+.log-content::-webkit-scrollbar-thumb { background: #292524; border-radius: 2px; }
 
 .log-line {
   font-size: 11px;

@@ -1,0 +1,16 @@
+FROM ghcr.io/666ghj/mirofish:latest
+
+# Overlay our reskinned frontend source
+COPY frontend/src /app/frontend/src
+COPY frontend/index.html /app/frontend/index.html
+
+# Overlay our translated backend
+COPY backend/app /app/backend/app
+COPY backend/run.py /app/backend/run.py
+COPY backend/scripts /app/backend/scripts
+
+# Rebuild frontend for production
+WORKDIR /app/frontend
+RUN npm run build 2>/dev/null || true
+
+WORKDIR /app

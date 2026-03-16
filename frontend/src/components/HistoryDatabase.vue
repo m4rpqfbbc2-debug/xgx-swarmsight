@@ -604,8 +604,8 @@ onUnmounted(() => {
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   /* Position from top-left, height changes only expand at bottom without affecting existing grid */
   background-position: top left;
@@ -618,8 +618,8 @@ onUnmounted(() => {
   right: 0;
   bottom: 0;
   background: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, transparent 15%, transparent 85%, rgba(255, 255, 255, 0.9) 100%),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, transparent 20%, transparent 80%, rgba(255, 255, 255, 0.8) 100%);
+    linear-gradient(to right, rgba(17, 15, 13, 0.9) 0%, transparent 15%, transparent 85%, rgba(17, 15, 13, 0.9) 100%),
+    linear-gradient(to bottom, rgba(17, 15, 13, 0.8) 0%, transparent 20%, transparent 80%, rgba(17, 15, 13, 0.8) 100%);
   pointer-events: none;
 }
 
@@ -671,12 +671,12 @@ onUnmounted(() => {
   border-radius: 0;
   padding: 14px;
   cursor: pointer;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.03);
   transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .project-card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.03);
   border-color: rgba(0, 0, 0, 0.4);
   z-index: 1000 !important;
 }
@@ -692,7 +692,7 @@ onUnmounted(() => {
   align-items: center;
   margin-bottom: 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #1c1917;
+  border-bottom: 1px solid #F3F4F6;
   font-family: 'JetBrains Mono', 'SF Mono', monospace;
   font-size: 0.7rem;
 }
@@ -726,7 +726,7 @@ onUnmounted(() => {
 .status-icon:nth-child(3).available { color: #10B981; } /* Analysis Report - green */
 
 .status-icon.unavailable {
-  color: #44403c;
+  color: #D1D5DB;
   opacity: 0.5;
 }
 
@@ -758,7 +758,7 @@ onUnmounted(() => {
   max-height: 110px;
   margin-bottom: 12px;
   padding: 8px 10px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+  background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
   border-radius: 4px;
   border: 1px solid #e8eaed;
   overflow: hidden;
@@ -863,7 +863,7 @@ onUnmounted(() => {
 /* File area hover effect */
 .project-card:hover .card-files-wrapper {
   border-color: #44403c;
-  background: linear-gradient(135deg, #1c1917 0%, #f8f9fa 100%);
+  background: linear-gradient(135deg, #1c1917 0%, #110f0d 100%);
 }
 
 /* Corner decoration */
@@ -894,7 +894,7 @@ onUnmounted(() => {
 }
 
 .project-card:hover .card-title {
-  color: #2563EB;
+  color: #60a5fa;
 }
 
 /* Card description */
@@ -918,7 +918,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding-top: 12px;
-  border-top: 1px solid #1c1917;
+  border-top: 1px solid #F3F4F6;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.65rem;
   color: #78716c;
@@ -1072,7 +1072,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 20px 32px;
-  border-bottom: 1px solid #1c1917;
+  border-bottom: 1px solid #F3F4F6;
   background: #1c1917;
 }
 
@@ -1162,7 +1162,7 @@ onUnmounted(() => {
   line-height: 1.6;
   padding: 16px;
   background: #110f0d;
-  border: 1px solid #1c1917;
+  border: 1px solid #F3F4F6;
   border-radius: 8px;
 }
 
@@ -1191,7 +1191,7 @@ onUnmounted(() => {
 }
 
 .modal-files::-webkit-scrollbar-thumb:hover {
-  background: #9CA3AF;
+  background: #44403c;
 }
 
 .modal-file-item {
@@ -1207,7 +1207,7 @@ onUnmounted(() => {
 
 .modal-file-item:hover {
   border-color: #44403c;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.03);
 }
 
 .modal-file-name {
@@ -1224,7 +1224,7 @@ onUnmounted(() => {
   color: #78716c;
   padding: 16px;
   background: #110f0d;
-  border: 1px dashed #292524;
+  border: 1px dashed #E5E7EB;
   border-radius: 6px;
   text-align: center;
 }

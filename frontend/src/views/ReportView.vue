@@ -322,7 +322,7 @@ onMounted(() => {
 }
 
 .status-indicator.processing .dot { background: #FF9800; animation: pulse 1s infinite; }
-.status-indicator.completed .dot { background: #c2410c; }
+.status-indicator.completed .dot { background: #4CAF50; }
 .status-indicator.error .dot { background: #F44336; }
 
 @keyframes pulse { 50% { opacity: 0.5; } }
@@ -343,6 +343,6 @@ onMounted(() => {
 }
 
 .panel-wrapper.left {
-  border-right: 1px solid #292524;
+  border-right: 1px solid #EAEAEA;
 }
 </style>

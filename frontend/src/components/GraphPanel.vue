@@ -579,7 +579,7 @@ const renderGraph = () => {
       event.stopPropagation()
       // Reset previously selected edge styles
       linkGroup.selectAll('path').attr('stroke', '#C0C0C0').attr('stroke-width', 1.5)
-      linkLabelBg.attr('fill', 'rgba(255,255,255,0.95)')
+      linkLabelBg.attr('fill', 'rgba(17,15,13,0.95)')
       linkLabels.attr('fill', '#666')
       // Highlight currently selected edge
       d3.select(event.target).attr('stroke', '#3498db').attr('stroke-width', 3)
@@ -594,7 +594,7 @@ const renderGraph = () => {
   const linkLabelBg = linkGroup.selectAll('rect')
     .data(edges)
     .enter().append('rect')
-    .attr('fill', 'rgba(255,255,255,0.95)')
+    .attr('fill', 'rgba(17,15,13,0.95)')
     .attr('rx', 3)
     .attr('ry', 3)
     .style('cursor', 'pointer')
@@ -603,7 +603,7 @@ const renderGraph = () => {
     .on('click', (event, d) => {
       event.stopPropagation()
       linkGroup.selectAll('path').attr('stroke', '#C0C0C0').attr('stroke-width', 1.5)
-      linkLabelBg.attr('fill', 'rgba(255,255,255,0.95)')
+      linkLabelBg.attr('fill', 'rgba(17,15,13,0.95)')
       linkLabels.attr('fill', '#666')
       // Highlight corresponding edge
       link.filter(l => l === d).attr('stroke', '#3498db').attr('stroke-width', 3)
@@ -631,7 +631,7 @@ const renderGraph = () => {
     .on('click', (event, d) => {
       event.stopPropagation()
       linkGroup.selectAll('path').attr('stroke', '#C0C0C0').attr('stroke-width', 1.5)
-      linkLabelBg.attr('fill', 'rgba(255,255,255,0.95)')
+      linkLabelBg.attr('fill', 'rgba(17,15,13,0.95)')
       linkLabels.attr('fill', '#666')
       // Highlight corresponding edge
       link.filter(l => l === d).attr('stroke', '#3498db').attr('stroke-width', 3)
@@ -778,7 +778,7 @@ const renderGraph = () => {
     selectedItem.value = null
     node.attr('stroke', '#fff').attr('stroke-width', 2.5)
     linkGroup.selectAll('path').attr('stroke', '#C0C0C0').attr('stroke-width', 1.5)
-    linkLabelBg.attr('fill', 'rgba(255,255,255,0.95)')
+    linkLabelBg.attr('fill', 'rgba(17,15,13,0.95)')
     linkLabels.attr('fill', '#666')
   })
 }
@@ -819,7 +819,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   background-color: #110f0d;
-  background-image: radial-gradient(#D0D0D0 1.5px, transparent 1.5px);
+  background-image: radial-gradient(#44403c 1.5px, transparent 1.5px);
   background-size: 24px 24px;
   overflow: hidden;
 }
@@ -834,7 +834,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0));
+  background: linear-gradient(to bottom, rgba(17,15,13,0.95), rgba(255,255,255,0));
   pointer-events: none;
 }
 
@@ -916,7 +916,7 @@ onUnmounted(() => {
   position: absolute;
   bottom: 24px;
   left: 24px;
-  background: rgba(255,255,255,0.95);
+  background: rgba(17,15,13,0.95);
   padding: 12px 16px;
   border-radius: 8px;
   border: 1px solid #292524;
@@ -1119,13 +1119,13 @@ input:checked + .slider:before {
 
 .detail-value.fact-text {
   line-height: 1.5;
-  color: #444;
+  color: #a8a29e;
 }
 
 .detail-section {
   margin-top: 16px;
   padding-top: 14px;
-  border-top: 1px solid #1c1917;
+  border-top: 1px solid #F0F0F0;
 }
 
 .section-title {
@@ -1159,7 +1159,7 @@ input:checked + .slider:before {
 
 .summary-text {
   line-height: 1.6;
-  color: #444;
+  color: #a8a29e;
   font-size: 12px;
 }
 
@@ -1188,7 +1188,7 @@ input:checked + .slider:before {
 .episode-tag {
   display: inline-block;
   padding: 6px 10px;
-  background: #F8F8F8;
+  background: #1c1917;
   border: 1px solid #E8E8E8;
   border-radius: 6px;
   font-family: 'JetBrains Mono', monospace;
@@ -1199,7 +1199,7 @@ input:checked + .slider:before {
 
 /* Edge relation header */
 .edge-relation-header {
-  background: #F8F8F8;
+  background: #1c1917;
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 16px;
@@ -1218,7 +1218,7 @@ input:checked + .slider:before {
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(8px);
-  color: #1c1917;
+  color: #fef3c7;
   padding: 10px 20px;
   border-radius: 30px;
   font-size: 13px;
@@ -1242,7 +1242,7 @@ input:checked + .slider:before {
 .memory-icon {
   width: 18px;
   height: 18px;
-  color: #c2410c;
+  color: #4CAF50;
 }
 
 @keyframes breathe {
@@ -1265,7 +1265,7 @@ input:checked + .slider:before {
 .finished-hint .hint-icon {
   width: 18px;
   height: 18px;
-  color: #1c1917;
+  color: #fef3c7;
 }
 
 .finished-hint .hint-text {
@@ -1283,7 +1283,7 @@ input:checked + .slider:before {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  color: #1c1917;
+  color: #fef3c7;
   transition: all 0.2s;
   margin-left: 8px;
   flex-shrink: 0;
@@ -1298,7 +1298,7 @@ input:checked + .slider:before {
 .loading-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid #292524;
+  border: 3px solid #E0E0E0;
   border-top-color: #7B2D8E;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -1310,7 +1310,7 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
+  background: linear-gradient(135deg, #14291a 0%, #1a2e1a 100%);
   border: 1px solid #C8E6C9;
 }
 
@@ -1318,7 +1318,7 @@ input:checked + .slider:before {
   margin-left: auto;
   font-size: 11px;
   color: #a8a29e;
-  background: rgba(255,255,255,0.8);
+  background: rgba(17,15,13,0.8);
   padding: 2px 8px;
   border-radius: 10px;
 }
@@ -1346,11 +1346,11 @@ input:checked + .slider:before {
 }
 
 .self-loop-item-header:hover {
-  background: #EEEEEE;
+  background: #292524;
 }
 
 .self-loop-item.expanded .self-loop-item-header {
-  background: #E8E8E8;
+  background: #292524;
 }
 
 .self-loop-index {
@@ -1384,13 +1384,13 @@ input:checked + .slider:before {
 }
 
 .self-loop-item.expanded .self-loop-toggle {
-  background: #D0D0D0;
+  background: #44403c;
   color: #a8a29e;
 }
 
 .self-loop-item-content {
   padding: 12px;
-  border-top: 1px solid #292524;
+  border-top: 1px solid #EAEAEA;
 }
 
 .self-loop-item-content .detail-row {

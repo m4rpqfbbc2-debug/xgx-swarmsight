@@ -1,0 +1,17 @@
+[2026-03-16 20:28:04] INFO [swarmsight.create_app:38] ==================================================
+[2026-03-16 20:28:04] INFO [swarmsight.create_app:39] SwarmSight Backend starting...
+[2026-03-16 20:28:04] INFO [swarmsight.create_app:40] ==================================================
+[2026-03-16 20:28:04] INFO [swarmsight.create_app:49] Simulation process cleanup function registered
+[2026-03-16 20:28:04] INFO [swarmsight.create_app:77] SwarmSight Backend startup complete
+[2026-03-16 20:28:06] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
+[2026-03-16 20:28:06] DEBUG [swarmsight.request.log_response:62] Response: 200
+[2026-03-16 20:28:44] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
+[2026-03-16 20:28:44] DEBUG [swarmsight.request.log_response:62] Response: 200
+[2026-03-16 20:32:22] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
+[2026-03-16 20:32:22] DEBUG [swarmsight.request.log_response:62] Response: 200
+[2026-03-16 20:32:33] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
+[2026-03-16 20:32:33] DEBUG [swarmsight.request.log_response:62] Response: 200
+[2026-03-16 20:33:35] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
+[2026-03-16 20:33:35] DEBUG [swarmsight.request.log_response:62] Response: 200
+[2026-03-16 20:33:52] DEBUG [swarmsight.request.log_request:55] Request: GET /api/simulation/history
+[2026-03-16 20:33:52] DEBUG [swarmsight.request.log_response:62] Response: 200
