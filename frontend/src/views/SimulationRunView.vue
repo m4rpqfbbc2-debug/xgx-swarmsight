@@ -315,7 +315,7 @@ onUnmounted(() => {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #FFF;
+  background: #1c1917;
   overflow: hidden;
   font-family: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
 }
@@ -323,12 +323,12 @@ onUnmounted(() => {
 /* Header */
 .app-header {
   height: 60px;
-  border-bottom: 1px solid #EAEAEA;
+  border-bottom: 1px solid #292524;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  background: #FFF;
+  background: #1c1917;
   z-index: 100;
   position: relative;
 }
@@ -349,7 +349,7 @@ onUnmounted(() => {
 
 .view-switcher {
   display: flex;
-  background: #F5F5F5;
+  background: #110f0d;
   padding: 4px;
   border-radius: 6px;
   gap: 4px;
@@ -361,15 +361,15 @@ onUnmounted(() => {
   padding: 6px 16px;
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: #a8a29e;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .switch-btn.active {
-  background: #FFF;
-  color: #000;
+  background: #1c1917;
+  color: #e7e5e4;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
@@ -389,18 +389,18 @@ onUnmounted(() => {
 .step-num {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  color: #999;
+  color: #78716c;
 }
 
 .step-name {
   font-weight: 700;
-  color: #000;
+  color: #e7e5e4;
 }
 
 .step-divider {
   width: 1px;
   height: 14px;
-  background-color: #E0E0E0;
+  background-color: #292524;
 }
 
 .status-indicator {
@@ -408,7 +408,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #666;
+  color: #a8a29e;
   font-weight: 500;
 }
 
@@ -416,11 +416,11 @@ onUnmounted(() => {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #CCC;
+  background: #44403c;
 }
 
-.status-indicator.processing .dot { background: #FF5722; animation: pulse 1s infinite; }
-.status-indicator.completed .dot { background: #4CAF50; }
+.status-indicator.processing .dot { background: #c2410c; animation: pulse 1s infinite; }
+.status-indicator.completed .dot { background: #c2410c; }
 .status-indicator.error .dot { background: #F44336; }
 
 @keyframes pulse { 50% { opacity: 0.5; } }
@@ -441,7 +441,7 @@ onUnmounted(() => {
 }
 
 .panel-wrapper.left {
-  border-right: 1px solid #EAEAEA;
+  border-right: 1px solid #292524;
 }
 </style>
 

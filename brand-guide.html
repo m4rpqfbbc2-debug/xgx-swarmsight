@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SwarmSight — Warm Cognition v4</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+--void: #110f0d;
+--espresso: #1c1917;
+--walnut: #292524;
+--clay: #44403c;
+--stone: #78716c;
+--parchment: #d6d3d1;
+--cream: #fef3c7;
+--ember: #c2410c;
+--ember-deep: #B8510D;
+--ember-glow: #ea580c;
+--signal-red: #dc2626;
+--patina: #a8a29e;
+--bone: #e7e5e4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: var(--void);
+color: var(--bone);
+font-family: 'DM Sans', sans-serif;
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
+}
+
+/* ============================
+TEXTURE LIBRARY
+============================ */
+.tex-knurl {
+background-image:
+radial-gradient(circle at 1.5px 1.5px, rgba(255,255,255,0.025) 0.5px, transparent 0.5px);
+background-size: 3px 3px;
+}
+
+.tex-knurl-coarse {
+background-image:
+radial-gradient(circle at 3px 3px, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size: 6px 6px;
+}
+
+.tex-leather {
+background-image:
+radial-gradient(ellipse at 2px 3px, rgba(255,255,255,0.018) 1px, transparent 1px),
+radial-gradient(ellipse at 5px 1px, rgba(0,0,0,0.06) 1px, transparent 1px),
+radial-gradient(ellipse at 8px 6px, rgba(255,255,255,0.012) 0.5px, transparent 0.5px);
+background-size: 9px 7px, 11px 9px, 7px 11px;
+}
+
+.tex-brushed {
+background-image:
+repeating-linear-gradient(
+0deg,
+transparent,
+transparent 1px,
+rgba(255,255,255,0.012) 1px,
+rgba(255,255,255,0.012) 2px
+);
+}
+
+.tex-canvas {
+background-image:
+linear-gradient(0deg, rgba(255,255,255,0.015) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+background-size: 4px 4px;
+}
+
+.tex-paper {
+background-image:
+radial-gradient(circle at 3px 3px, rgba(254,243,199,0.02) 0.5px, transparent 0.5px),
+radial-gradient(circle at 7px 5px, rgba(0,0,0,0.03) 0.5px, transparent 0.5px),
+radial-gradient(circle at 1px 8px, rgba(254,243,199,0.015) 0.5px, transparent 0.5px);
+background-size: 8px 9px, 11px 7px, 5px 13px;
+}
+
+.tex-perf {
+background-image:
+radial-gradient(circle at 4px 4px, rgba(0,0,0,0.15) 1.5px, transparent 1.5px);
+background-size: 8px 8px;
+}
+
+.tex-crosshatch {
+background-image:
+repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 3px),
+repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 3px);
+}
+
+.tex-ribbed {
+background-image:
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,0.04) 0px,
+rgba(255,255,255,0.04) 1px,
+transparent 1px,
+transparent 3px
+);
+}
+
+.tex-stamped {
+color: rgba(255,255,255,0.25);
+text-shadow:
+0 -1px 0 rgba(0,0,0,0.6),
+0 1px 0 rgba(255,255,255,0.06);
+font-family: 'Space Mono', monospace;
+font-size: 9px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+}
+
+.tex-debossed {
+text-shadow:
+0 1px 1px rgba(0,0,0,0.5),
+0 -1px 0 rgba(255,255,255,0.04);
+}
+
+.tex-embossed {
+text-shadow:
+0 1px 0 rgba(255,255,255,0.08),
+0 -1px 1px rgba(0,0,0,0.5);
+}
+
+/* ============================
+HERO WITH ENTROPY CANVAS
+============================ */
+.hero {
+position: relative;
+min-height: 520px;
+display: flex;
+align-items: center;
+overflow: hidden;
+border-bottom: 1px solid var(--walnut);
+}
+
+.hero::after {
+content: '';
+position: absolute;
+bottom: -1px;
+left: 48px;
+right: 48px;
+height: 1px;
+background: linear-gradient(90deg, transparent, rgba(168,162,158,0.15), transparent);
+}
+
+.hero-canvas-wrap {
+position: absolute;
+top: 0;
+right: 0;
+width: 55%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+pointer-events: none;
+}
+
+#entropy-canvas {
+opacity: 0.6;
+}
+
+/* Gradient fade from content to canvas */
+.hero-fade {
+position: absolute;
+top: 0;
+left: 0;
+width: 55%;
+height: 100%;
+background: linear-gradient(90deg, var(--void) 40%, transparent 100%);
+z-index: 2;
+pointer-events: none;
+}
+
+/* Bottom vignette on canvas */
+.hero-vignette {
+position: absolute;
+bottom: 0;
+right: 0;
+width: 55%;
+height: 40%;
+background: linear-gradient(0deg, var(--void) 0%, transparent 100%);
+z-index: 2;
+pointer-events: none;
+}
+
+/* Top vignette */
+.hero-vignette-top {
+position: absolute;
+top: 0;
+right: 0;
+width: 55%;
+height: 30%;
+background: linear-gradient(180deg, var(--void) 0%, transparent 100%);
+z-index: 2;
+pointer-events: none;
+}
+
+.hero-content {
+position: relative;
+z-index: 3;
+padding: 56px 48px;
+max-width: 600px;
+}
+
+.version-badge {
+display: inline-block;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 9px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--stone);
+background: var(--espresso);
+border: 1px solid var(--walnut);
+padding: 5px 12px;
+border-radius: 4px;
+margin-bottom: 24px;
+box-shadow: inset 0 1px 3px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.hero h1 {
+font-family: 'DM Sans', sans-serif;
+font-size: 56px;
+font-weight: 800;
+letter-spacing: -2px;
+line-height: 1.0;
+color: var(--cream);
+margin-bottom: 16px;
+}
+
+.hero-desc {
+font-size: 16px;
+color: var(--patina);
+line-height: 1.7;
+margin-bottom: 24px;
+}
+
+.hero-tags {
+display: flex;
+gap: 8px;
+flex-wrap: wrap;
+}
+
+.hero-tag {
+display: inline-block;
+padding: 5px 12px;
+border-radius: 6px;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 9px;
+letter-spacing: 1px;
+text-transform: uppercase;
+background: linear-gradient(180deg, var(--walnut), var(--espresso));
+color: var(--patina);
+border: 1px solid rgba(255,255,255,0.04);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-tag.active {
+background: linear-gradient(180deg, var(--ember), var(--ember-deep));
+color: var(--cream);
+box-shadow: 0 2px 8px rgba(194,65,12,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+
+/* ============================
+LAYOUT
+============================ */
+.page { max-width: 1400px; margin: 0 auto; }
+
+.nav {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(17,15,13,0.94);
+backdrop-filter: blur(16px);
+border-bottom: 1px solid var(--walnut);
+padding: 0 48px;
+}
+
+.nav-inner { display: flex; gap: 0; overflow-x: auto; }
+
+.nav-btn {
+font-family: 'Space Mono', monospace;
+font-size: 10px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: var(--stone);
+padding: 16px 22px;
+cursor: pointer;
+border: none;
+border-bottom: 2px solid transparent;
+background: none;
+transition: all 0.2s;
+white-space: nowrap;
+}
+
+.nav-btn:hover { color: var(--parchment); }
+.nav-btn.active { color: var(--ember); border-bottom-color: var(--ember); }
+
+.section {
+display: none;
+padding: 48px;
+animation: fadeIn 0.3s ease;
+}
+
+.section.active { display: block; }
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(8px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+font-family: 'DM Sans', sans-serif;
+font-size: 28px;
+font-weight: 700;
+letter-spacing: -0.5px;
+color: var(--cream);
+margin-bottom: 6px;
+}
+
+.section-sub {
+font-size: 14px;
+color: var(--stone);
+margin-bottom: 36px;
+max-width: 560px;
+line-height: 1.7;
+}
+
+/* PALETTE */
+.palette-strip {
+display: flex;
+gap: 0;
+border-radius: 14px;
+overflow: hidden;
+margin-bottom: 28px;
+box-shadow: 0 6px 24px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04), 0 1px 0 rgba(255,255,255,0.02);
+}
+
+.swatch {
+flex: 1;
+height: 110px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+padding: 12px 14px;
+cursor: pointer;
+transition: flex 0.3s ease;
+}
+
+.swatch:hover { flex: 2; }
+
+.swatch-role {
+font-family: 'Space Mono', monospace;
+font-size: 8px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+opacity: 0.5;
+margin-bottom: 2px;
+}
+
+.swatch-hex {
+font-family: 'IBM Plex Mono', monospace;
+font-weight: 600;
+font-size: 11px;
+opacity: 0.8;
+}
+
+.palette-ext {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 12px;
+margin-bottom: 36px;
+}
+
+.ext-chip {
+border-radius: 10px;
+padding: 16px;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 10px;
+box-shadow: inset 0 2px 6px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.03);
+border: 1px solid rgba(255,255,255,0.04);
+}
+
+.ext-chip-label {
+font-size: 8px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+opacity: 0.4;
+margin-bottom: 6px;
+}
+
+/* TEXTURE GALLERY */
+.tex-gallery {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 16px;
+margin-bottom: 36px;
+}
+
+.tex-tile {
+aspect-ratio: 1;
+border-radius: 14px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+padding: 16px;
+position: relative;
+overflow: hidden;
+box-shadow: 0 6px 20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.04);
+cursor: pointer;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tex-tile:hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.tex-tile-name {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 10px;
+font-weight: 600;
+color: var(--parchment);
+margin-bottom: 2px;
+}
+
+.tex-tile-use {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 8px;
+letter-spacing: 1px;
+text-transform: uppercase;
+color: var(--stone);
+}
+
+/* COMPONENTS */
+.comp-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+margin-bottom: 36px;
+}
+
+.comp-panel {
+border-radius: 16px;
+padding: 24px;
+position: relative;
+overflow: hidden;
+box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.04);
+}
+
+.comp-label { margin-bottom: 20px; }
+
+.btn {
+display: flex;
+align-items: center;
+gap: 8px;
+padding: 11px 20px;
+border-radius: 8px;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.3px;
+cursor: pointer;
+transition: all 0.12s;
+border: none;
+width: 100%;
+text-align: left;
+}
+
+.btn:active { transform: translateY(2px); }
+
+.btn-primary {
+background: linear-gradient(180deg, var(--ember-glow) 0%, var(--ember) 50%, var(--ember-deep) 100%);
+color: var(--cream);
+box-shadow: 0 4px 12px rgba(194,65,12,0.35), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0 2px 0 #9A4409;
+text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.btn-primary:active {
+box-shadow: inset 0 3px 8px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.03);
+background: linear-gradient(180deg, var(--ember-deep) 0%, var(--ember) 100%);
+}
+
+.btn-secondary {
+background: linear-gradient(180deg, #4a4541 0%, var(--clay) 50%, #3a3632 100%);
+color: var(--parchment);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.3), 0 1px 0 #2a2522;
+border: 1px solid rgba(255,255,255,0.06);
+}
+
+.btn-depressed {
+background: linear-gradient(180deg, #1a1816 0%, var(--espresso) 100%);
+color: var(--stone);
+box-shadow: inset 0 4px 10px rgba(0,0,0,0.6), inset 0 1px 3px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.04);
+border: 1px solid rgba(0,0,0,0.3);
+}
+
+.btn-ghost {
+background: transparent;
+color: var(--patina);
+border: 1px dashed rgba(168,162,158,0.2);
+box-shadow: none;
+font-weight: 400;
+}
+
+.led {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+box-shadow: inset 0 1px 3px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.06);
+position: relative;
+display: inline-block;
+}
+
+.led::after {
+content: '';
+position: absolute;
+top: 2px;
+left: 3px;
+width: 3px;
+height: 2px;
+border-radius: 50%;
+background: rgba(255,255,255,0.3);
+}
+
+.led-on-ember {
+background: radial-gradient(circle at 40% 35%, var(--ember-glow), var(--ember-deep));
+box-shadow: inset 0 1px 3px rgba(0,0,0,0.3), 0 0 10px rgba(194,65,12,0.5), 0 0 20px rgba(194,65,12,0.2);
+}
+
+.led-on-green {
+background: radial-gradient(circle at 40% 35%, #4ade80, #166534);
+box-shadow: inset 0 1px 3px rgba(0,0,0,0.3), 0 0 10px rgba(74,222,128,0.4), 0 0 20px rgba(74,222,128,0.15);
+}
+
+.led-off {
+background: radial-gradient(circle at 40% 35%, var(--clay), var(--walnut));
+}
+
+.led-label {
+font-family: 'Space Mono', monospace;
+font-size: 8px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: var(--stone);
+}
+
+.readout-well {
+border-radius: 10px;
+padding: 20px;
+background: linear-gradient(180deg, #0e0c0a 0%, var(--void) 100%);
+border: 1px solid #1a1816;
+box-shadow: inset 0 4px 12px rgba(0,0,0,0.6), inset 0 1px 3px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.readout-val {
+font-family: 'JetBrains Mono', monospace;
+font-size: 42px;
+font-weight: 700;
+letter-spacing: -2px;
+line-height: 1;
+color: var(--ember);
+text-shadow: 0 0 20px rgba(194,65,12,0.25);
+}
+
+.readout-unit { font-size: 16px; color: var(--stone); font-weight: 400; }
+
+.readout-label {
+font-family: 'Space Mono', monospace;
+font-size: 8px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--clay);
+margin-top: 6px;
+}
+
+.slider-group { margin-bottom: 18px; }
+
+.slider-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 8px;
+}
+
+.slider-name { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--patina); }
+.slider-val { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--ember); font-weight: 600; }
+
+.slider-track {
+width: 100%;
+height: 8px;
+border-radius: 4px;
+background: linear-gradient(180deg, #0e0c0a, #151311);
+box-shadow: inset 0 3px 6px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.04);
+position: relative;
+}
+
+.slider-fill {
+height: 100%;
+border-radius: 4px;
+background: linear-gradient(90deg, var(--ember-deep), var(--ember), var(--ember-glow));
+position: relative;
+box-shadow: 0 0 8px rgba(194,65,12,0.2);
+}
+
+.slider-thumb {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+position: absolute;
+right: -10px;
+top: -6px;
+background: linear-gradient(180deg, var(--parchment) 0%, var(--patina) 100%);
+box-shadow: 0 3px 8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.1);
+border: 2px solid rgba(255,255,255,0.12);
+}
+
+.slider-thumb-ribbed {
+width: 22px;
+height: 22px;
+border-radius: 50%;
+position: absolute;
+right: -11px;
+top: -7px;
+background:
+repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, transparent 1px, transparent 3px),
+linear-gradient(180deg, var(--parchment) 0%, var(--patina) 100%);
+box-shadow: 0 3px 8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+border: 2px solid rgba(255,255,255,0.1);
+}
+
+.toggle-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 14px;
+}
+
+.toggle-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--patina); }
+
+.toggle {
+width: 46px;
+height: 24px;
+border-radius: 12px;
+position: relative;
+cursor: pointer;
+background: linear-gradient(180deg, #0e0c0a, #151311);
+box-shadow: inset 0 3px 6px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.toggle-knob {
+width: 18px;
+height: 18px;
+border-radius: 50%;
+position: absolute;
+top: 3px;
+}
+
+.toggle-knob-on {
+left: 24px;
+background: radial-gradient(circle at 40% 35%, var(--ember-glow), var(--ember-deep));
+box-shadow: 0 2px 6px rgba(194,65,12,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.toggle-knob-off {
+left: 3px;
+background: linear-gradient(180deg, var(--clay), var(--walnut));
+box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.toggle-knob-ribbed {
+background:
+repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 2px),
+linear-gradient(180deg, var(--clay), var(--walnut));
+box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.seg-control {
+display: flex;
+border-radius: 8px;
+overflow: hidden;
+background: linear-gradient(180deg, #0e0c0a, var(--void));
+box-shadow: inset 0 3px 8px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.03);
+border: 1px solid rgba(0,0,0,0.3);
+margin-bottom: 16px;
+}
+
+.seg-option {
+flex: 1;
+padding: 9px 14px;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 9px;
+letter-spacing: 0.5px;
+text-align: center;
+color: var(--stone);
+cursor: pointer;
+border: none;
+background: none;
+transition: all 0.15s;
+}
+
+.seg-option.seg-active {
+background: linear-gradient(180deg, var(--ember) 0%, var(--ember-deep) 100%);
+color: var(--cream);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 0 8px rgba(194,65,12,0.2);
+text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.bars {
+display: flex;
+align-items: flex-end;
+gap: 4px;
+height: 52px;
+}
+
+.bar {
+flex: 1;
+border-radius: 2px 2px 0 0;
+min-height: 4px;
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.screw {
+width: 12px;
+height: 12px;
+border-radius: 50%;
+background: radial-gradient(circle at 40% 35%, var(--clay), var(--walnut));
+box-shadow: inset 0 1px 3px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.05);
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.screw::after {
+content: '';
+width: 6px;
+height: 1px;
+background: rgba(0,0,0,0.4);
+border-radius: 1px;
+}
+
+.type-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+margin-bottom: 28px;
+}
+
+.type-card {
+border-radius: 14px;
+padding: 28px;
+border: 1px solid rgba(255,255,255,0.04);
+box-shadow: 0 6px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.type-specimen { margin-bottom: 10px; line-height: 1.15; }
+
+.type-meta {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 9px;
+color: var(--stone);
+letter-spacing: 0.3px;
+line-height: 1.6;
+}
+
+.device-frame {
+border-radius: 20px;
+padding: 3px;
+margin-bottom: 36px;
+background: linear-gradient(180deg, #3a3632, var(--walnut), #1a1816);
+box-shadow: 0 12px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+position: relative;
+}
+
+.device-screen {
+border-radius: 17px;
+overflow: hidden;
+background: var(--void);
+padding: 32px;
+}
+
+.notes {
+border-radius: 12px;
+padding: 24px;
+font-size: 13px;
+color: var(--stone);
+line-height: 1.8;
+background: var(--espresso);
+border: 1px solid var(--walnut);
+box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+margin-top: 36px;
+}
+
+.notes strong { color: var(--parchment); }
+
+.notes::before {
+content: '';
+display: block;
+font-family: 'Space Mono', monospace;
+font-size: 9px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--ember);
+margin-bottom: 12px;
+}
+
+.footer {
+text-align: center;
+padding: 48px;
+font-family: 'Space Mono', monospace;
+font-size: 9px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--walnut);
+}
+
+@media (max-width: 900px) {
+.comp-grid { grid-template-columns: 1fr; }
+.type-row { grid-template-columns: 1fr; }
+.tex-gallery { grid-template-columns: repeat(2, 1fr); }
+.palette-ext { grid-template-columns: repeat(2, 1fr); }
+.section { padding: 32px 20px; }
+.hero-content { padding: 32px 20px; }
+.hero h1 { font-size: 36px; }
+.hero-canvas-wrap { width: 50%; opacity: 0.4; }
+.hero-fade { width: 60%; }
+.nav { padding: 0 20px; }
+}
+
+@keyframes blink {
+0%, 100% { opacity: 1; }
+50% { opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<!-- ================================ -->
+<!-- HERO WITH ENTROPY ANIMATION -->
+<!-- ================================ -->
+<div class="hero tex-leather" style="background-color: var(--espresso);">
+<div class="hero-fade"></div>
+<div class="hero-vignette"></div>
+<div class="hero-vignette-top"></div>
+
+<div class="hero-canvas-wrap">
+<canvas id="entropy-canvas"></canvas>
+</div>
+
+<div class="hero-content">
+<div class="version-badge">Brand Concept Sheet — Warm Cognition v4</div>
+<h1>SwarmSight</h1>
+<p class="hero-desc">Intelligent prediction engine. Swarm convergence visualised through the Entropy field — order and chaos interacting in real time. This is the brand language.</p>
+<div class="hero-tags">
+<span class="hero-tag active">Skeuomorphism</span>
+<span class="hero-tag">High Intelligence</span>
+<span class="hero-tag">TE-Inspired</span>
+<span class="hero-tag">Textured Depth</span>
+</div>
+</div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+<div class="nav-inner">
+<button class="nav-btn active" onclick="show('palette')">Palette</button>
+<button class="nav-btn" onclick="show('textures')">Textures</button>
+<button class="nav-btn" onclick="show('type')">Typography</button>
+<button class="nav-btn" onclick="show('components')">Components</button>
+<button class="nav-btn" onclick="show('device')">Device Mockup</button>
+</div>
+</div>
+
+<!-- ================================ -->
+<!-- PALETTE -->
+<!-- ================================ -->
+<div class="section active" id="sec-palette">
+<div class="section-title">Colour System</div>
+<div class="section-sub">Espresso foundations with ember signal. Every surface has warmth — no pure blacks, no clinical greys. Colours are named for materials, not abstractions.</div>
+
+<div class="palette-strip">
+<div class="swatch" style="background:var(--void); color:var(--stone);"><span class="swatch-role">Void</span><span class="swatch-hex">#110F0D</span></div>
+<div class="swatch" style="background:var(--espresso); color:var(--patina);"><span class="swatch-role">Espresso</span><span class="swatch-hex">#1C1917</span></div>
+<div class="swatch" style="background:var(--walnut); color:var(--parchment);"><span class="swatch-role">Walnut</span><span class="swatch-hex">#292524</span></div>
+<div class="swatch" style="background:var(--clay); color:var(--bone);"><span class="swatch-role">Clay</span><span class="swatch-hex">#44403C</span></div>
+<div class="swatch" style="background:var(--stone); color:var(--void);"><span class="swatch-role">Stone</span><span class="swatch-hex">#78716C</span></div>
+<div class="swatch" style="background:var(--ember); color:var(--cream);"><span class="swatch-role">Ember</span><span class="swatch-hex">#C2410C</span></div>
+<div class="swatch" style="background:var(--cream); color:var(--void);"><span class="swatch-role">Cream</span><span class="swatch-hex">#FEF3C7</span></div>
+<div class="swatch" style="background:var(--bone); color:var(--void);"><span class="swatch-role">Bone</span><span class="swatch-hex">#E7E5E4</span></div>
+</div>
+
+<div class="palette-ext">
+<div class="ext-chip" style="background:var(--ember-deep); color:var(--cream);"><div class="ext-chip-label">Bright Amber</div>#B8510D — Active pressed</div>
+<div class="ext-chip" style="background:var(--ember-glow); color:var(--void);"><div class="ext-chip-label">Ember Glow</div>#EA580C — Hover / highlight</div>
+<div class="ext-chip" style="background:var(--signal-red); color:#fff;"><div class="ext-chip-label">Signal Red</div>#DC2626 — Error / alert</div>
+<div class="ext-chip" style="background:var(--patina); color:var(--void);"><div class="ext-chip-label">Patina</div>#A8A29E — Secondary text</div>
+</div>
+
+<div class="notes">
+<strong>Background hierarchy:</strong> Void → Espresso → Walnut → Clay. Never skip levels. <strong>Text on dark:</strong> Cream for headings, Bone for body, Patina for secondary, Stone for tertiary. <strong>Ember:</strong> Used only for interactive elements, active states, and data highlights — never decoratively. <strong>Signal Red:</strong> Reserved exclusively for destructive actions and error states.
+</div>
+</div>
+
+<!-- ================================ -->
+<!-- TEXTURES -->
+<!-- ================================ -->
+<div class="section" id="sec-textures">
+<div class="section-title">Texture Library</div>
+<div class="section-sub">Every surface carries a tactile signature. Textures signal interactivity, hierarchy, and material. Nothing is flat.</div>
+
+<div class="tex-gallery">
+<div class="tex-tile tex-knurl" style="background-color: var(--walnut);"><div class="tex-tile-name">Fine Knurl</div><div class="tex-tile-use">Panel backgrounds, cards</div></div>
+<div class="tex-tile tex-knurl-coarse" style="background-color: var(--walnut);"><div class="tex-tile-name">Coarse Knurl</div><div class="tex-tile-use">Interactive surfaces, grip zones</div></div>
+<div class="tex-tile tex-leather" style="background-color: var(--espresso);"><div class="tex-tile-name">Leather Grain</div><div class="tex-tile-use">Page backgrounds, hero areas</div></div>
+<div class="tex-tile tex-brushed" style="background-color: var(--clay);"><div class="tex-tile-name">Brushed Metal</div><div class="tex-tile-use">Headers, toolbars, rails</div></div>
+<div class="tex-tile tex-canvas" style="background-color: var(--espresso);"><div class="tex-tile-name">Canvas Weave</div><div class="tex-tile-use">Subtle card surfaces</div></div>
+<div class="tex-tile tex-paper" style="background-color: #1a1816;"><div class="tex-tile-name">Paper Grain</div><div class="tex-tile-use">Content wells, readouts</div></div>
+<div class="tex-tile tex-perf" style="background-color: var(--walnut);"><div class="tex-tile-name">Perforated</div><div class="tex-tile-use">Speaker grilles, ventilation motif</div></div>
+<div class="tex-tile tex-crosshatch" style="background-color: var(--espresso);"><div class="tex-tile-name">Cross-Hatch</div><div class="tex-tile-use">Premium surfaces, carbon motif</div></div>
+</div>
+
+<div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:16px; margin-bottom:36px;">
+<div class="tex-knurl" style="background-color:var(--walnut); border-radius:12px; padding:28px; text-align:center; box-shadow: 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.04);">
+<div class="tex-stamped" style="margin-bottom:12px;">Stamped Label</div>
+<div style="font-family:'DM Sans',sans-serif; font-size:24px; font-weight:700; color:var(--cream);" class="tex-embossed">Embossed</div>
+<div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--stone); margin-top:8px;">Raised from surface</div>
+</div>
+<div class="tex-leather" style="background-color:var(--espresso); border-radius:12px; padding:28px; text-align:center; box-shadow: 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.04);">
+<div class="tex-stamped" style="margin-bottom:12px;">Pressed Label</div>
+<div style="font-family:'DM Sans',sans-serif; font-size:24px; font-weight:700; color:var(--patina);" class="tex-debossed">Debossed</div>
+<div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--stone); margin-top:8px;">Pressed into surface</div>
+</div>
+<div class="tex-brushed" style="background-color:var(--clay); border-radius:12px; padding:28px; text-align:center; box-shadow: 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.04);">
+<div class="tex-stamped" style="margin-bottom:12px;">Metal Label</div>
+<div style="font-family:'DM Sans',sans-serif; font-size:24px; font-weight:700; color:var(--bone); text-shadow: 0 1px 0 rgba(255,255,255,0.12), 0 -1px 1px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.2);">Engraved</div>
+<div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--patina); margin-top:8px;">Cut into brushed metal</div>
+</div>
+</div>
+
+<div class="notes">
+<strong>Texture rules:</strong> Textures are layered via CSS background-image on top of background-color — they never replace colour. Opacity kept extremely low (0.01–0.04). <strong>Interactive surfaces</strong> use coarser textures (knurl, ribbed). <strong>Static surfaces</strong> use finer textures (leather, paper, canvas).
+</div>
+</div>
+
+<!-- ================================ -->
+<!-- TYPOGRAPHY -->
+<!-- ================================ -->
+<div class="section" id="sec-type">
+<div class="section-title">Type System</div>
+<div class="section-sub">Two families, four weights. DM Sans for the human voice, IBM Plex Mono for the machine voice. Space Mono for stamped labels only.</div>
+
+<div class="type-row">
+<div class="type-card tex-leather" style="background-color: var(--espresso);">
+<div class="tex-stamped" style="margin-bottom:16px;">Display</div>
+<div class="type-specimen" style="font-family:'DM Sans',sans-serif; font-weight:800; font-size:36px; color:var(--cream); letter-spacing:-1px;">SwarmSight</div>
+<div class="type-meta">DM Sans 800 · -1px tracking · Hero headlines and product name only</div>
+</div>
+<div class="type-card tex-leather" style="background-color: var(--espresso);">
+<div class="tex-stamped" style="margin-bottom:16px;">Heading</div>
+<div class="type-specimen" style="font-family:'DM Sans',sans-serif; font-weight:600; font-size:24px; color:var(--bone);">Prediction Confidence</div>
+<div class="type-meta">DM Sans 600 · Section headings, card titles, navigation items</div>
+</div>
+</div>
+
+<div class="type-row">
+<div class="type-card tex-canvas" style="background-color: var(--espresso);">
+<div class="tex-stamped" style="margin-bottom:16px;">Body</div>
+<div class="type-specimen" style="font-family:'DM Sans',sans-serif; font-weight:400; font-size:16px; color:var(--parchment); line-height:1.7;">Collective intelligence distilled into foresight. The swarm doesn't guess — it converges.</div>
+<div class="type-meta">DM Sans 400 · 16px / 1.7 · All body copy, descriptions, explanations</div>
+</div>
+<div class="type-card tex-canvas" style="background-color: var(--espresso);">
+<div class="tex-stamped" style="margin-bottom:16px;">Machine Voice</div>
+<div class="type-specimen" style="font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:16px; color:var(--ember);">swarm.predict(data)</div>
+<div class="type-meta">IBM Plex Mono 500 · Code, data values, readouts, technical labels</div>
+</div>
+</div>
+
+<div class="type-row">
+<div class="type-card tex-knurl" style="background-color: var(--walnut);">
+<div class="tex-stamped" style="margin-bottom:16px;">Data Readout</div>
+<div class="type-specimen" style="font-family:'JetBrains Mono',monospace; font-weight:700; font-size:48px; color:var(--ember); letter-spacing:-2px;">94.7<span style="font-size:20px; color:var(--stone);">%</span></div>
+<div class="type-meta">JetBrains Mono 700 · Large numeric displays · Dashboard readouts</div>
+</div>
+<div class="type-card tex-knurl" style="background-color: var(--walnut);">
+<div class="tex-stamped" style="margin-bottom:16px;">Stamped Label</div>
+<div style="margin-bottom:16px;"><span class="tex-stamped" style="font-size:11px;">Swarm Confidence</span></div>
+<div style="margin-bottom:16px;"><span class="tex-stamped" style="font-size:9px; color:rgba(255,255,255,0.15);">Prediction Engine</span></div>
+<div class="type-meta">Space Mono · 9-11px · Uppercase · Emboss shadow · Panel labels only.</div>
+</div>
+</div>
+
+<div class="notes">
+<strong>The rule:</strong> If it's for humans, use DM Sans. If it's for data, use IBM Plex Mono. If it's stamped into a surface, use Space Mono at 9px uppercase. <strong>Never</strong> mix families within a single element.
+</div>
+</div>
+
+<!-- ================================ -->
+<!-- COMPONENTS -->
+<!-- ================================ -->
+<div class="section" id="sec-components">
+<div class="section-title">Component Library</div>
+<div class="section-sub">Every control has weight, shadow, and grain. Buttons have gradient bevels and cast shadows. Recessed wells use deep inset shadows. Thumbs and knobs carry ribbed texture.</div>
+
+<div class="comp-grid">
+<!-- BUTTONS -->
+<div class="comp-panel tex-knurl" style="background-color:var(--walnut);">
+<div class="tex-stamped comp-label">Button States</div>
+<div style="display:flex; flex-direction:column; gap:10px;">
+<button class="btn btn-primary">◉ Run Prediction</button>
+<button class="btn btn-secondary">◎ Configure Model</button>
+<button class="btn btn-depressed">▾ Depressed State</button>
+<button class="btn btn-ghost">+ Add Source</button>
+</div>
+<div style="display:flex; gap:10px; align-items:center; margin-top:20px;">
+<div class="led led-on-green"></div>
+<div class="led led-on-ember"></div>
+<div class="led led-off"></div>
+<span class="led-label">System Status</span>
+</div>
+</div>
+
+<!-- READOUT -->
+<div class="comp-panel tex-leather" style="background-color:var(--espresso);">
+<div class="tex-stamped comp-label">Data Display</div>
+<div class="readout-well tex-paper">
+<div class="readout-val">94.7<span class="readout-unit">%</span></div>
+<div class="readout-label">Swarm Confidence</div>
+</div>
+<div style="margin-top:16px;">
+<div class="readout-well tex-paper" style="padding:14px 16px;">
+<div style="display:flex; justify-content:space-between; align-items:baseline;">
+<span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--stone);">Convergence</span>
+<span style="font-family:'JetBrains Mono',monospace; font-size:18px; font-weight:700; color:var(--ember);">0.891</span>
+</div>
+</div>
+</div>
+<div class="bars" style="margin-top:14px;">
+<div class="bar" style="height:35%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:55%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:42%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:78%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:60%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:92%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:70%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:85%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:50%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:65%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+</div>
+</div>
+
+<!-- CONTROLS -->
+<div class="comp-panel tex-knurl-coarse" style="background-color:var(--walnut);">
+<div class="tex-stamped comp-label">Controls</div>
+
+<div class="seg-control">
+<button class="seg-option seg-active">1H</button>
+<button class="seg-option">4H</button>
+<button class="seg-option">1D</button>
+<button class="seg-option">1W</button>
+</div>
+
+<div class="slider-group">
+<div class="slider-header"><span class="slider-name">Sensitivity</span><span class="slider-val">0.73</span></div>
+<div class="slider-track"><div class="slider-fill" style="width:73%;"><div class="slider-thumb-ribbed"></div></div></div>
+</div>
+
+<div class="slider-group">
+<div class="slider-header"><span class="slider-name">Depth</span><span class="slider-val">0.41</span></div>
+<div class="slider-track"><div class="slider-fill" style="width:41%;"><div class="slider-thumb"></div></div></div>
+</div>
+
+<div style="margin-top:8px;">
+<div class="toggle-row">
+<span class="toggle-label">Auto-predict</span>
+<div class="toggle"><div class="toggle-knob toggle-knob-on"></div></div>
+</div>
+<div class="toggle-row">
+<span class="toggle-label">Swarm mode</span>
+<div class="toggle"><div class="toggle-knob toggle-knob-off toggle-knob-ribbed"></div></div>
+</div>
+<div class="toggle-row">
+<span class="toggle-label">Historical</span>
+<div class="toggle"><div class="toggle-knob toggle-knob-off"></div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Second row -->
+<div style="display:grid; grid-template-columns: 2fr 1fr; gap:20px;">
+<div class="comp-panel tex-crosshatch" style="background-color:var(--espresso); position:relative; min-height:200px;">
+<div class="screw" style="top:12px; left:12px;"></div>
+<div class="screw" style="top:12px; right:12px;"></div>
+<div class="screw" style="bottom:12px; left:12px;"></div>
+<div class="screw" style="bottom:12px; right:12px;"></div>
+<div style="padding:16px 12px;">
+<div class="tex-stamped" style="margin-bottom:16px;">Prediction Panel — Card with Fasteners</div>
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+<div class="readout-well tex-paper" style="padding:14px; text-align:center;">
+<div style="font-family:'JetBrains Mono',monospace; font-size:24px; font-weight:700; color:var(--ember);">347</div>
+<div class="readout-label">Signals</div>
+</div>
+<div class="readout-well tex-paper" style="padding:14px; text-align:center;">
+<div style="font-family:'JetBrains Mono',monospace; font-size:24px; font-weight:700; color:var(--ember);">0.94</div>
+<div class="readout-label">Consensus</div>
+</div>
+<div class="readout-well tex-paper" style="padding:14px; text-align:center;">
+<div style="font-family:'JetBrains Mono',monospace; font-size:24px; font-weight:700; color:#4ade80;">Live</div>
+<div class="readout-label">Status</div>
+</div>
+</div>
+<div style="margin-top:16px; display:flex; gap:10px;">
+<button class="btn btn-primary" style="flex:2;">◉ Execute</button>
+<button class="btn btn-secondary" style="flex:1;">◎ Inspect</button>
+</div>
+</div>
+</div>
+
+<div class="comp-panel tex-knurl" style="background-color:var(--walnut);">
+<div class="tex-stamped comp-label">Inputs</div>
+<div style="margin-bottom:14px;">
+<div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--stone); margin-bottom:6px; letter-spacing:0.5px;">Query</div>
+<div style="border-radius:8px; padding:10px 14px; background:linear-gradient(180deg,#0e0c0a,var(--void)); box-shadow:inset 0 3px 8px rgba(0,0,0,0.5),0 1px 0 rgba(255,255,255,0.03); border:1px solid rgba(0,0,0,0.3); font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--parchment);">
+market sentiment...<span style="display:inline-block; width:1px; height:14px; background:var(--ember); vertical-align:middle; margin-left:2px; animation:blink 1s infinite;"></span>
+</div>
+</div>
+<div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;">
+<span style="display:inline-block; padding:5px 10px; border-radius:6px; font-family:'IBM Plex Mono',monospace; font-size:9px; background:linear-gradient(180deg,var(--clay),var(--walnut)); color:var(--parchment); box-shadow:inset 0 1px 0 rgba(255,255,255,0.06),0 2px 4px rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.04);">finance</span>
+<span style="display:inline-block; padding:5px 10px; border-radius:6px; font-family:'IBM Plex Mono',monospace; font-size:9px; background:linear-gradient(180deg,var(--ember),var(--ember-deep)); color:var(--cream); box-shadow:0 2px 6px rgba(194,65,12,0.25),inset 0 1px 0 rgba(255,255,255,0.15);">active</span>
+<span style="display:inline-block; padding:5px 10px; border-radius:6px; font-family:'IBM Plex Mono',monospace; font-size:9px; background:linear-gradient(180deg,#0e0c0a,var(--void)); color:var(--stone); box-shadow:inset 0 2px 4px rgba(0,0,0,0.4); border:1px solid rgba(0,0,0,0.2);">crypto</span>
+</div>
+<div style="border-radius:8px; padding:10px 14px; background:var(--cream); color:var(--void); font-family:'IBM Plex Mono',monospace; font-size:10px; box-shadow:0 6px 20px rgba(0,0,0,0.4); position:relative;">
+<div style="font-weight:600; margin-bottom:2px;">Tooltip</div>
+<div style="color:var(--clay); font-size:9px;">94.7% confidence — 347 signals</div>
+<div style="position:absolute; top:-5px; left:20px; width:10px; height:10px; background:var(--cream); transform:rotate(45deg);"></div>
+</div>
+</div>
+</div>
+
+<div class="notes">
+<strong>Texture mapping:</strong> Panels use <code>tex-knurl</code> for interactive areas, <code>tex-leather</code> for content areas, <code>tex-crosshatch</code> for premium/structural elements. <strong>Screw details</strong> add physicality to fixed panels. <strong>Shadow depth:</strong> Primary buttons cast coloured shadows. Depressed buttons use deep inset shadows. Wells are "cut into" the surface. <strong>Ribbed thumbs</strong> signal "grip here."
+</div>
+</div>
+
+<!-- ================================ -->
+<!-- DEVICE MOCKUP -->
+<!-- ================================ -->
+<div class="section" id="sec-device">
+<div class="section-title">Device Mockup</div>
+<div class="section-sub">How it all comes together. A simulated dashboard panel showing palette, texture, typography, and components in context.</div>
+
+<div class="device-frame tex-brushed" style="position:relative;">
+<div class="screw" style="top:10px; left:10px; z-index:2;"></div>
+<div class="screw" style="top:10px; right:10px; z-index:2;"></div>
+<div class="screw" style="bottom:10px; left:10px; z-index:2;"></div>
+<div class="screw" style="bottom:10px; right:10px; z-index:2;"></div>
+
+<div class="device-screen tex-leather" style="background-color:var(--espresso);">
+<!-- Top bar -->
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid var(--walnut);">
+<div>
+<div style="font-family:'DM Sans',sans-serif; font-weight:800; font-size:20px; color:var(--cream); letter-spacing:-0.5px;">SwarmSight</div>
+<div style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--stone); margin-top:2px;">prediction engine v2.4.1</div>
+</div>
+<div style="display:flex; gap:8px; align-items:center;">
+<div class="led led-on-green"></div>
+<span style="font-family:'IBM Plex Mono',monospace; font-size:9px; color:var(--patina);">Connected</span>
+<div style="width:1px; height:16px; background:var(--walnut); margin:0 8px;"></div>
+<div style="width:28px; height:28px; border-radius:50%; background:linear-gradient(180deg,var(--clay),var(--walnut)); box-shadow:inset 0 1px 0 rgba(255,255,255,0.08),0 2px 4px rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; color:var(--cream);">G</div>
+</div>
+</div>
+
+<!-- Stat cards -->
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-bottom:20px;">
+<div class="readout-well tex-paper">
+<div class="readout-label">Active Signals</div>
+<div style="font-family:'JetBrains Mono',monospace; font-size:32px; font-weight:700; color:var(--ember); line-height:1; margin-top:6px;">1,247</div>
+</div>
+<div class="readout-well tex-paper">
+<div class="readout-label">Consensus</div>
+<div style="font-family:'JetBrains Mono',monospace; font-size:32px; font-weight:700; color:var(--ember); line-height:1; margin-top:6px;">0.94</div>
+</div>
+<div class="readout-well tex-paper">
+<div class="readout-label">Prediction</div>
+<div style="font-family:'JetBrains Mono',monospace; font-size:32px; font-weight:700; color:#4ade80; line-height:1; margin-top:6px;">Bullish</div>
+</div>
+</div>
+
+<!-- Chart area -->
+<div class="tex-knurl" style="background-color:var(--walnut); border-radius:12px; padding:20px; box-shadow:inset 0 2px 8px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.03); margin-bottom:20px;">
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+<div class="tex-stamped">Signal Distribution</div>
+<div class="seg-control" style="margin-bottom:0; width:auto;">
+<button class="seg-option seg-active" style="padding:6px 12px;">Live</button>
+<button class="seg-option" style="padding:6px 12px;">1D</button>
+<button class="seg-option" style="padding:6px 12px;">1W</button>
+</div>
+</div>
+<div class="bars" style="height:80px;">
+<div class="bar" style="height:30%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:45%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:38%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:65%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:55%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:80%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:72%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:90%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:68%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:85%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:95%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:78%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:60%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:88%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:50%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+<div class="bar" style="height:75%; background:linear-gradient(180deg,var(--ember-glow),var(--ember-deep));"></div>
+</div>
+</div>
+
+<div style="display:flex; gap:12px;">
+<button class="btn btn-primary" style="flex:2;">◉ Run Full Analysis</button>
+<button class="btn btn-secondary" style="flex:1;">◎ Export</button>
+<button class="btn btn-ghost" style="flex:1;">History</button>
+</div>
+</div>
+</div>
+
+<div class="notes">
+<strong>Composition:</strong> Device frame = brushed metal + screws. Screen = leather grain. Interactive panels = knurl. Data wells = recessed paper grain. Four-layer tactile hierarchy: <strong>housing → screen → panels → wells</strong>. The Entropy animation from the hero can be used as a background element in dashboard panels or loading states, with opacity reduced and the Warm Cognition ember palette applied to the particle colour.
+</div>
+</div>
+
+</div><!-- end page -->
+
+<div class="footer">SwarmSight — Brand Concepts — Warm Cognition v4 — March 2026</div>
+
+<!-- ================================ -->
+<!-- ENTROPY CANVAS — Vanilla JS port -->
+<!-- ================================ -->
+<script>
+(function() {
+const canvas = document.getElementById('entropy-canvas');
+if (!canvas) return;
+const ctx = canvas.getContext('2d');
+if (!ctx) return;
+
+// Responsive sizing — fill the hero canvas wrap
+const wrap = canvas.parentElement;
+let W, H;
+
+function resize() {
+const rect = wrap.getBoundingClientRect();
+W = rect.width;
+H = rect.height;
+const dpr = window.devicePixelRatio || 1;
+canvas.width = W * dpr;
+canvas.height = H * dpr;
+canvas.style.width = W + 'px';
+canvas.style.height = H + 'px';
+ctx.scale(dpr, dpr);
+// Reset scale since we re-set canvas dims
+ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+resize();
+window.addEventListener('resize', resize);
+
+// Warm Cognition particle colour — ember-tinted cream
+const particleColor = '#d6d3d1'; // parchment
+const lineColor = '#c2410c'; // ember for connections
+
+// Particle class
+function Particle(x, y, order) {
+this.x = x;
+this.y = y;
+this.originalX = x;
+this.originalY = y;
+this.size = 1.8;
+this.order = order;
+this.vx = (Math.random() - 0.5) * 2;
+this.vy = (Math.random() - 0.5) * 2;
+this.influence = 0;
+this.neighbors = [];
+}
+
+Particle.prototype.update = function() {
+if (this.order) {
+var dx = this.originalX - this.x;
+var dy = this.originalY - this.y;
+var cx = 0, cy = 0;
+for (var i = 0; i < this.neighbors.length; i++) {
+var n = this.neighbors[i];
+if (!n.order) {
+var dist = Math.hypot(this.x - n.x, this.y - n.y);
+var str = Math.max(0, 1 - dist / 120);
+cx += n.vx * str;
+cy += n.vy * str;
+this.influence = Math.max(this.influence, str);
+}
+}
+this.x += dx * 0.05 * (1 - this.influence) + cx * this.influence;
+this.y += dy * 0.05 * (1 - this.influence) + cy * this.influence;
+this.influence *= 0.99;
+} else {
+this.vx += (Math.random() - 0.5) * 0.5;
+this.vy += (Math.random() - 0.5) * 0.5;
+this.vx *= 0.95;
+this.vy *= 0.95;
+this.x += this.vx;
+this.y += this.vy;
+if (this.x < W / 2 || this.x > W) this.vx *= -1;
+if (this.y < 0 || this.y > H) this.vy *= -1;
+this.x = Math.max(W / 2, Math.min(W, this.x));
+this.y = Math.max(0, Math.min(H, this.y));
+}
+};
+
+Particle.prototype.draw = function(ctx) {
+var alpha = this.order ? 0.7 - this.influence * 0.4 : 0.6;
+var hex = Math.round(alpha * 255).toString(16).padStart(2, '0');
+ctx.fillStyle = particleColor + hex;
+ctx.beginPath();
+ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+ctx.fill();
+};
+
+// Create particle grid
+var particles = [];
+var gridSize = 22;
+
+function createParticles() {
+particles = [];
+var spacingX = W / gridSize;
+var spacingY = H / gridSize;
+for (var i = 0; i < gridSize; i++) {
+for (var j = 0; j < gridSize; j++) {
+var x = spacingX * i + spacingX / 2;
+var y = spacingY * j + spacingY / 2;
+var order = x < W / 2;
+particles.push(new Particle(x, y, order));
+}
+}
+}
+
+createParticles();
+
+function updateNeighbors() {
+for (var i = 0; i < particles.length; i++) {
+var p = particles[i];
+p.neighbors = [];
+for (var j = 0; j < particles.length; j++) {
+if (i === j) continue;
+var dist = Math.hypot(p.x - particles[j].x, p.y - particles[j].y);
+if (dist < 120) p.neighbors.push(particles[j]);
+}
+}
+}
+
+var time = 0;
+var animId;
+
+function animate() {
+ctx.clearRect(0, 0, W, H);
+
+if (time % 30 === 0) updateNeighbors();
+
+for (var i = 0; i < particles.length; i++) {
+var p = particles[i];
+p.update();
+p.draw(ctx);
+
+// Connection lines
+for (var k = 0; k < p.neighbors.length; k++) {
+var n = p.neighbors[k];
+var dist = Math.hypot(p.x - n.x, p.y - n.y);
+if (dist < 60) {
+var alpha = 0.12 * (1 - dist / 60);
+var hex = Math.round(alpha * 255).toString(16).padStart(2, '0');
+ctx.strokeStyle = lineColor + hex;
+ctx.lineWidth = 0.5;
+ctx.beginPath();
+ctx.moveTo(p.x, p.y);
+ctx.lineTo(n.x, n.y);
+ctx.stroke();
+}
+}
+}
+
+// Dividing line — subtle
+ctx.strokeStyle = 'rgba(194,65,12,0.08)';
+ctx.lineWidth = 0.5;
+ctx.beginPath();
+ctx.moveTo(W / 2, 0);
+ctx.lineTo(W / 2, H);
+ctx.stroke();
+
+time++;
+animId = requestAnimationFrame(animate);
+}
+
+animate();
+
+// Handle resize — recreate particles
+var resizeTimer;
+window.addEventListener('resize', function() {
+clearTimeout(resizeTimer);
+resizeTimer = setTimeout(function() {
+resize();
+createParticles();
+}, 200);
+});
+})();
+</script>
+
+</body>
+</html>

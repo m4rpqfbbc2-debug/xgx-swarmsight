@@ -286,7 +286,7 @@ const entityTypes = computed(() => {
   if (!props.graphData?.nodes) return []
   const typeMap = {}
   // Color palette
-  const colors = ['#FF6B35', '#004E89', '#7B2D8E', '#1A936F', '#C5283D', '#E9724C', '#3498db', '#9b59b6', '#27ae60', '#f39c12']
+  const colors = ['#c2410c', '#004E89', '#7B2D8E', '#c2410c', '#C5283D', '#E9724C', '#3498db', '#9b59b6', '#27ae60', '#f39c12']
   
   props.graphData.nodes.forEach(node => {
     const type = node.labels?.find(l => l !== 'Entity') || 'Entity'
@@ -818,7 +818,7 @@ onUnmounted(() => {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #FAFAFA;
+  background-color: #110f0d;
   background-image: radial-gradient(#D0D0D0 1.5px, transparent 1.5px);
   background-size: 24px 24px;
   overflow: hidden;
@@ -841,7 +841,7 @@ onUnmounted(() => {
 .panel-title {
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: #d6d3d1;
   pointer-events: auto;
 }
 
@@ -855,24 +855,24 @@ onUnmounted(() => {
 .tool-btn {
   height: 32px;
   padding: 0 12px;
-  border: 1px solid #E0E0E0;
-  background: #FFF;
+  border: 1px solid #292524;
+  background: #1c1917;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   cursor: pointer;
-  color: #666;
+  color: #a8a29e;
   transition: all 0.2s;
   box-shadow: 0 2px 4px rgba(0,0,0,0.02);
   font-size: 13px;
 }
 
 .tool-btn:hover {
-  background: #F5F5F5;
-  color: #000;
-  border-color: #CCC;
+  background: #110f0d;
+  color: #e7e5e4;
+  border-color: #44403c;
 }
 
 .tool-btn .btn-text {
@@ -902,7 +902,7 @@ onUnmounted(() => {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #999;
+  color: #78716c;
 }
 
 .empty-icon {
@@ -919,7 +919,7 @@ onUnmounted(() => {
   background: rgba(255,255,255,0.95);
   padding: 12px 16px;
   border-radius: 8px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #292524;
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
   z-index: 10;
 }
@@ -946,7 +946,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  color: #555;
+  color: #a8a29e;
 }
 
 .legend-dot {
@@ -968,10 +968,10 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #FFF;
+  background: #1c1917;
   padding: 8px 14px;
   border-radius: 20px;
-  border: 1px solid #E0E0E0;
+  border: 1px solid #292524;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   z-index: 10;
 }
@@ -996,7 +996,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #E0E0E0;
+  background-color: #292524;
   border-radius: 22px;
   transition: 0.3s;
 }
@@ -1023,7 +1023,7 @@ input:checked + .slider:before {
 
 .toggle-label {
   font-size: 12px;
-  color: #666;
+  color: #a8a29e;
 }
 
 /* Detail Panel - Right Side */
@@ -1033,8 +1033,8 @@ input:checked + .slider:before {
   right: 20px;
   width: 320px;
   max-height: calc(100% - 100px);
-  background: #FFF;
-  border: 1px solid #EAEAEA;
+  background: #1c1917;
+  border: 1px solid #292524;
   border-radius: 10px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -1050,14 +1050,14 @@ input:checked + .slider:before {
   justify-content: space-between;
   align-items: center;
   padding: 14px 16px;
-  background: #FAFAFA;
+  background: #110f0d;
   border-bottom: 1px solid #EEE;
   flex-shrink: 0;
 }
 
 .detail-title {
   font-weight: 600;
-  color: #333;
+  color: #d6d3d1;
   font-size: 14px;
 }
 
@@ -1075,14 +1075,14 @@ input:checked + .slider:before {
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: #999;
+  color: #78716c;
   line-height: 1;
   padding: 0;
   transition: color 0.2s;
 }
 
 .detail-close:hover {
-  color: #333;
+  color: #d6d3d1;
 }
 
 .detail-content {
@@ -1099,14 +1099,14 @@ input:checked + .slider:before {
 }
 
 .detail-label {
-  color: #888;
+  color: #78716c;
   font-size: 12px;
   font-weight: 500;
   min-width: 80px;
 }
 
 .detail-value {
-  color: #333;
+  color: #d6d3d1;
   flex: 1;
   word-break: break-word;
 }
@@ -1114,7 +1114,7 @@ input:checked + .slider:before {
 .detail-value.uuid-text {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: #666;
+  color: #a8a29e;
 }
 
 .detail-value.fact-text {
@@ -1125,13 +1125,13 @@ input:checked + .slider:before {
 .detail-section {
   margin-top: 16px;
   padding-top: 14px;
-  border-top: 1px solid #F0F0F0;
+  border-top: 1px solid #1c1917;
 }
 
 .section-title {
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: #a8a29e;
   margin-bottom: 10px;
 }
 
@@ -1147,13 +1147,13 @@ input:checked + .slider:before {
 }
 
 .property-key {
-  color: #888;
+  color: #78716c;
   font-weight: 500;
   min-width: 90px;
 }
 
 .property-value {
-  color: #333;
+  color: #d6d3d1;
   flex: 1;
 }
 
@@ -1172,11 +1172,11 @@ input:checked + .slider:before {
 .label-tag {
   display: inline-block;
   padding: 4px 12px;
-  background: #F5F5F5;
-  border: 1px solid #E0E0E0;
+  background: #110f0d;
+  border: 1px solid #292524;
   border-radius: 16px;
   font-size: 11px;
-  color: #555;
+  color: #a8a29e;
 }
 
 .episodes-list {
@@ -1193,7 +1193,7 @@ input:checked + .slider:before {
   border-radius: 6px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  color: #666;
+  color: #a8a29e;
   word-break: break-all;
 }
 
@@ -1205,7 +1205,7 @@ input:checked + .slider:before {
   margin-bottom: 16px;
   font-size: 13px;
   font-weight: 500;
-  color: #333;
+  color: #d6d3d1;
   line-height: 1.5;
   word-break: break-word;
 }
@@ -1218,7 +1218,7 @@ input:checked + .slider:before {
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(8px);
-  color: #fff;
+  color: #1c1917;
   padding: 10px 20px;
   border-radius: 30px;
   font-size: 13px;
@@ -1242,7 +1242,7 @@ input:checked + .slider:before {
 .memory-icon {
   width: 18px;
   height: 18px;
-  color: #4CAF50;
+  color: #c2410c;
 }
 
 @keyframes breathe {
@@ -1265,7 +1265,7 @@ input:checked + .slider:before {
 .finished-hint .hint-icon {
   width: 18px;
   height: 18px;
-  color: #FFF;
+  color: #1c1917;
 }
 
 .finished-hint .hint-text {
@@ -1283,7 +1283,7 @@ input:checked + .slider:before {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  color: #FFF;
+  color: #1c1917;
   transition: all 0.2s;
   margin-left: 8px;
   flex-shrink: 0;
@@ -1298,7 +1298,7 @@ input:checked + .slider:before {
 .loading-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid #E0E0E0;
+  border: 3px solid #292524;
   border-top-color: #7B2D8E;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -1317,7 +1317,7 @@ input:checked + .slider:before {
 .self-loop-count {
   margin-left: auto;
   font-size: 11px;
-  color: #666;
+  color: #a8a29e;
   background: rgba(255,255,255,0.8);
   padding: 2px 8px;
   border-radius: 10px;
@@ -1330,8 +1330,8 @@ input:checked + .slider:before {
 }
 
 .self-loop-item {
-  background: #FAFAFA;
-  border: 1px solid #EAEAEA;
+  background: #110f0d;
+  border: 1px solid #292524;
   border-radius: 8px;
 }
 
@@ -1340,7 +1340,7 @@ input:checked + .slider:before {
   align-items: center;
   gap: 8px;
   padding: 10px 12px;
-  background: #F5F5F5;
+  background: #110f0d;
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -1356,8 +1356,8 @@ input:checked + .slider:before {
 .self-loop-index {
   font-size: 10px;
   font-weight: 600;
-  color: #888;
-  background: #E0E0E0;
+  color: #78716c;
+  background: #292524;
   padding: 2px 6px;
   border-radius: 4px;
 }
@@ -1365,7 +1365,7 @@ input:checked + .slider:before {
 .self-loop-name {
   font-size: 12px;
   font-weight: 500;
-  color: #333;
+  color: #d6d3d1;
   flex: 1;
 }
 
@@ -1377,20 +1377,20 @@ input:checked + .slider:before {
   justify-content: center;
   font-size: 14px;
   font-weight: 600;
-  color: #888;
-  background: #E0E0E0;
+  color: #78716c;
+  background: #292524;
   border-radius: 4px;
   transition: all 0.2s;
 }
 
 .self-loop-item.expanded .self-loop-toggle {
   background: #D0D0D0;
-  color: #666;
+  color: #a8a29e;
 }
 
 .self-loop-item-content {
   padding: 12px;
-  border-top: 1px solid #EAEAEA;
+  border-top: 1px solid #292524;
 }
 
 .self-loop-item-content .detail-row {

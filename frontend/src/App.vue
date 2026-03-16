@@ -15,11 +15,11 @@
 }
 
 #app {
-  font-family: 'JetBrains Mono', 'Space Grotesk', 'Noto Sans SC', monospace;
+  font-family: 'DM Sans', 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #000000;
-  background-color: #ffffff;
+  color: #e7e5e4;
+  background-color: #110f0d;
 }
 
 /* Scrollbar styles */
@@ -29,15 +29,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1c1917;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000000;
+  background: #44403c;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: #78716c;
 }
 
 /* Global button styles */

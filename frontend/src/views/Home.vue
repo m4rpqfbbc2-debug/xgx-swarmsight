@@ -310,12 +310,12 @@ const startSimulation = () => {
 <style scoped>
 /* Global variables and reset */
 :root {
-  --black: #000000;
-  --white: #FFFFFF;
+  --black: #e7e5e4;
+  --white: #1c1917;
   --orange: #FF4500;
-  --gray-light: #F5F5F5;
+  --gray-light: #110f0d;
   --gray-text: #666666;
-  --border: #E5E5E5;
+  --border: #292524;
   /*
     Use Space Grotesk as the primary heading font, JetBrains Mono for code/label font.
     Ensure these Google Fonts are imported in index.html.
@@ -414,7 +414,7 @@ const startSimulation = () => {
 }
 
 .version-text {
-  color: #999;
+  color: #78716c;
   font-weight: 500;
   letter-spacing: 0.5px;
 }
@@ -429,7 +429,7 @@ const startSimulation = () => {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #000000 0%, #444444 100%);
+  background: linear-gradient(90deg, #e7e5e4 0%, #444444 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -562,7 +562,7 @@ const startSimulation = () => {
 .panel-header {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: #999;
+  color: #78716c;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -607,7 +607,7 @@ const startSimulation = () => {
 
 .metric-label {
   font-size: 0.85rem;
-  color: #999;
+  color: #78716c;
 }
 
 /* Simulation workflow steps */
@@ -620,7 +620,7 @@ const startSimulation = () => {
 .steps-header {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: #999;
+  color: #78716c;
   margin-bottom: 25px;
   display: flex;
   align-items: center;
@@ -672,7 +672,7 @@ const startSimulation = () => {
 }
 
 .console-box {
-  border: 1px solid #CCC; /* Outer solid border */
+  border: 1px solid #44403c; /* Outer solid border */
   padding: 8px; /* Inner padding for double-border effect */
 }
 
@@ -690,11 +690,11 @@ const startSimulation = () => {
   margin-bottom: 15px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: #666;
+  color: #a8a29e;
 }
 
 .upload-zone {
-  border: 1px dashed #CCC;
+  border: 1px dashed #44403c;
   height: 200px;
   overflow-y: auto;
   display: flex;
@@ -702,7 +702,7 @@ const startSimulation = () => {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s;
-  background: #FAFAFA;
+  background: #110f0d;
 }
 
 .upload-zone.has-files {
@@ -710,8 +710,8 @@ const startSimulation = () => {
 }
 
 .upload-zone:hover {
-  background: #F0F0F0;
-  border-color: #999;
+  background: #1c1917;
+  border-color: #78716c;
 }
 
 .upload-placeholder {
@@ -721,12 +721,12 @@ const startSimulation = () => {
 .upload-icon {
   width: 40px;
   height: 40px;
-  border: 1px solid #DDD;
+  border: 1px solid #44403c;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 15px;
-  color: #999;
+  color: #78716c;
 }
 
 .upload-title {
@@ -738,7 +738,7 @@ const startSimulation = () => {
 .upload-hint {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: #999;
+  color: #78716c;
 }
 
 .file-list {
@@ -769,7 +769,7 @@ const startSimulation = () => {
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
-  color: #999;
+  color: #78716c;
 }
 
 .console-divider {
@@ -796,8 +796,8 @@ const startSimulation = () => {
 
 .input-wrapper {
   position: relative;
-  border: 1px solid #DDD;
-  background: #FAFAFA;
+  border: 1px solid #44403c;
+  background: #110f0d;
 }
 
 .code-input {
@@ -859,11 +859,11 @@ const startSimulation = () => {
 }
 
 .start-engine-btn:disabled {
-  background: #E5E5E5;
-  color: #999;
+  background: #292524;
+  color: #78716c;
   cursor: not-allowed;
   transform: none;
-  border: 1px solid #E5E5E5;
+  border: 1px solid #292524;
 }
 
 /* Guide animation: subtle border pulse */
@@ -876,7 +876,7 @@ const startSimulation = () => {
 /* Footer */
 .powered-by-footer {
   font-family: monospace;
-  color: #999;
+  color: #78716c;
   padding: 40px 0 20px;
   text-align: center;
   font-size: 0.8rem;

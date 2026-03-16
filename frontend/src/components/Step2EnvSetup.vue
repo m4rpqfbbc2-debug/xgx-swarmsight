@@ -375,7 +375,7 @@
                   <path d="M16.24 7.76L14.12 14.12L7.76 16.24L9.88 9.88L16.24 7.76Z" fill="url(#paint0_linear)" stroke="url(#paint0_linear)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <defs>
                     <linearGradient id="paint0_linear" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#FF5722"/>
+                      <stop stop-color="#c2410c"/>
                       <stop offset="1" stop-color="#FF9800"/>
                     </linearGradient>
                   </defs>
@@ -1085,7 +1085,7 @@ onUnmounted(() => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #FAFAFA;
+  background: #110f0d;
   font-family: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
 }
 
@@ -1100,17 +1100,17 @@ onUnmounted(() => {
 
 /* Step Card */
 .step-card {
-  background: #FFF;
+  background: #1c1917;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  border: 1px solid #EAEAEA;
+  border: 1px solid #292524;
   transition: all 0.3s ease;
   position: relative;
 }
 
 .step-card.active {
-  border-color: #FF5722;
+  border-color: #c2410c;
   box-shadow: 0 4px 12px rgba(255, 87, 34, 0.08);
 }
 
@@ -1131,12 +1131,12 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 20px;
   font-weight: 700;
-  color: #E0E0E0;
+  color: #292524;
 }
 
 .step-card.active .step-num,
 .step-card.completed .step-num {
-  color: #000;
+  color: #e7e5e4;
 }
 
 .step-title {
@@ -1154,8 +1154,8 @@ onUnmounted(() => {
 }
 
 .badge.success { background: #E8F5E9; color: #2E7D32; }
-.badge.processing { background: #FF5722; color: #FFF; }
-.badge.pending { background: #F5F5F5; color: #999; }
+.badge.processing { background: #c2410c; color: #1c1917; }
+.badge.pending { background: #110f0d; color: #78716c; }
 .badge.accent { background: #E3F2FD; color: #1565C0; }
 
 .card-content {
@@ -1165,13 +1165,13 @@ onUnmounted(() => {
 .api-note {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  color: #999;
+  color: #78716c;
   margin-bottom: 8px;
 }
 
 .description {
   font-size: 12px;
-  color: #666;
+  color: #a8a29e;
   line-height: 1.5;
   margin-bottom: 16px;
 }
@@ -1195,8 +1195,8 @@ onUnmounted(() => {
 }
 
 .action-btn.primary {
-  background: #000;
-  color: #FFF;
+  background: #110f0d;
+  color: #1c1917;
 }
 
 .action-btn.primary:hover:not(:disabled) {
@@ -1204,12 +1204,12 @@ onUnmounted(() => {
 }
 
 .action-btn.secondary {
-  background: #F5F5F5;
-  color: #333;
+  background: #110f0d;
+  color: #d6d3d1;
 }
 
 .action-btn.secondary:hover:not(:disabled) {
-  background: #E5E5E5;
+  background: #292524;
 }
 
 .action-btn:disabled {
@@ -1234,7 +1234,7 @@ onUnmounted(() => {
 
 /* Info Card */
 .info-card {
-  background: #F5F5F5;
+  background: #110f0d;
   border-radius: 6px;
   padding: 16px;
   margin-top: 16px;
@@ -1245,7 +1245,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   padding: 8px 0;
-  border-bottom: 1px dashed #E0E0E0;
+  border-bottom: 1px dashed #292524;
 }
 
 .info-row:last-child {
@@ -1254,7 +1254,7 @@ onUnmounted(() => {
 
 .info-label {
   font-size: 12px;
-  color: #666;
+  color: #a8a29e;
 }
 
 .info-value {
@@ -1272,7 +1272,7 @@ onUnmounted(() => {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
-  background: #F9F9F9;
+  background: #110f0d;
   padding: 16px;
   border-radius: 6px;
 }
@@ -1285,13 +1285,13 @@ onUnmounted(() => {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: #e7e5e4;
   font-family: 'JetBrains Mono', monospace;
 }
 
 .stat-label {
   font-size: 9px;
-  color: #999;
+  color: #78716c;
   text-transform: uppercase;
   margin-top: 4px;
   display: block;
@@ -1300,7 +1300,7 @@ onUnmounted(() => {
 /* Profiles Preview */
 .profiles-preview {
   margin-top: 20px;
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid #292524;
   padding-top: 16px;
 }
 
@@ -1314,7 +1314,7 @@ onUnmounted(() => {
 .preview-title {
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: #a8a29e;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -1333,17 +1333,17 @@ onUnmounted(() => {
 }
 
 .profiles-list::-webkit-scrollbar-thumb {
-  background: #DDD;
+  background: #44403c;
   border-radius: 2px;
 }
 
 .profiles-list::-webkit-scrollbar-thumb:hover {
-  background: #CCC;
+  background: #44403c;
 }
 
 .profile-card {
-  background: #FAFAFA;
-  border: 1px solid #E5E5E5;
+  background: #110f0d;
+  border: 1px solid #292524;
   border-radius: 6px;
   padding: 14px;
   cursor: pointer;
@@ -1351,8 +1351,8 @@ onUnmounted(() => {
 }
 
 .profile-card:hover {
-  border-color: #999;
-  background: #FFF;
+  border-color: #78716c;
+  background: #1c1917;
 }
 
 .profile-header {
@@ -1365,13 +1365,13 @@ onUnmounted(() => {
 .profile-realname {
   font-size: 14px;
   font-weight: 700;
-  color: #000;
+  color: #e7e5e4;
 }
 
 .profile-username {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: #999;
+  color: #78716c;
 }
 
 .profile-meta {
@@ -1380,8 +1380,8 @@ onUnmounted(() => {
 
 .profile-profession {
   font-size: 11px;
-  color: #666;
-  background: #F0F0F0;
+  color: #a8a29e;
+  background: #1c1917;
   padding: 2px 8px;
   border-radius: 3px;
 }
@@ -1413,7 +1413,7 @@ onUnmounted(() => {
 
 .topic-more {
   font-size: 10px;
-  color: #999;
+  color: #78716c;
   padding: 2px 6px;
 }
 
@@ -1425,7 +1425,7 @@ onUnmounted(() => {
 
 .config-block {
   margin-top: 16px;
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid #292524;
   padding-top: 12px;
 }
 
@@ -1445,7 +1445,7 @@ onUnmounted(() => {
 .config-block-title {
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: #a8a29e;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -1453,7 +1453,7 @@ onUnmounted(() => {
 .config-block-badge {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  background: #F1F5F9;
+  background: #1c1917;
   color: #475569;
   padding: 2px 8px;
   border-radius: 10px;
@@ -1467,7 +1467,7 @@ onUnmounted(() => {
 }
 
 .config-item {
-  background: #F9F9F9;
+  background: #110f0d;
   padding: 12px 14px;
   border-radius: 6px;
   display: flex;
@@ -1500,7 +1500,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 8px 12px;
-  background: #F9F9F9;
+  background: #110f0d;
   border-radius: 6px;
 }
 
@@ -1543,25 +1543,25 @@ onUnmounted(() => {
 }
 
 .agents-cards::-webkit-scrollbar-thumb {
-  background: #DDD;
+  background: #44403c;
   border-radius: 2px;
 }
 
 .agents-cards::-webkit-scrollbar-thumb:hover {
-  background: #CCC;
+  background: #44403c;
 }
 
 .agent-card {
-  background: #F9F9F9;
-  border: 1px solid #E5E5E5;
+  background: #110f0d;
+  border: 1px solid #292524;
   border-radius: 6px;
   padding: 14px;
   transition: all 0.2s ease;
 }
 
 .agent-card:hover {
-  border-color: #999;
-  background: #FFF;
+  border-color: #78716c;
+  background: #1c1917;
 }
 
 /* Agent Card Header */
@@ -1571,7 +1571,7 @@ onUnmounted(() => {
   align-items: flex-start;
   margin-bottom: 14px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #F1F5F9;
+  border-bottom: 1px solid #1c1917;
 }
 
 .agent-identity {
@@ -1600,7 +1600,7 @@ onUnmounted(() => {
 .agent-type {
   font-size: 10px;
   color: #64748B;
-  background: #F1F5F9;
+  background: #1c1917;
   padding: 2px 8px;
   border-radius: 4px;
 }
@@ -1614,7 +1614,7 @@ onUnmounted(() => {
 }
 
 .stance-neutral {
-  background: #F1F5F9;
+  background: #1c1917;
   color: #64748B;
 }
 
@@ -1745,7 +1745,7 @@ onUnmounted(() => {
 }
 
 .platform-card {
-  background: #F9F9F9;
+  background: #110f0d;
   padding: 14px;
   border-radius: 6px;
 }
@@ -1753,13 +1753,13 @@ onUnmounted(() => {
 .platform-card-header {
   margin-bottom: 10px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #292524;
 }
 
 .platform-name {
   font-size: 13px;
   font-weight: 600;
-  color: #333;
+  color: #d6d3d1;
 }
 
 .platform-params {
@@ -1795,13 +1795,13 @@ onUnmounted(() => {
 
 .reasoning-item {
   padding: 12px 14px;
-  background: #F9F9F9;
+  background: #110f0d;
   border-radius: 6px;
 }
 
 .reasoning-text {
   font-size: 13px;
-  color: #555;
+  color: #a8a29e;
   line-height: 1.7;
   margin: 0;
 }
@@ -1822,7 +1822,7 @@ onUnmounted(() => {
 }
 
 .profile-modal {
-  background: #FFF;
+  background: #1c1917;
   border-radius: 16px;
   width: 90%;
   max-width: 600px;
@@ -1838,8 +1838,8 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: flex-start;
   padding: 24px;
-  background: #FFF;
-  border-bottom: 1px solid #F0F0F0;
+  background: #1c1917;
+  border-bottom: 1px solid #1c1917;
 }
 
 .modal-header-info {
@@ -1856,19 +1856,19 @@ onUnmounted(() => {
 .modal-realname {
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: #e7e5e4;
 }
 
 .modal-username {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  color: #999;
+  color: #78716c;
 }
 
 .modal-profession {
   font-size: 12px;
-  color: #666;
-  background: #F5F5F5;
+  color: #a8a29e;
+  background: #110f0d;
   padding: 4px 10px;
   border-radius: 4px;
   display: inline-block;
@@ -1880,7 +1880,7 @@ onUnmounted(() => {
   height: 32px;
   border: none;
   background: none;
-  color: #999;
+  color: #78716c;
   border-radius: 50%;
   font-size: 24px;
   cursor: pointer;
@@ -1893,7 +1893,7 @@ onUnmounted(() => {
 }
 
 .close-btn:hover {
-  color: #333;
+  color: #d6d3d1;
 }
 
 .modal-body {
@@ -1921,7 +1921,7 @@ onUnmounted(() => {
 
 .info-label {
   font-size: 11px;
-  color: #999;
+  color: #78716c;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
@@ -1930,12 +1930,12 @@ onUnmounted(() => {
 .info-value {
   font-size: 15px;
   font-weight: 600;
-  color: #333;
+  color: #d6d3d1;
 }
 
 .info-value.mbti {
   font-family: 'JetBrains Mono', monospace;
-  color: #FF5722;
+  color: #c2410c;
 }
 
 /* Module area */
@@ -1947,7 +1947,7 @@ onUnmounted(() => {
   display: block;
   font-size: 11px;
   font-weight: 600;
-  color: #999;
+  color: #78716c;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
@@ -1955,13 +1955,13 @@ onUnmounted(() => {
 
 .section-bio {
   font-size: 14px;
-  color: #333;
+  color: #d6d3d1;
   line-height: 1.6;
   margin: 0;
   padding: 16px;
-  background: #F9F9F9;
+  background: #110f0d;
   border-radius: 6px;
-  border-left: 3px solid #E0E0E0;
+  border-left: 3px solid #292524;
 }
 
 /* Topic tags */
@@ -1998,27 +1998,27 @@ onUnmounted(() => {
   background: #F8F9FA;
   padding: 12px;
   border-radius: 6px;
-  border-left: 3px solid #DDD;
+  border-left: 3px solid #44403c;
   transition: all 0.2s;
 }
 
 .dimension-card:hover {
-  background: #F0F0F0;
-  border-left-color: #999;
+  background: #1c1917;
+  border-left-color: #78716c;
 }
 
 .dim-title {
   display: block;
   font-size: 12px;
   font-weight: 700;
-  color: #333;
+  color: #d6d3d1;
   margin-bottom: 4px;
 }
 
 .dim-desc {
   display: block;
   font-size: 10px;
-  color: #888;
+  color: #78716c;
   line-height: 1.4;
 }
 
@@ -2036,13 +2036,13 @@ onUnmounted(() => {
 }
 
 .persona-content::-webkit-scrollbar-thumb {
-  background: #DDD;
+  background: #44403c;
   border-radius: 2px;
 }
 
 .section-persona {
   font-size: 13px;
-  color: #555;
+  color: #a8a29e;
   line-height: 1.8;
   margin: 0;
   text-align: justify;
@@ -2050,8 +2050,8 @@ onUnmounted(() => {
 
 /* System Logs */
 .system-logs {
-  background: #000;
-  color: #DDD;
+  background: #110f0d;
+  color: #44403c;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
   border-top: 1px solid #222;
@@ -2065,7 +2065,7 @@ onUnmounted(() => {
   padding-bottom: 8px;
   margin-bottom: 8px;
   font-size: 10px;
-  color: #888;
+  color: #78716c;
 }
 
 .log-content {
@@ -2094,12 +2094,12 @@ onUnmounted(() => {
 }
 
 .log-time {
-  color: #666;
+  color: #a8a29e;
   min-width: 75px;
 }
 
 .log-msg {
-  color: #CCC;
+  color: #44403c;
   word-break: break-all;
 }
 
@@ -2107,8 +2107,8 @@ onUnmounted(() => {
 .spinner-sm {
   width: 16px;
   height: 16px;
-  border: 2px solid #E5E5E5;
-  border-top-color: #FF5722;
+  border: 2px solid #292524;
+  border-top-color: #c2410c;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -2128,14 +2128,14 @@ onUnmounted(() => {
   display: block;
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: #a8a29e;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
 }
 
 .narrative-box {
-  background: #FFFFFF;
+  background: #1c1917;
   padding: 20px 24px;
   border-radius: 12px;
   border: 1px solid #EEF2F6;
@@ -2147,7 +2147,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #666;
+  color: #a8a29e;
   font-size: 13px;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
@@ -2174,7 +2174,7 @@ onUnmounted(() => {
 }
 
 .topics-section {
-  background: #FFF;
+  background: #1c1917;
 }
 
 .hot-topics-grid {
@@ -2194,12 +2194,12 @@ onUnmounted(() => {
 
 .hot-topic-more {
   font-size: 11px;
-  color: #999;
+  color: #78716c;
   padding: 4px 6px;
 }
 
 .initial-posts-section {
-  border-top: 1px solid #EAEAEA;
+  border-top: 1px solid #292524;
   padding-top: 16px;
 }
 
@@ -2208,7 +2208,7 @@ onUnmounted(() => {
   flex-direction: column;
   gap: 16px;
   padding-left: 8px;
-  border-left: 2px solid #F0F0F0;
+  border-left: 2px solid #1c1917;
   margin-top: 12px;
 }
 
@@ -2223,11 +2223,11 @@ onUnmounted(() => {
   top: 14px;
   width: 12px;
   height: 2px;
-  background: #DDD;
+  background: #44403c;
 }
 
 .timeline-content {
-  background: #F9F9F9;
+  background: #110f0d;
   padding: 12px;
   border-radius: 6px;
   border: 1px solid #EEE;
@@ -2242,7 +2242,7 @@ onUnmounted(() => {
 .post-role {
   font-size: 11px;
   font-weight: 700;
-  color: #333;
+  color: #d6d3d1;
   text-transform: uppercase;
 }
 
@@ -2256,7 +2256,7 @@ onUnmounted(() => {
 .post-username {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  color: #666;
+  color: #a8a29e;
   line-height: 1;
   vertical-align: baseline;
 }
@@ -2267,7 +2267,7 @@ onUnmounted(() => {
 
 .post-text {
   font-size: 12px;
-  color: #555;
+  color: #a8a29e;
   line-height: 1.5;
   margin: 0;
 }
@@ -2276,7 +2276,7 @@ onUnmounted(() => {
 .rounds-config-section {
   margin: 24px 0;
   padding-top: 24px;
-  border-top: 1px solid #EAEAEA;
+  border-top: 1px solid #292524;
 }
 
 .rounds-header {
@@ -2307,7 +2307,7 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 600;
   color: #1E293B;
-  background: #F1F5F9;
+  background: #1c1917;
   padding: 1px 6px;
   border-radius: 4px;
   margin: 0 2px;
@@ -2348,14 +2348,14 @@ onUnmounted(() => {
   top: 2px;
   width: 16px;
   height: 16px;
-  background: #FFF;
+  background: #1c1917;
   border-radius: 50%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .switch-control input:checked + .switch-track {
-  background: #000;
+  background: #110f0d;
 }
 
 .switch-control input:checked + .switch-track::after {
@@ -2394,12 +2394,12 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 24px;
   font-weight: 700;
-  color: #000;
+  color: #e7e5e4;
 }
 
 .val-unit {
   font-size: 12px;
-  color: #666;
+  color: #a8a29e;
   font-weight: 500;
 }
 
@@ -2407,7 +2407,7 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   color: #64748B;
-  background: #F1F5F9;
+  background: #1c1917;
   padding: 4px 8px;
   border-radius: 4px;
 }
@@ -2435,8 +2435,8 @@ onUnmounted(() => {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #FFF;
-  border: 2px solid #000;
+  background: #1c1917;
+  border: 2px solid #e7e5e4;
   cursor: pointer;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   transition: transform 0.1s;
@@ -2469,11 +2469,11 @@ onUnmounted(() => {
 }
 
 .mark-recommend:hover {
-  color: #000;
+  color: #e7e5e4;
 }
 
 .mark-recommend.active {
-  color: #000;
+  color: #e7e5e4;
   font-weight: 600;
 }
 
@@ -2528,7 +2528,7 @@ onUnmounted(() => {
   font-size: 11px;
   font-weight: 500;
   color: #64748B;
-  background: #FFFFFF;
+  background: #1c1917;
   border: 1px solid #E2E8F0;
   padding: 3px 8px;
   border-radius: 6px;
