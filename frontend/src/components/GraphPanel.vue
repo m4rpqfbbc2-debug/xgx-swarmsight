@@ -286,7 +286,7 @@ const entityTypes = computed(() => {
   if (!props.graphData?.nodes) return []
   const typeMap = {}
   // Color palette
-  const colors = ['#c2410c', '#B8510D', '#B8510D', '#c2410c', '#dc2626', '#ea580c', '#c2410c', '#c2410c', '#c2410c', '#ea580c']
+  const colors = ['#c2410c', '#6889a0', '#5a7a5e', '#c4a243', '#8b6b9e', '#B8510D', '#dc2626', '#ea580c', '#78716c', '#a8a29e']
   
   props.graphData.nodes.forEach(node => {
     const type = node.labels?.find(l => l !== 'Entity') || 'Entity'
